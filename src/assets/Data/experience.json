@@ -1,0 +1,165 @@
+{
+    "experience": [
+        {
+            "title": "Programmer Internship",
+            "type": "period",
+            "startDate": "2024-09",
+            "endDate": "2025-01",
+            "description": "Selama saya magang sebagai Programmer di Sahabat Mediacom saya mengikuti kursus intensif internal dua kali seminggu untuk memperdalam pemahaman tentang pengembangan website. Pada akhir program, saya diberikan tanggung jawab untuk menguji integrasi data RS Online dengan modul Bridging RS Online Versi 3 (April 2024), yang menjadi bagian dari pengembangan sistem informasi rumah sakit.",
+            "organizer": "CV.Sahabat (Sahabat Mediacom)",
+            "location": "Yogyakarta, Indonesia",
+            "directory": "sahabat",
+            "Img": ["LogoCVSahabat.png","MagangSMC.jpg"],
+            "caption": ["Logo CV Sahabat","Surat Keterangan Magang di Sahabat Mediacom"]
+        },
+        {
+            "title": "Kuliah Umum Univesitas AMIKOM Yogyakarta",
+            "type": "onetime",
+            "date": "2021-07-24",
+            "description": "Mengikuti Kuliah Umum Universitas AMIKOM Yogyakarta tahun 2021 sebagai peserta. Kuliah umum bertujuan untuk memberikan wawasan dan motivasi kepada mahasiswa baru mengenai kampus dan berbagai prestasinya.",
+            "organizer": "Universitas AMIKOM Yogyakarta",
+            "location": "Online",
+            "directory": "kuliahumum",
+            "Img": ["KU.jpg"],
+            "caption": ["Sertifikat Kuliah Umum Universitas AMIKOM Yogyakarta"]
+        },
+        {
+            "title": "Introduction To Computer (ITC) 2021",
+            "type":"onetime",
+            "date":"2021-11-26",
+            "description": "Mengikuti acara ITC 2021 sebagai peserta divisi Computer Graphics. Pembahasan materi seputar design graphic, dan praktek sederhana menggunakan Adobe Illustrator dan After Effects.",
+            "organizer": "Universitas AMIKOM Yogyakarta",
+            "location":"Online",
+            "directory": "ITC",
+            "Img": ["ITC21.jpg", "asset.png"],
+            "caption": ["Sertifikat ITC 2021", "Hasil Karya Desain Poster Sederhana"]
+        },
+        {
+            "title": "Pelatihan Member AMCC 2021/2022",
+            "type": "period",
+            "startDate": "2022-01",
+            "endDate": "2022-06",
+            "description": "Mengikuti program pelatihan member Amikom Computer Club divisi Web Programming. Selama priod pelatihan materi yang diberikan mengenai pengembangan website serta proyek mengembangkan website sederhana menggunakan HTML, CSS, JS secara mandiri.",
+            "organizer": "Amikom Computer Club (AMCC)",
+            "location": "Online",
+            "directory": "amcc",
+            "Img": ["AMCC2122.jpg"],
+            "caption": "Sertifikat Pelatihan Member AMCC 2021/2022"
+        },
+        {
+            "title": "Gelar Karya Mahasiswa 2022/2023",
+            "type": "period",
+            "startDate": "2023-02",
+            "endDate": "2023-03",
+            "description": "Mengikuti Gelar Karya Mahasiswa Sistem Informasi (GEMASI) tahun 2022/2023 sebagai Perwakilan Kelas. GEMASI adalah suatu ajang kompetisi untuk mahasiswa di prodi Sistem Informasi. Karya proyek-proyek mata kuliah mahasiswa program studi Sistem Informasi dapat didaftarkan sebagai karya inovasi pada ajang GEMASI.",
+            "organizer": "Universitas AMIKOM Yogyakarta",
+            "location": "Sleman, DIY",
+            "directory": "gemasi",
+            "Img": ["GEMASI2223.jpg"],
+            "caption": ["Sertifikat Gelar Karya Mahasiswa 2022/2023"]
+        },
+        {
+            "title": "Asisten Praktikum Mata Kuliah Pemrograman Terstruktur",
+            "type": "period",
+            "startDate": "2023-03",
+            "endDate": "2023-07",
+            "description": "Menjadi Asisten Praktikum Mata Kuliah Pemrograman Terstruktur Program Studi Sistem Informasi Pada Semester Genap TA. 2022/2023. Membantu dosen dalam memberikan materi dan mengevaluasi hasil praktikum.",
+            "organizer": "Forum Asisten Universitas AMIKOM Yogyakarta",
+            "location": "Sleman, DIY",
+            "directory": "asprakPT2223",
+            "Img": ["AsprakPT2223.JPG", "sertifikat.jpg"],
+            "caption": ["Dokumentasi saat praktikum","Sertifikat Asisten Praktikum"]
+        },
+        {
+            "title": "Asisten Praktikum Mata Kuliah Struktur Data",
+            "type": "period",
+            "startDate": "2023-09",
+            "endDate": "2024-01",
+            "description": "Menjadi Asisten Praktikum Mata Kuliah Struktur Data Program Studi Sistem Informasi Pada Semester Ganjil TA. 2023/2024.",
+            "organizer": "Forum Asisten Universitas AMIKOM Yogyakarta",
+            "location": "Sleman, DIY",
+            "directory": "asprakSD2324",
+            "Img": ["foto.jpg", "AsprakSD2324.jpg"],
+            "caption": ["Dokumentasi bersama teman asisten setelah kelas selesai", "Sertifikat Asisten Praktikum"]
+        },
+        {
+            "title": "Asisten Praktikum Mata Kuliah Pemrograman Terstruktur",
+            "type": "period",
+            "startDate": "2024-02",
+            "endDate": "2024-07",
+            "description": "Menjadi Asisten Praktikum Mata Kuliah Pemrograman Terstruktur Program Studi Sistem Informasi Pada Semester Genap TA. 2023/2024. Membantu dosen dalam memberikan materi dan mengevaluasi hasil praktikum.",
+            "organizer": "Forum Asisten Universitas AMIKOM Yogyakarta",
+            "location": "Sleman, DIY",
+            "directory": "asprakPT2324",
+            "Img":["IMG-20240704.jpg","AsprakPT2324.jpg"],
+            "caption": ["Foto kelas di akhir semester bersama dosen dan asisten","Sertifikat Asisten Praktikum"]
+        },
+        {
+            "title": "IFCAMP 2023 HIMA IF x Avip Syaifulloh",
+            "type":"onetime",
+            "date":"2023-09-09",
+            "description": "Menjadi peserta program IFCAMP 2023 HIMA IF X Avip Syaifulloh. Acara berlangsung secara daring dengan materi Building Apps with Framework Laravel.",
+            "organizer": "Himpunan Mahasiswa S1-Informatika Universitas TELKOM",
+            "location":"Online",
+            "directory": "IFcamp",
+            "Img": ["Laravel.jpg"],
+            "caption": ["Sertifikat IFCAMP 2023 HIMA IF x Avip Syaifulloh"]
+        },
+        {
+            "title": "International Bootcamp Data Analyst",
+            "type":"onetime",
+            "date":"2024-05-25",
+            "description": "Mengikuti program Data Analyst International Bootcamp diselenggaran oleh SmartPath. Acara pertama bertema Overview of Data Analysis, Career, and Salary",
+            "organizer": "SmartPath",
+            "location":"Online",
+            "directory": "smartpath",
+            "Img": ["DTanalis.png"],
+            "caption": ["Sertifikat Overview of Data Analysis, Career, and Salary"]
+        },
+        {
+            "title": "International Bootcamp Data Analyst",
+            "type":"onetime",
+            "date":"2024-06-02",
+            "description": "Mengikuti program Data Analyst International Bootcamp diselenggaran oleh SmartPath. Tema kedua Mastering SQL Fundamental: From Concept to Application",
+            "organizer": "SmartPath",
+            "location":"Online",
+            "directory": "smartpath",
+            "Img": ["MSQL.png"],
+            "caption": ["Sertifikat Mastering SQL Fundamental: From Concept to Application"]  
+        },
+        {
+            "title": "International Bootcamp Data Analyst",
+            "type":"onetime",
+            "date":"2024-06-08",
+            "description": "Mengikuti program Data Analyst International Bootcamp diselenggaran oleh SmartPath. Tema ketiga Elevating Your SQL Skills: Intermediate Techniques for Data Analysis",
+            "organizer": "SmartPath",
+            "location":"Online",
+            "directory": "smartpath",
+            "Img": ["SQLSkill.png"],
+            "caption": ["Sertifikat Elevating Your SQL Skills: Intermediate Techniques for Data Analysis"]
+        },
+        {
+            "title": "Sekretaris OSIS SMA Negeri 1 Sumbawa Besar",
+            "type":"period",
+            "startDate": "2019-08-01",
+            "endDate": "2020-08-31",
+            "description": "Menjadi Sekretaris OSIS SMAN 1 Sumbawa Besar tahun jabatan 2019/2020. Bertanggung jawab sebagai pengelola data organisasi dan bertindak sebagai event organizer.",
+            "organizer": "OSIS SMAN 1 Sumbawa Besar",
+            "location":"Sumbawa Besar, NTB",
+            "directory": "osis",
+            "Img": ["osis.jpg"],
+            "caption": ["Foto Pengurus OSIS SMA Negeri 1 Sumbawa Besar Tahun 2019/2020"]
+        },
+        {
+            "title": "Sosialiasi PMSE Kementerian Perdagangan Republik Indonesia",
+            "type":"onetime",
+            "date":"2023-11-06",
+            "description": "Mengikuti sosialisasi PMSE yang diselenggarakan oleh Kementerian Perdagangan Republik Indonesia.",
+            "organizer": "Kementerian Perdagangan Republik Indonesia",
+            "location":"Universitas AMIKOM Yogyakarta",
+            "directory": "kemendag",
+            "Img": ["PMSE-Kemendag.jpg"],
+            "caption": ["Sertifikat Sosialisasi PMSE Kementerian Perdagangan Republik Indonesia"]
+        }
+    ]
+}

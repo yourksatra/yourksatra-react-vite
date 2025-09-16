@@ -1,0 +1,44 @@
+{
+    "project": [
+        {
+            "title":"Sistem pelaporan Data Capaian Standar Pelayanan Minimal Bidang Kesehatan berbasis Website",
+            "description":"Saya membangun sistem yang dapat memfasilitasi pelaporan Standar Pelayanan Minimal (SPM) Bidang Kesehatan di Dinas Kesehatan Kabupaten Sumbawa. Website ini dibangun menggunakan framework Laravel 10 dan Database MySQL.",
+            "techInformation": ["PHP","JavaScript","Laravel","MySQL", "Bootstrap", "JQuery"],
+            "img-thumbnail":"1.png",
+            "img-folder":"project1",
+            "total-img":13
+        },
+        {
+            "title":"Web Inventarisasi Laboratorium Fisioterapi UMS",
+            "description":"SPada bulan Maret hingga April 2024, saya mengembangkan sistem peminjaman alat laboratorium untuk Inventaris Laboratorium Fisioterapi di Universitas Muhammadiyah Surakarta. Sistem ini dirancang berbasis website untuk mempermudah proses peminjaman dan pengelolaan alat-alat laboratorium. Proyek ini memungkinkan pengguna untuk melakukan peminjaman secara efisien, serta membantu pihak laboratorium dalam memantau dan mengelola inventaris alat dengan lebih terstruktur.",
+            "techInformation": ["PHP","CodeIgniter","MySQL", "Bootstrap"],
+            "img-thumbnail":"1.png",
+            "img-folder":"project2",
+            "total-img":4
+        },
+        {
+            "title":"Sistem Rekomendasi Film dengan Model Spearman Rank Correlation dan Algoritma Item-Based Collaborative Filtering",
+            "description":"Pada semester ganjil tahun akademik 2023/2024, saya mengerjakan proyek Ujian Akhir Semester untuk mata kuliah Sistem Rekomendasi dengan judul 'Studi Kasus Rekomendasi Film Berdasarkan Genre dan Data Pemeran Film (Actor) dengan Model Spearman Rank Correlation dan Algoritma Item-Based Collaborative Filtering.' Proyek ini dikembangkan menggunakan bahasa Python dan memanfaatkan teknologi Google Colab. Dalam proyek ini, saya mengimplementasikan model Spearman Rank Correlation dan algoritma Item-Based Collaborative Filtering untuk membangun sistem rekomendasi film yang mempertimbangkan preferensi genre dan aktor. Melalui proyek ini, saya memperdalam pemahaman saya tentang teknik-teknik dalam sistem rekomendasi dan penerapannya dalam dunia nyata.",
+            "techInformation": ["Phyton","Google Colabs","Kaggle"],
+            "img-thumbnail":"1.png",
+            "img-folder":"project3",
+            "total-img":5
+        },
+        {
+            "title":"HealthyDoc, Sistem Informasi Rekam Medis Berbasis Web",
+            "description":"Pada Ujian Akhir Semester Genap tahun akademik 2022/2023 untuk mata kuliah Digital Bisnis, saya merancang dan mengembangkan sebuah website bernama HealthyDoc menggunakan framework CodeIgniter 3. HealthyDoc adalah sebuah platform Rekam Medis Elektronik yang dirancang sebagai fasilitas digital untuk penyimpanan dan pengelolaan data kesehatan. Proyek ini bertujuan untuk mempermudah akses dan manajemen informasi medis, sehingga dapat mendukung efisiensi dalam dunia kesehatan. Melalui pengembangan ini, saya berhasil mengintegrasikan pengetahuan teknis dengan kebutuhan bisnis digital yang relevan di bidang kesehatan.",
+            "techInformation": ["PHP","CodeIgniter","Bootstrap","JavaScript","JQuery","MySQL"],
+            "img-thumbnail":"1.png",
+            "img-folder":"project4",
+            "total-img":17
+        },
+        {
+            "title":"Program Kasir Rental atau Peminjaman Mobil. Menggunakan bahasa pemograman C++",
+            "description":"Pada semester genap tahun akademik 2021/2022, saya mengembangkan sebuah program kasir untuk rental mobil menggunakan bahasa pemrograman C++ sebagai bagian dari Ujian Akhir Semester mata kuliah Pemrograman Terstruktur. Melalui proyek ini, saya dapat mengaplikasikan konsep-konsep pemrograman terstruktur yang telah dipelajari dan meningkatkan pemahaman saya dalam membangun aplikasi berbasis C++.",
+            "techInformation": ["CPP/C++","Visual Studio Code","MinGW", "CMD"],
+            "img-thumbnail":"1.png",
+            "img-folder":"project5",
+            "total-img":11
+        }
+    ]
+}

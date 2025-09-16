@@ -1,0 +1,99 @@
+{
+    "tools": [
+        {
+            "name": "PHP",
+            "type": "Bahasa Pemograman",
+            "level": "Advanced",
+            "img": "PHP.png"
+        },
+        {
+            "name": "JavaScript",
+            "type": "Bahasa Pemograman",
+            "level": "Intermediate",
+            "img": "JavaScript.png"
+        },
+        {
+            "name": "C++",
+            "type": "Bahasa Pemograman",
+            "level": "Intermediate",
+            "img": "cpp.png"
+        },
+        {
+            "name": "Python",
+            "type": "Bahasa Pemograman",
+            "level": "Intermediate",
+            "img": "Python.png"
+        },{
+            "name": "CodeIgniter",
+            "type": "Framework PHP",
+            "level": "Intermediate",
+            "img": "CI.png"
+        },
+        {
+            "name": "Laravel",
+            "type": "Framework PHP",
+            "level": "Intermediate",
+            "img": "laravel.png"
+        },
+        {
+            "name": "Bootstrap",
+            "type": "Framework CSS",
+            "level": "Intermediate",
+            "img": "bootstrap.png"
+        },
+        {
+            "name": "JQuery",
+            "type": "JavaScript Library",
+            "level": "Intermediate",
+            "img": "jQuery.png"
+        },
+        {
+            "name": "Visual Studio Code",
+            "type": "Text Editor",
+            "level": "Advanced",
+            "img": "VSC.png"
+        },
+        {
+            "name": "GitHub",
+            "type": "Repository",
+            "level": "Intermediate",
+            "img": "Github.png"
+        },
+        {
+            "name": "Postman",
+            "type": "API Testing",
+            "level": "Basic",
+            "img": "postman.png"
+        },
+        {
+            "name": "DBeaver",
+            "type": "Database Management Tool",
+            "level": "Basic",
+            "img": "DBeaver.png"
+        },
+        {
+            "name": "Photoshop",
+            "type": "Design App",
+            "level": "Intermediate",
+            "img": "Photoshop.png"
+        },
+        {
+            "name": "Illustrator",
+            "type": "Design App",
+            "level": "Basic",
+            "img": "Illustrator.png"
+        },
+        {
+            "name": "Figma",
+            "type": "Design App",
+            "level": "Intermediate",
+            "img": "Figma.png"
+        },
+        {
+            "name":"Laragon",
+            "type":"Local Server",
+            "level":"Advanced",
+            "img": "Laragon.png"
+        }
+    ]
+}

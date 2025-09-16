@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 4rem;
+}
+
+.clip-diagonal {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.overlay-diagonal {
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 150%);
+}
+
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease forwards;
+}
