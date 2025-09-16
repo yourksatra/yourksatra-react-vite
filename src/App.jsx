@@ -56,7 +56,6 @@ export default function App() {
                 setActivePage={setActivePage}
               />
               <ContactSection />
-              <ExperienceSection />
             </>
           )}
           {activePage === "ExperienceSection" && (
