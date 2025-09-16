@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import data from "../../assets/data/experience.json";
+import data from "../../assets/Data/experience.json";
 
 export default function experience({ jmlhdisplay, onSeeMore }) {
   const [selected, setSelected] = useState(null);
