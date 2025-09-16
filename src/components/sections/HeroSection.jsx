@@ -77,7 +77,9 @@ export default function HeroSection() {
               >
                 KONTAK SEKARANG
               </button>
-              <button
+              <a
+                href="/CV/Resume.pdf"
+                download="Resume_Yourksatra.pdf"
                 className="cursor-pointer px-2 py-1 rounded-lg border border-gray-900 dark:border-white 
     text-gray-900 dark:text-white 
     hover:bg-sky-500 hover:border-sky-500 hover:text-white 
@@ -86,7 +88,7 @@ export default function HeroSection() {
               >
                 Download CV
                 <FaDownload className="text-sm" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -175,7 +177,9 @@ export default function HeroSection() {
                 KONTAK SEKARANG
               </button>
 
-              <button
+              <a
+                href="/CV/Resume.pdf"
+                download="Resume_Yourksatra.pdf"
                 className="cursor-pointer px-2 py-1 rounded-lg border border-gray-900 dark:border-white 
     text-gray-900 dark:text-white 
     hover:bg-sky-600 hover:border-sky-600 hover:text-white 
@@ -184,7 +188,7 @@ export default function HeroSection() {
               >
                 Download CV
                 <FaDownload className="text-sm" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
