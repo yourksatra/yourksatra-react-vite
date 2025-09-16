@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import LoadingScreen from "./components/reusable/LoadingScreen";
+import LoadingScreen from "./components/reusable/LoadingScreen.jsx";
 import Navbar from "./components/layout/navbar";
 import AboutSection from "./components/sections/AboutSection";
 import HeroSection from "./components/sections/HeroSection";
@@ -42,7 +42,11 @@ export default function App() {
         <LoadingScreen />
       ) : (
         <>
-          <Navbar setSelectedTab={setSelectedTab} activePage={activePage} setActivePage={setActivePage} />
+          <Navbar
+            setSelectedTab={setSelectedTab}
+            activePage={activePage}
+            setActivePage={setActivePage}
+          />
           {activePage === "home" && (
             <>
               <HeroSection />
