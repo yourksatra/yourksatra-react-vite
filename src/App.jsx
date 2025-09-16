@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import LoadingScreen from "./components/reusable/loadingscreen";
+import LoadingScreen from "./components/reusable/LoadingScreen";
 import Navbar from "./components/layout/navbar";
 import AboutSection from "./components/sections/AboutSection";
 import HeroSection from "./components/sections/HeroSection";
