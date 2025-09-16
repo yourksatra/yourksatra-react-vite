@@ -13,7 +13,7 @@ import moonIcon from "../../assets/Icon/moon.svg";
 import { ChevronDown } from "lucide-react";
 import { span } from "framer-motion/client";
 
-export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
+export default function navbar({ setSelectedTab, activePage, setActivePage }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuMaxHeight, setMenuMaxHeight] = useState(0);

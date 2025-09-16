@@ -1,9 +1,8 @@
-// components/Experience.jsx
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import data from "../../assets/data/experience.json";
 
-export default function Experience({ jmlhdisplay, onSeeMore }) {
+export default function experience({ jmlhdisplay, onSeeMore }) {
   const [selected, setSelected] = useState(null);
   const [currentImg, setCurrentImg] = useState(0);
   const modalContentRef = useRef(null);
