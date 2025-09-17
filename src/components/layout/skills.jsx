@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import skillsetData from "../../assets/data/skillset.json";
+import skillsetData from "../../assets/Data/skillset.json";
 
-const Skills = ({ onSeeDetail }) => {
+const skills = ({ onSeeDetail }) => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
@@ -71,4 +71,4 @@ const Skills = ({ onSeeDetail }) => {
   );
 };
 
-export default Skills;
+export default skills;
