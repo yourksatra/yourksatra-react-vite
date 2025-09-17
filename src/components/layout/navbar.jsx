@@ -11,7 +11,6 @@ import moonIcon from "../../assets/Icon/moon.svg";
 
 // ICON DROPDOWN
 import { ChevronDown } from "lucide-react";
-import { span } from "framer-motion/client";
 
 export default function navbar({ setSelectedTab, activePage, setActivePage }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -196,8 +195,8 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
                   toggleTheme();
                   setIsMenuOpen(false);
                 }}
-                className={`p-2 rounded-full transition ${
-                  isScrolled || isMenuOpen
+                className={`cursor-pointer p-2 rounded-full transition ${
+                  isScrolled || isMenuOpen || activePage !== "home"
                     ? "hover:bg-gray-200 dark:hover:bg-gray-700"
                     : "hover:bg-sky-400 dark:hover:bg-sky-600"
                 }`}
@@ -217,8 +216,8 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
               {/* Theme toggle */}
               <button
                 onClick={toggleTheme}
-                className={`p-2 rounded-full transition ${
-                  isScrolled || isMenuOpen
+                className={`cursor-pointer p-2 rounded-full transition ${
+                  isScrolled || isMenuOpen || activePage !== "home"
                     ? "hover:bg-gray-200 dark:hover:bg-gray-700"
                     : "hover:bg-sky-400 dark:hover:bg-sky-600"
                 }`}

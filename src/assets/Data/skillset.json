@@ -1,99 +1,178 @@
 {
-    "tools": [
+    "skillset": [
         {
             "name": "PHP",
             "type": "Bahasa Pemograman",
             "level": "Advanced",
-            "img": "PHP.png"
+            "group": "Di Gunakan",
+            "img": "PHP.svg"
         },
         {
             "name": "JavaScript",
             "type": "Bahasa Pemograman",
             "level": "Intermediate",
-            "img": "JavaScript.png"
+            "group": "Di Gunakan",
+            "img": "JavaScript.svg"
         },
         {
             "name": "C++",
             "type": "Bahasa Pemograman",
             "level": "Intermediate",
-            "img": "cpp.png"
+            "group": "Lainnya",
+            "img": "cpp.svg"
         },
         {
             "name": "Python",
             "type": "Bahasa Pemograman",
             "level": "Intermediate",
-            "img": "Python.png"
+            "group": "Di Gunakan",
+            "img": "Python.svg"
         },{
             "name": "CodeIgniter",
             "type": "Framework PHP",
             "level": "Intermediate",
-            "img": "CI.png"
+            "group": "Di Gunakan",
+            "img": "CI.svg"
         },
         {
             "name": "Laravel",
             "type": "Framework PHP",
             "level": "Intermediate",
-            "img": "laravel.png"
+            "group": "Di Gunakan",
+            "img": "Laravel.svg"
         },
         {
             "name": "Bootstrap",
             "type": "Framework CSS",
             "level": "Intermediate",
-            "img": "bootstrap.png"
+            "group": "Di Gunakan",
+            "img": "bootstrap.svg"
         },
         {
             "name": "JQuery",
             "type": "JavaScript Library",
             "level": "Intermediate",
-            "img": "jQuery.png"
+            "group": "Di Gunakan",
+            "img": "jQuery.svg"
         },
         {
             "name": "Visual Studio Code",
             "type": "Text Editor",
             "level": "Advanced",
-            "img": "VSC.png"
+            "group": "Di Gunakan",
+            "img": "VSC.svg"
         },
         {
             "name": "GitHub",
             "type": "Repository",
             "level": "Intermediate",
-            "img": "Github.png"
+            "group": "Di Gunakan",
+            "img": "Github.svg"
         },
         {
             "name": "Postman",
             "type": "API Testing",
             "level": "Basic",
-            "img": "postman.png"
+            "group": "Lainnya",
+            "img": "postman.svg"
         },
         {
             "name": "DBeaver",
             "type": "Database Management Tool",
             "level": "Basic",
-            "img": "DBeaver.png"
+            "group": "Lainnya",
+            "img": "DBeaver.svg"
         },
         {
             "name": "Photoshop",
             "type": "Design App",
             "level": "Intermediate",
-            "img": "Photoshop.png"
+            "group": "Di Gunakan",
+            "img": "Photoshop.svg"
         },
         {
             "name": "Illustrator",
             "type": "Design App",
             "level": "Basic",
-            "img": "Illustrator.png"
+            "group": "Di Gunakan",
+            "img": "Illustrator.svg"
         },
         {
             "name": "Figma",
             "type": "Design App",
             "level": "Intermediate",
-            "img": "Figma.png"
+            "group": "Lainnya",
+            "img": "Figma.svg"
         },
         {
             "name":"Laragon",
             "type":"Local Server",
             "level":"Advanced",
-            "img": "Laragon.png"
+            "group": "Di Gunakan",
+            "img": "Laragon.svg"
+        },
+        {
+            "name":"XAMPP",
+            "type":"Local Server",
+            "level":"Intermediate",
+            "group": "Lainnya",
+            "img": "xampp.svg"
+        },
+        {
+            "name":"MySQL",
+            "type":"Database",
+            "level":"Intermediate",
+            "group": "Di Gunakan",
+            "img": "MySQL.svg"
+        },
+        {
+            "name":"FireBase NoSQL",
+            "type":"Database",
+            "level":"Basic",
+            "group": "Belajar",
+            "img": "FireBase.svg"
+        },
+        {
+            "name":"Git",
+            "type":"Version Control",
+            "level":"Basic",
+            "group": "Belajar",
+            "img": "Git.svg"
+        },
+        {
+            "name":"Tailwind CSS",
+            "type":"Framework CSS",
+            "level":"Intermediate",
+            "group": "Di Gunakan",
+            "img": "TailwindCSS.svg"
+        },
+        {
+            "name":"ReactJS",
+            "type":"JavaScript Library",
+            "level":"Intermediate",
+            "group": "Di Gunakan",
+            "img": "ReactJS.svg"
+        },
+        {
+            "name":"NodeJS",
+            "type":"JavaScript Runtime",
+            "level":"Basic",
+            "group": "Belajar",
+            "img": "NodeJS.svg"
+        },
+        {
+            "name":"NextJS",
+            "type":"Framework React",
+            "level":"Basic",
+            "group": "Belajar",
+            "img": "NextJS.svg"
+        },
+        {
+            "name":"typeScript",
+            "type":"Bahasa Pemograman",
+            "level":"Basic",
+            "group": "Belajar",
+            "img": "typeScript.svg"
         }
     ]
 }

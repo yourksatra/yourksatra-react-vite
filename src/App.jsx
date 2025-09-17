@@ -9,6 +9,7 @@ import HeroSection from "./components/sections/HeroSection";
 import PortoSection from "./components/sections/PortoSection";
 import ContactSection from "./components/sections/ContactSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
+import SkillsSection from "./components/sections/SkillsSection";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,7 @@ export default function App() {
 
   useEffect(() => {
     if (activePage !== "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0 });
     }
   }, [activePage]);
 
@@ -60,6 +61,9 @@ export default function App() {
           )}
           {activePage === "ExperienceSection" && (
             <ExperienceSection setActivePage={setActivePage} />
+          )}
+          {activePage === "SkillsSection" && (
+            <SkillsSection setActivePage={setActivePage} />
           )}
         </>
       )}

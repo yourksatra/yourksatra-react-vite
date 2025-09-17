@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Experience from "../layout/experience";
+import Skills from "../layout/skills";
 
 export default function PortoSection({ selectedTab, setActivePage }) {
   const [activeTab, setActiveTab] = useState(selectedTab || "project");
@@ -22,11 +23,7 @@ export default function PortoSection({ selectedTab, setActivePage }) {
           </div>
         );
       case "skills":
-        return (
-          <div className="p-6 text-center text-blue-400">
-            Skills Coming Soon
-          </div>
-        );
+        return <Skills onSeeDetail={() => setActivePage("SkillsSection")} />;;
       default:
         return null;
     }
