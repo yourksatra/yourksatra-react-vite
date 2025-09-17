@@ -1,5 +1,5 @@
 import skillsetData from "../../assets/Data/skillset.json";
-import Breadcrumb from "../reusable/breadcrumb";
+import Breadcrumb from "../reusable/Breadcrumb";
 
 const groups = ["Di Gunakan", "Belajar", "Lainnya"];
 
