@@ -69,14 +69,15 @@ export default function HeroSection() {
               </div>
             </div>
             <div className="flex items-end-safe gap-2 mt-5">
-              <button
+              <a
+                href="#contact&focus"
                 className="cursor-pointer px-3 py-1 rounded-lg border bg-sky-500 border-sky-500 text-white dark:text-gray-900 
     hover:bg-white hover:text-gray-900 hover:border-gray-900 
     dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-white 
     font-medium flex items-center gap-2 transition-colors duration-200"
               >
-                KONTAK SEKARANG
-              </button>
+                HUBUNGI SEKARANG
+              </a>
               <a
                 href="/CV/Resume.pdf"
                 download="Resume_Yourksatra.pdf"
@@ -122,6 +123,7 @@ export default function HeroSection() {
         {/* Gambar full background */}
         <div
           data-aos="fade-in"
+          data-aos-delay="300"
           data-once="true"
           className="absolute inset-0"
         >
@@ -168,14 +170,15 @@ export default function HeroSection() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <button
+              <a
+                href="#contact&focus"
                 className="cursor-pointer px-3 py-1 rounded-lg border bg-sky-600 dark:bg-sky-400 border-sky-600 dark:border-sky-400 text-white dark:text-gray-900 
     hover:bg-white hover:text-gray-900 hover:border-gray-900 
     dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-white 
     text-sm font-medium flex items-center gap-2 transition-colors duration-200"
               >
-                KONTAK SEKARANG
-              </button>
+                HUBUNGI SEKARANG
+              </a>
 
               <a
                 href="/CV/Resume.pdf"

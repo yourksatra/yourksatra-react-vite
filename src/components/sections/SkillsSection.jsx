@@ -18,8 +18,8 @@ const SkillsSection = ({ setActivePage }) => {
 
           return (
             <div key={group} className="mb-10">
-              <h3 data-aos="fade-up" className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{group}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <h3 data-aos="fade-up" className="text-xl font-semibold mb-4 ms-1 md:ms-0 text-gray-900 dark:text-white">{group}</h3>
+              <div className="grid grid-cols-2 mx-2 gap-2 md:grid-cols-4 md:mx-0 md:gap-6">
                 {filtered.map((skill, i) => (
                   <div
                     key={i}

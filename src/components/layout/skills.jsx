@@ -34,14 +34,14 @@ const skills = ({ onSeeDetail }) => {
   }, []);
 
   return (
-    <div className="w-full py-10 relative overflow-hidden bg-white dark:bg-gray-900">
+    <div className="w-full pb-6 relative overflow-hidden bg-white dark:bg-gray-900">
       <div className="space-y-16">
         {rows.map((row, i) => (
           <div
             key={i}
             data-aos="fade-up"
             data-aos-delay={i * 100}
-            className="flex animate-marquee space-x-10"
+            className="flex animate-marquee space-x-5 md:space-x-10"
             style={{
               animationDuration: `${20 + i * 5}s`,
             }}
@@ -58,7 +58,7 @@ const skills = ({ onSeeDetail }) => {
         ))}
       </div>
 
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-10">
         <button
           onClick={onSeeDetail}
           data-aos="fade-up"

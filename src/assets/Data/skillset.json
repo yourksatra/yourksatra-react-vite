@@ -15,6 +15,13 @@
             "img": "JavaScript.svg"
         },
         {
+            "name":"TypeScript",
+            "type":"Bahasa Pemograman",
+            "level":"Basic",
+            "group": "Belajar",
+            "img": "typeScript.svg"
+        },
+        {
             "name": "C++",
             "type": "Bahasa Pemograman",
             "level": "Intermediate",
@@ -27,124 +34,13 @@
             "level": "Intermediate",
             "group": "Di Gunakan",
             "img": "Python.svg"
-        },{
-            "name": "CodeIgniter",
-            "type": "Framework PHP",
-            "level": "Intermediate",
-            "group": "Di Gunakan",
-            "img": "CI.svg"
         },
         {
-            "name": "Laravel",
-            "type": "Framework PHP",
-            "level": "Intermediate",
-            "group": "Di Gunakan",
-            "img": "Laravel.svg"
-        },
-        {
-            "name": "Bootstrap",
-            "type": "Framework CSS",
-            "level": "Intermediate",
-            "group": "Di Gunakan",
-            "img": "bootstrap.svg"
-        },
-        {
-            "name": "JQuery",
-            "type": "JavaScript Library",
-            "level": "Intermediate",
-            "group": "Di Gunakan",
-            "img": "jQuery.svg"
-        },
-        {
-            "name": "Visual Studio Code",
-            "type": "Text Editor",
-            "level": "Advanced",
-            "group": "Di Gunakan",
-            "img": "VSC.svg"
-        },
-        {
-            "name": "GitHub",
-            "type": "Repository",
-            "level": "Intermediate",
-            "group": "Di Gunakan",
-            "img": "Github.svg"
-        },
-        {
-            "name": "Postman",
-            "type": "API Testing",
-            "level": "Basic",
-            "group": "Lainnya",
-            "img": "postman.svg"
-        },
-        {
-            "name": "DBeaver",
-            "type": "Database Management Tool",
-            "level": "Basic",
-            "group": "Lainnya",
-            "img": "DBeaver.svg"
-        },
-        {
-            "name": "Photoshop",
-            "type": "Design App",
-            "level": "Intermediate",
-            "group": "Di Gunakan",
-            "img": "Photoshop.svg"
-        },
-        {
-            "name": "Illustrator",
-            "type": "Design App",
-            "level": "Basic",
-            "group": "Di Gunakan",
-            "img": "Illustrator.svg"
-        },
-        {
-            "name": "Figma",
-            "type": "Design App",
-            "level": "Intermediate",
-            "group": "Lainnya",
-            "img": "Figma.svg"
-        },
-        {
-            "name":"Laragon",
-            "type":"Local Server",
-            "level":"Advanced",
-            "group": "Di Gunakan",
-            "img": "Laragon.svg"
-        },
-        {
-            "name":"XAMPP",
-            "type":"Local Server",
-            "level":"Intermediate",
-            "group": "Lainnya",
-            "img": "xampp.svg"
-        },
-        {
-            "name":"MySQL",
-            "type":"Database",
+            "name":"ChatGPT",
+            "type":"AI Model",
             "level":"Intermediate",
             "group": "Di Gunakan",
-            "img": "MySQL.svg"
-        },
-        {
-            "name":"FireBase NoSQL",
-            "type":"Database",
-            "level":"Basic",
-            "group": "Belajar",
-            "img": "FireBase.svg"
-        },
-        {
-            "name":"Git",
-            "type":"Version Control",
-            "level":"Basic",
-            "group": "Belajar",
-            "img": "Git.svg"
-        },
-        {
-            "name":"Tailwind CSS",
-            "type":"Framework CSS",
-            "level":"Intermediate",
-            "group": "Di Gunakan",
-            "img": "TailwindCSS.svg"
+            "img": "ChatGPT.svg"
         },
         {
             "name":"ReactJS",
@@ -168,11 +64,151 @@
             "img": "NextJS.svg"
         },
         {
-            "name":"typeScript",
-            "type":"Bahasa Pemograman",
+            "name": "Laravel",
+            "type": "Framework PHP",
+            "level": "Intermediate",
+            "group": "Di Gunakan",
+            "img": "Laravel.svg"
+        },
+        {
+            "name": "CodeIgniter",
+            "type": "Framework PHP",
+            "level": "Intermediate",
+            "group": "Lainnya",
+            "img": "CI.svg"
+        },
+        {
+            "name":"Tailwind CSS",
+            "type":"Framework CSS",
+            "level":"Intermediate",
+            "group": "Di Gunakan",
+            "img": "TailwindCSS.svg"
+        },
+        {
+            "name": "Bootstrap",
+            "type": "Framework CSS",
+            "level": "Intermediate",
+            "group": "Lainnya",
+            "img": "bootstrap.svg"
+        },
+        {
+            "name": "JQuery",
+            "type": "JavaScript Library",
+            "level": "Intermediate",
+            "group": "Di Gunakan",
+            "img": "jQuery.svg"
+        },
+        {
+            "name": "GitHub",
+            "type": "Repository",
+            "level": "Intermediate",
+            "group": "Di Gunakan",
+            "img": "Github.svg"
+        },
+        {
+            "name":"Git",
+            "type":"Version Control",
+            "level":"Basic",
+            "group": "Di Gunakan",
+            "img": "Git.svg"
+        },
+        {
+            "name":"MySQL",
+            "type":"Database",
+            "level":"Intermediate",
+            "group": "Di Gunakan",
+            "img": "MySQL.svg"
+        },
+        {
+            "name":"FireBase NoSQL",
+            "type":"Database",
             "level":"Basic",
             "group": "Belajar",
-            "img": "typeScript.svg"
-        }
+            "img": "FireBase.svg"
+        },
+        {
+            "name":"Laragon",
+            "type":"Local Server",
+            "level":"Advanced",
+            "group": "Di Gunakan",
+            "img": "Laragon.svg"
+        },
+        {
+            "name":"XAMPP",
+            "type":"Local Server",
+            "level":"Intermediate",
+            "group": "Lainnya",
+            "img": "xampp.svg"
+        },
+        {
+            "name": "Photoshop",
+            "type": "Design App",
+            "level": "Intermediate",
+            "group": "Di Gunakan",
+            "img": "Photoshop.svg"
+        },
+        {
+            "name": "Illustrator",
+            "type": "Design App",
+            "level": "Basic",
+            "group": "Di Gunakan",
+            "img": "Illustrator.svg"
+        },
+        {
+            "name": "Figma",
+            "type": "Design App",
+            "level": "Intermediate",
+            "group": "Lainnya",
+            "img": "Figma.svg"
+        },
+        {
+            "name":"Canva",
+            "type":"Design App",
+            "level":"Intermediate",
+            "group": "Lainnya",
+            "img": "Canva.svg"
+        },
+        {
+            "name": "Visual Studio Code",
+            "type": "Text Editor",
+            "level": "Advanced",
+            "group": "Di Gunakan",
+            "img": "VSC.svg"
+        },
+        {
+            "name": "DBeaver",
+            "type": "Database Management Tool",
+            "level": "Basic",
+            "group": "Lainnya",
+            "img": "DBeaver.svg"
+        },
+        {
+            "name": "Postman",
+            "type": "API Testing",
+            "level": "Basic",
+            "group": "Lainnya",
+            "img": "postman.svg"
+        },
+        {
+            "name":"Microsoft Word",
+            "type":"Word Processing",
+            "level":"Advanced",
+            "group": "Lainnya",
+            "img": "MicrosoftWord.svg"
+        },
+        {
+            "name":"Microsoft Excel",
+            "type":"Spreadsheet",
+            "level":"Basic",
+            "group": "Lainnya",
+            "img": "MicrosoftExcel.svg"
+        },
+        {
+            "name":"Microsoft PowerPoint",
+            "type":"Presentation",
+            "level":"Intermediate",
+            "group": "Lainnya",
+            "img": "PowerPoint.svg"
+        }   
     ]
 }
