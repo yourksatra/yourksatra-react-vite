@@ -116,12 +116,12 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-[90svh] flex flex-col items-center justify-center bg-sky-500 dark:bg-sky-500 px-4 py-10"
+      className="min-h-[100svh] flex flex-col items-center justify-center bg-sky-500 dark:bg-sky-500 px-4 py-10"
     >
       {/* Section Title */}
       <div data-aos="fade-up" className="mb-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900">
-          Kontak Saya
+          KONTAK SAYA
         </h2>
       </div>
 
@@ -200,7 +200,7 @@ export default function ContactSection() {
             ></textarea>
 
             {errors.message && (
-              <p className="text-red-400 text-sm">{errors.message}</p>
+              <p className="text-red-500 text-sm">{errors.message}</p>
             )}
 
             <button
