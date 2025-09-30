@@ -1,44 +1,244 @@
 {
-    "project": [
+  "projects": [
+    {
+      "title": "Website Pelaporan SPM Bidang Kesehatan Dinas Kesehatan Kab.Sumbawa",
+      "description": "Project ini merupakan sistem yang dikembangkan agar dapat memfasilitasi pelaporan data capaian Standar Pelayanan Minimal (SPM) Bidang Kesehatan di Dinas Kesehatan Kabupaten Sumbawa. Website ini dibangun menggunakan PHP dengan kerangka kerja Laravel 10 dan Database MySQL.",
+      "techInformation": ["PHP", "JavaScript", "Laravel", "MySQL", "Bootstrap", "JQuery"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "project1",
+        "thumbnail": "0.png",
+        "total": 13
+      }
+    },
+    {
+      "title": "Inventarisasi Laboratorium Fisioterapi UMS",
+      "description": "Saya mengembangkan sistem peminjaman alat laboratorium untuk Inventaris Laboratorium Fisioterapi di Universitas Muhammadiyah Surakarta. Sistem ini dirancang berbasis website untuk mempermudah proses peminjaman dan pengelolaan alat-alat laboratorium. Proyek ini memungkinkan pengguna untuk melakukan peminjaman secara efisien, serta membantu pihak laboratorium dalam memantau dan mengelola inventaris alat dengan lebih terstruktur.",
+      "techInformation": ["PHP", "CodeIgniter", "MySQL", "Bootstrap"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "project2",
+        "thumbnail": "0.png",
+        "total": 4
+      }
+    },
+    {
+      "title": "Yourksatra Github Page",
+      "description": "Project github page ini merupakan portofolio berbasis halaman web pertama yang saya kembangkan. Menggunakan HTML5 yang disupport dengan Javascript dan template Bootstrap, saya membuat website single page sederhana yang responsive.",
+      "techInformation": ["HTML", "JavaScript", "Bootstrap"],
+      "button": {
+        "active": true,
+        "link": "https://yourksatra.github.io",
+        "title": "Buka Halaman"
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Sistem Rekomendasi Film (IPYNB)",
+      "description": "Sistem ini dibuat sebagai proyek Ujian Akhir Semester untuk mata kuliah Sistem Rekomendasi dengan judul 'Studi Kasus Rekomendasi Film Berdasarkan Genre dan Data Pemeran Film (Actor) dengan Model Spearman Rank Correlation dan Algoritma Item-Based Collaborative Filtering.' Proyek ini dikembangkan menggunakan bahasa Python dan memanfaatkan teknologi Google Colab. Pada proyek ini, saya mengimplementasikan model Spearman Rank Correlation dan algoritma Item-Based Collaborative Filtering untuk membangun sistem rekomendasi film dengan mempertimbangkan preferensi genre dan aktor.",
+      "techInformation": ["Python", "Google Colab", "Kaggle"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "project3",
+        "thumbnail": "0.png",
+        "total": 5
+      }
+    },
+    {
+      "title": "HealthyDoc",
+      "description": "Saya merancang dan mengembangkan website bernama HealthyDoc menggunakan framework CodeIgniter 3 untuk Ujian Akhir Semester Genap tahun akademik 2022/2023 mata kuliah Digital Bisnis. HealthyDoc adalah sebuah platform Rekam Medis Elektronik yang dirancang sebagai fasilitas digital untuk penyimpanan dan pengelolaan data kesehatan khususnya rekam medis pasien.",
+      "techInformation": ["PHP", "CodeIgniter", "Bootstrap", "JavaScript", "JQuery", "MySQL"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "project4",
+        "thumbnail": "0.png",
+        "total": 17
+      }
+    },
+    {
+      "title": "Program Kasir Rental atau Peminjaman Mobil (CPP)",
+      "description": "Saya mengembangkan sebuah program kasir untuk rental mobil menggunakan bahasa pemrograman CPP/C++ sebagai bagian dari Ujian Akhir Semester mata kuliah Pemrograman Terstruktur.",
+      "techInformation": ["CPP/C++", "Visual Studio Code", "MinGW", "CMD"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "project5",
+        "thumbnail": "1.png",
+        "total": 11
+      }
+    },
+    {
+      "title": "Project Web Toko Kita",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "Harap Isi",
+        "total": 0
+      }
+    },
+    {
+      "title": "Program Reservasi Hotel Sederhana (CPP)",
+      "description": "Harap Isi",
+      "techInformation": ["CPP/C++", "Visual Studio Code", "MinGW", "CMD"],
+      "button": {
+        "active": false,
+        "link": "Harap Isi",
+        "title": "Harap Isi"
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Web Promosi Resto Mr.B",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Home Test FrontEnd APP Using Next.JS",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "Harap Isi",
+        "total": 0
+      }
+    },
+    {
+      "title": "REST-AJAX-CURL",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": true,
+        "link": "Harap Isi link repo",
+        "title": "Buka Repository"
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Program Sederhana Menggunakan Kotlin",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": "Harap Isi link repo",
+        "title": "Buka Repository"
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Project Website Baca Komik Sederhana",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
         {
-            "title":"Sistem pelaporan Data Capaian Standar Pelayanan Minimal Bidang Kesehatan berbasis Website",
-            "description":"Saya membangun sistem yang dapat memfasilitasi pelaporan Standar Pelayanan Minimal (SPM) Bidang Kesehatan di Dinas Kesehatan Kabupaten Sumbawa. Website ini dibangun menggunakan framework Laravel 10 dan Database MySQL.",
-            "techInformation": ["PHP","JavaScript","Laravel","MySQL", "Bootstrap", "JQuery"],
-            "img-thumbnail":"1.png",
-            "img-folder":"project1",
-            "total-img":13
-        },
-        {
-            "title":"Web Inventarisasi Laboratorium Fisioterapi UMS",
-            "description":"SPada bulan Maret hingga April 2024, saya mengembangkan sistem peminjaman alat laboratorium untuk Inventaris Laboratorium Fisioterapi di Universitas Muhammadiyah Surakarta. Sistem ini dirancang berbasis website untuk mempermudah proses peminjaman dan pengelolaan alat-alat laboratorium. Proyek ini memungkinkan pengguna untuk melakukan peminjaman secara efisien, serta membantu pihak laboratorium dalam memantau dan mengelola inventaris alat dengan lebih terstruktur.",
-            "techInformation": ["PHP","CodeIgniter","MySQL", "Bootstrap"],
-            "img-thumbnail":"1.png",
-            "img-folder":"project2",
-            "total-img":4
-        },
-        {
-            "title":"Sistem Rekomendasi Film dengan Model Spearman Rank Correlation dan Algoritma Item-Based Collaborative Filtering",
-            "description":"Pada semester ganjil tahun akademik 2023/2024, saya mengerjakan proyek Ujian Akhir Semester untuk mata kuliah Sistem Rekomendasi dengan judul 'Studi Kasus Rekomendasi Film Berdasarkan Genre dan Data Pemeran Film (Actor) dengan Model Spearman Rank Correlation dan Algoritma Item-Based Collaborative Filtering.' Proyek ini dikembangkan menggunakan bahasa Python dan memanfaatkan teknologi Google Colab. Dalam proyek ini, saya mengimplementasikan model Spearman Rank Correlation dan algoritma Item-Based Collaborative Filtering untuk membangun sistem rekomendasi film yang mempertimbangkan preferensi genre dan aktor. Melalui proyek ini, saya memperdalam pemahaman saya tentang teknik-teknik dalam sistem rekomendasi dan penerapannya dalam dunia nyata.",
-            "techInformation": ["Phyton","Google Colabs","Kaggle"],
-            "img-thumbnail":"1.png",
-            "img-folder":"project3",
-            "total-img":5
-        },
-        {
-            "title":"HealthyDoc, Sistem Informasi Rekam Medis Berbasis Web",
-            "description":"Pada Ujian Akhir Semester Genap tahun akademik 2022/2023 untuk mata kuliah Digital Bisnis, saya merancang dan mengembangkan sebuah website bernama HealthyDoc menggunakan framework CodeIgniter 3. HealthyDoc adalah sebuah platform Rekam Medis Elektronik yang dirancang sebagai fasilitas digital untuk penyimpanan dan pengelolaan data kesehatan. Proyek ini bertujuan untuk mempermudah akses dan manajemen informasi medis, sehingga dapat mendukung efisiensi dalam dunia kesehatan. Melalui pengembangan ini, saya berhasil mengintegrasikan pengetahuan teknis dengan kebutuhan bisnis digital yang relevan di bidang kesehatan.",
-            "techInformation": ["PHP","CodeIgniter","Bootstrap","JavaScript","JQuery","MySQL"],
-            "img-thumbnail":"1.png",
-            "img-folder":"project4",
-            "total-img":17
-        },
-        {
-            "title":"Program Kasir Rental atau Peminjaman Mobil. Menggunakan bahasa pemograman C++",
-            "description":"Pada semester genap tahun akademik 2021/2022, saya mengembangkan sebuah program kasir untuk rental mobil menggunakan bahasa pemrograman C++ sebagai bagian dari Ujian Akhir Semester mata kuliah Pemrograman Terstruktur. Melalui proyek ini, saya dapat mengaplikasikan konsep-konsep pemrograman terstruktur yang telah dipelajari dan meningkatkan pemahaman saya dalam membangun aplikasi berbasis C++.",
-            "techInformation": ["CPP/C++","Visual Studio Code","MinGW", "CMD"],
-            "img-thumbnail":"1.png",
-            "img-folder":"project5",
-            "total-img":11
-        }
-    ]
+      "title": "Latihan HTML-CSS",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Project Pertama Membuat Web",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "First Try Kotlin",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": false,
+        "link": "Harap Isi link repo",
+        "title": "Buka Repository"
+      },
+      "images": {
+        "folder": "Harap Isi",
+        "thumbnail": "0.png",
+        "total": 0
+      }
+    }
+  ]
 }
