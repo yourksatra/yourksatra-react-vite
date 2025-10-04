@@ -11,7 +11,7 @@
       },
       "images": {
         "folder": "project1",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 13
       }
     },
@@ -26,7 +26,7 @@
       },
       "images": {
         "folder": "project2",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 4
       }
     },
@@ -40,7 +40,7 @@
         "title": "Buka Halaman"
       },
       "images": {
-        "folder": "Harap Isi",
+        "folder": "project0",
         "thumbnail": "0.png",
         "total": 0
       }
@@ -56,7 +56,7 @@
       },
       "images": {
         "folder": "project3",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 5
       }
     },
@@ -71,7 +71,7 @@
       },
       "images": {
         "folder": "project4",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 17
       }
     },
@@ -100,9 +100,9 @@
         "title": null
       },
       "images": {
-        "folder": "Harap Isi",
-        "thumbnail": "Harap Isi",
-        "total": 0
+        "folder": "project10",
+        "thumbnail": "0.png",
+        "total": 4
       }
     },
     {
@@ -110,33 +110,33 @@
       "description": "Harap Isi",
       "techInformation": ["CPP/C++", "Visual Studio Code", "MinGW", "CMD"],
       "button": {
-        "active": false,
+        "active": true,
         "link": "Harap Isi",
         "title": "Harap Isi"
       },
       "images": {
-        "folder": "Harap Isi",
-        "thumbnail": "0.png",
+        "folder": "gitThumbnail",
+        "thumbnail": "repo.png",
         "total": 0
       }
     },
     {
       "title": "Web Promosi Resto Mr.B",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "description": "Tampilan / Front-end website untuk bisnis fnb. Project ini dibuat untuk tugas akhir matakuliah pengenalan perancangan web. Dibuat sederhana dengan HTML, CSS dan Javascript.",
+      "techInformation": ["HTML", "CSS", "JavaScript"],
       "button": {
         "active": false,
         "link": null,
         "title": null
       },
       "images": {
-        "folder": "Harap Isi",
+        "folder": "project6",
         "thumbnail": "0.png",
-        "total": 0
+        "total": 7
       }
     },
     {
-      "title": "Home Test FrontEnd APP Using Next.JS",
+      "title": "Test Build FrontEnd APP Using Next.JS",
       "description": "Harap Isi",
       "techInformation": ["Harap Isi"],
       "button": {
@@ -145,9 +145,9 @@
         "title": null
       },
       "images": {
-        "folder": "Harap Isi",
-        "thumbnail": "Harap Isi",
-        "total": 0
+        "folder": "project9",
+        "thumbnail": "0.png",
+        "total": 2
       }
     },
     {
@@ -160,8 +160,8 @@
         "title": "Buka Repository"
       },
       "images": {
-        "folder": "Harap Isi",
-        "thumbnail": "0.png",
+        "folder": "gitThumbnail",
+        "thumbnail": "repo.png",
         "total": 0
       }
     },
@@ -170,13 +170,13 @@
       "description": "Harap Isi",
       "techInformation": ["Harap Isi"],
       "button": {
-        "active": false,
+        "active": true,
         "link": "Harap Isi link repo",
         "title": "Buka Repository"
       },
       "images": {
-        "folder": "Harap Isi",
-        "thumbnail": "0.png",
+        "folder": "gitThumbnail",
+        "thumbnail": "repo.png",
         "total": 0
       }
     },
@@ -190,9 +190,9 @@
         "title": null
       },
       "images": {
-        "folder": "Harap Isi",
+        "folder": "project8",
         "thumbnail": "0.png",
-        "total": 0
+        "total": 2
       }
     },
         {
@@ -205,22 +205,7 @@
         "title": null
       },
       "images": {
-        "folder": "Harap Isi",
-        "thumbnail": "0.png",
-        "total": 0
-      }
-    },
-    {
-      "title": "Project Pertama Membuat Web",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
-      "button": {
-        "active": false,
-        "link": null,
-        "title": null
-      },
-      "images": {
-        "folder": "Harap Isi",
+        "folder": "project7",
         "thumbnail": "0.png",
         "total": 0
       }
@@ -235,8 +220,23 @@
         "title": "Buka Repository"
       },
       "images": {
-        "folder": "Harap Isi",
-        "thumbnail": "0.png",
+        "folder": "gitThumbnail",
+        "thumbnail": "repo.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Project Pertama Membuat Web",
+      "description": "Harap Isi",
+      "techInformation": ["Harap Isi"],
+      "button": {
+        "active": true,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "gitThumbnail",
+        "thumbnail": "repo.png",
         "total": 0
       }
     }
