@@ -1,4 +1,10 @@
+import { Plus } from "lucide-react";
+import useProjects from "../../hooks/useProjects";
+
 export default function AboutSection() {
+  const projects = useProjects();
+  const totalProjects = projects.length;
+
   return (
     <section
       id="about"
@@ -76,8 +82,13 @@ export default function AboutSection() {
             className="flex flex-col justify-center items-center bg-white dark:bg-gray-800 
                           border border-gray-200 dark:border-gray-700 shadow-xl rounded-lg p-8"
           >
-            <h1 className="text-6xl md:text-8xl font-bold text-sky-500">18</h1>
-            <p className="mt-2 text-base md:text-lg font-semibold text-sky-500">
+            <div className="flex items-start">
+              <h1 className="text-6xl md:text-8xl font-bold text-sky-500">
+                {totalProjects}
+              </h1>
+              <Plus className="mt-1 w-10 h-10 md:w-13 md:h-13 md:mt-3 text-sky-500" />
+            </div>
+            <p className="text-base md:text-2xl font-bold text-sky-500">
               Project Selesai
             </p>
           </div>

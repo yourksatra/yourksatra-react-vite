@@ -10,6 +10,7 @@ import PortoSection from "./components/sections/PortoSection";
 import ContactSection from "./components/sections/ContactSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
 import SkillsSection from "./components/sections/SkillsSection";
+import ProjectSection from "./components/sections/ProjectSection";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -64,6 +65,9 @@ export default function App() {
           )}
           {activePage === "SkillsSection" && (
             <SkillsSection setActivePage={setActivePage} />
+          )}
+          {activePage === "ProjectSection" && (
+            <ProjectSection setActivePage={setActivePage} />
           )}
         </>
       )}

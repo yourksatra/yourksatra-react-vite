@@ -41,7 +41,7 @@ export default function ContactSection() {
     {
       icon: <FaLinkedin />,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/nugrahsatriabagassabirin",
+      href: "https://www.linkedin.com/in/yourksatra",
     },
     {
       icon: <FaGithub />,

@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "title": "Website Pelaporan SPM Bidang Kesehatan Dinas Kesehatan Kab.Sumbawa",
-      "description": "Project ini merupakan sistem yang dikembangkan agar dapat memfasilitasi pelaporan data capaian Standar Pelayanan Minimal (SPM) Bidang Kesehatan di Dinas Kesehatan Kabupaten Sumbawa. Website ini dibangun menggunakan PHP dengan kerangka kerja Laravel 10 dan Database MySQL.",
+      "title": "Website Pelaporan SPM-BK di Dinas Kesehatan Kab Sumbawa",
+      "description": "Project ini dikembangkan untuk memfasilitasi pelaporan data capaian Standar Pelayanan Minimal (SPM) Bidang Kesehatan di Dinas Kesehatan Kabupaten Sumbawa. Sistem dibangun menggunakan Laravel 10 dengan basis data MySQL untuk memastikan pengelolaan dan pelaporan data yang akurat dan efisien.",
       "techInformation": ["PHP", "JavaScript", "Laravel", "MySQL", "Bootstrap", "JQuery"],
       "button": {
         "active": false,
@@ -17,7 +17,7 @@
     },
     {
       "title": "Inventarisasi Laboratorium Fisioterapi UMS",
-      "description": "Saya mengembangkan sistem peminjaman alat laboratorium untuk Inventaris Laboratorium Fisioterapi di Universitas Muhammadiyah Surakarta. Sistem ini dirancang berbasis website untuk mempermudah proses peminjaman dan pengelolaan alat-alat laboratorium. Proyek ini memungkinkan pengguna untuk melakukan peminjaman secara efisien, serta membantu pihak laboratorium dalam memantau dan mengelola inventaris alat dengan lebih terstruktur.",
+      "description": "Saya mengembangkan sistem peminjaman alat laboratorium berbasis website untuk mendukung pengelolaan inventaris di Laboratorium Fisioterapi Universitas Muhammadiyah Surakarta. Aplikasi ini membantu proses peminjaman dan pelacakan alat agar lebih efisien dan terstruktur.",
       "techInformation": ["PHP", "CodeIgniter", "MySQL", "Bootstrap"],
       "button": {
         "active": false,
@@ -32,7 +32,7 @@
     },
     {
       "title": "Yourksatra Github Page",
-      "description": "Project github page ini merupakan portofolio berbasis halaman web pertama yang saya kembangkan. Menggunakan HTML5 yang disupport dengan Javascript dan template Bootstrap, saya membuat website single page sederhana yang responsive.",
+      "description": "Project ini merupakan portofolio web pertama saya yang dikembangkan menggunakan HTML5, Bootstrap, dan JavaScript. Website ini menampilkan informasi profil secara responsif dalam satu halaman yang sederhana namun fungsional.",
       "techInformation": ["HTML", "JavaScript", "Bootstrap"],
       "button": {
         "active": true,
@@ -41,13 +41,13 @@
       },
       "images": {
         "folder": "project0",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 0
       }
     },
     {
       "title": "Sistem Rekomendasi Film (IPYNB)",
-      "description": "Sistem ini dibuat sebagai proyek Ujian Akhir Semester untuk mata kuliah Sistem Rekomendasi dengan judul 'Studi Kasus Rekomendasi Film Berdasarkan Genre dan Data Pemeran Film (Actor) dengan Model Spearman Rank Correlation dan Algoritma Item-Based Collaborative Filtering.' Proyek ini dikembangkan menggunakan bahasa Python dan memanfaatkan teknologi Google Colab. Pada proyek ini, saya mengimplementasikan model Spearman Rank Correlation dan algoritma Item-Based Collaborative Filtering untuk membangun sistem rekomendasi film dengan mempertimbangkan preferensi genre dan aktor.",
+      "description": "Project ini merupakan sistem rekomendasi film berbasis Python yang memanfaatkan Spearman Rank Correlation dan Item-Based Collaborative Filtering. Dibangun menggunakan Google Colab, proyek ini bertujuan memberikan rekomendasi film berdasarkan genre dan pemeran (aktor).",
       "techInformation": ["Python", "Google Colab", "Kaggle"],
       "button": {
         "active": false,
@@ -62,7 +62,7 @@
     },
     {
       "title": "HealthyDoc",
-      "description": "Saya merancang dan mengembangkan website bernama HealthyDoc menggunakan framework CodeIgniter 3 untuk Ujian Akhir Semester Genap tahun akademik 2022/2023 mata kuliah Digital Bisnis. HealthyDoc adalah sebuah platform Rekam Medis Elektronik yang dirancang sebagai fasilitas digital untuk penyimpanan dan pengelolaan data kesehatan khususnya rekam medis pasien.",
+      "description": "Saya merancang dan mengembangkan platform rekam medis elektronik bernama HealthyDoc menggunakan CodeIgniter 3. Website ini berfungsi sebagai sistem digital untuk penyimpanan dan pengelolaan data kesehatan pasien dengan tampilan modern dan interaktif.",
       "techInformation": ["PHP", "CodeIgniter", "Bootstrap", "JavaScript", "JQuery", "MySQL"],
       "button": {
         "active": false,
@@ -77,8 +77,8 @@
     },
     {
       "title": "Program Kasir Rental atau Peminjaman Mobil (CPP)",
-      "description": "Saya mengembangkan sebuah program kasir untuk rental mobil menggunakan bahasa pemrograman CPP/C++ sebagai bagian dari Ujian Akhir Semester mata kuliah Pemrograman Terstruktur.",
-      "techInformation": ["CPP/C++", "Visual Studio Code", "MinGW", "CMD"],
+      "description": "Project ini merupakan program kasir sederhana untuk sistem peminjaman mobil yang dikembangkan menggunakan bahasa C++. Aplikasi dijalankan melalui CMD dengan fitur input data pelanggan, perhitungan biaya, dan tampilan transaksi berbasis teks.",
+      "techInformation": ["CPP/C++", "MinGW", "CMD"],
       "button": {
         "active": false,
         "link": null,
@@ -92,8 +92,8 @@
     },
     {
       "title": "Project Web Toko Kita",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "description": "Project ini merupakan pengalaman pertama saya menggunakan framework CodeIgniter 3 untuk memperbaiki dan menambah fitur pada website toko online. Proyek ini dibuat sebagai tugas responsi UTS mata kuliah Digital Bisnis.",
+      "techInformation": ["CodeIgniter", "PHP", "JavaScript", "Bootstrap"],
       "button": {
         "active": false,
         "link": null,
@@ -101,28 +101,28 @@
       },
       "images": {
         "folder": "project10",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 4
       }
     },
     {
       "title": "Program Reservasi Hotel Sederhana (CPP)",
-      "description": "Harap Isi",
-      "techInformation": ["CPP/C++", "Visual Studio Code", "MinGW", "CMD"],
+      "description": "Project ini adalah program reservasi hotel berbasis C++ dengan penerapan konsep linked list untuk mengelola data kamar dan pelanggan. Aplikasi ini memiliki fitur check-in, check-out, pencarian, serta pengurutan data pelanggan secara otomatis.",
+      "techInformation": ["CPP/C++", "MinGW", "CMD"],
       "button": {
         "active": true,
-        "link": "Harap Isi",
-        "title": "Harap Isi"
+        "link": "https://github.com/yourksatra/First_CPP_Project",
+        "title": "Buka Repository"
       },
       "images": {
-        "folder": "gitThumbnail",
-        "thumbnail": "repo.png",
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
         "total": 0
       }
     },
     {
       "title": "Web Promosi Resto Mr.B",
-      "description": "Tampilan / Front-end website untuk bisnis fnb. Project ini dibuat untuk tugas akhir matakuliah pengenalan perancangan web. Dibuat sederhana dengan HTML, CSS dan Javascript.",
+      "description": "Project ini merupakan tampilan front-end sederhana untuk website promosi bisnis kuliner. Dibuat menggunakan HTML, CSS, dan JavaScript sebagai tugas akhir mata kuliah pengenalan perancangan web dengan desain yang bersih dan interaktif.",
       "techInformation": ["HTML", "CSS", "JavaScript"],
       "button": {
         "active": false,
@@ -131,14 +131,14 @@
       },
       "images": {
         "folder": "project6",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 7
       }
     },
     {
-      "title": "Test Build FrontEnd APP Using Next.JS",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "title": "Test Build FrontEnd APP Using NextJS",
+      "description": "Project ini merupakan percobaan awal saya dalam membangun aplikasi front-end menggunakan Next.js dan Tailwind CSS. Fitur utama yang dibuat meliputi halaman login, register, serta autentikasi lokal menuju dashboard pengguna.",
+      "techInformation": ["NextJS", "TSX", "JavaScript", "Tailwind CSS"],
       "button": {
         "active": false,
         "link": null,
@@ -146,44 +146,29 @@
       },
       "images": {
         "folder": "project9",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 2
       }
     },
     {
       "title": "REST-AJAX-CURL",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "description": "Project ini mempelajari integrasi REST, AJAX, dan CURL dalam pengambilan serta manipulasi data web. Implementasi meliputi manipulasi DOM, pengolahan data JSON, XML, dan CSV, serta penggunaan XHR dan CURL untuk koneksi API.",
+      "techInformation": ["HTML", "PHP", "JavaScript", "Ajax", "CURL"],
       "button": {
         "active": true,
-        "link": "Harap Isi link repo",
+        "link": "https://github.com/yourksatra/REST-AJAX-CURL",
         "title": "Buka Repository"
       },
       "images": {
-        "folder": "gitThumbnail",
-        "thumbnail": "repo.png",
-        "total": 0
-      }
-    },
-    {
-      "title": "Program Sederhana Menggunakan Kotlin",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
-      "button": {
-        "active": true,
-        "link": "Harap Isi link repo",
-        "title": "Buka Repository"
-      },
-      "images": {
-        "folder": "gitThumbnail",
-        "thumbnail": "repo.png",
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
         "total": 0
       }
     },
     {
       "title": "Project Website Baca Komik Sederhana",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "description": "Project ini merupakan website baca komik sederhana yang dikembangkan menggunakan JavaScript untuk manipulasi DOM. Pengguna dapat menavigasi komik melalui tombol Prev, Daftar Chapter, dan Next dalam satu halaman HTML.",
+      "techInformation": ["HTML", "JavaScript", "Bootstrap"],
       "button": {
         "active": false,
         "link": null,
@@ -191,52 +176,52 @@
       },
       "images": {
         "folder": "project8",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 2
       }
     },
-        {
+    {
       "title": "Latihan HTML-CSS",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "description": "Project latihan untuk memahami struktur HTML dan penerapan CSS eksternal. Fokus utama proyek ini adalah membuat tampilan web yang proporsional, terorganisir, dan mudah diatur dari sisi tampilan.",
+      "techInformation": ["HTML", "CSS"],
       "button": {
-        "active": false,
-        "link": null,
-        "title": null
+        "active": true,
+        "link": "https://github.com/yourksatra/Latihan-HTML-CSS",
+        "title": "Buka Repository"
       },
       "images": {
         "folder": "project7",
-        "thumbnail": "0.png",
+        "thumbnail": "1.png",
         "total": 0
       }
     },
     {
       "title": "First Try Kotlin",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "description": "Project pertama menggunakan Kotlin untuk memahami konsep dasar seperti fungsi ekstensi dan lambda expression. Program ini menghitung luas serta keliling persegi panjang dengan pendekatan pemrograman fungsional sederhana.",
+      "techInformation": ["Kotlin"],
       "button": {
-        "active": false,
-        "link": "Harap Isi link repo",
+        "active": true,
+        "link": "https://github.com/yourksatra/Latihan-Kotlin-BP1",
         "title": "Buka Repository"
       },
       "images": {
-        "folder": "gitThumbnail",
-        "thumbnail": "repo.png",
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
         "total": 0
       }
     },
     {
       "title": "Project Pertama Membuat Web",
-      "description": "Harap Isi",
-      "techInformation": ["Harap Isi"],
+      "description": "Project pertama saya dalam belajar pengembangan web menggunakan HTML dasar dan Bootstrap. Fokus utamanya adalah memahami elemen-elemen HTML seperti heading, list, dan table untuk membangun tampilan web terstruktur.",
+      "techInformation": ["HTML", "Bootstrap"],
       "button": {
         "active": true,
-        "link": null,
-        "title": null
+        "link": "https://github.com/yourksatra/FirstWebProject",
+        "title": "Buka Repository"
       },
       "images": {
-        "folder": "gitThumbnail",
-        "thumbnail": "repo.png",
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
         "total": 0
       }
     }
