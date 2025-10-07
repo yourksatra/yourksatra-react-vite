@@ -5,7 +5,7 @@ import ProjectCard from "../reusable/ProjectCard";
 import ProjectModal from "../reusable/ProjectModal";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function ProjectLayout({ limit = 5, onSeeMore }) {
+export default function ProjectLayout({ limit = 6, onSeeMore }) {
   const all = useProjects();
   const projects = useMemo(() => all.slice(0, limit), [all, limit]);
 
@@ -105,7 +105,10 @@ export default function ProjectLayout({ limit = 5, onSeeMore }) {
                 key={`${p.title}-${i}`}
                 className="flex-shrink-0 w-80 mx-2 snap-center"
               >
-                <ProjectCard project={p} onOpen={(proj) => setOpenProject(proj)} />
+                <ProjectCard
+                  project={p}
+                  onOpen={(proj) => setOpenProject(proj)}
+                />
               </div>
             ))
           ) : (

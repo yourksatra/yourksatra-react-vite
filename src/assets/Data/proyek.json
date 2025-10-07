@@ -91,6 +91,21 @@
       }
     },
     {
+      "title": "Program Jual Beli Emas",
+      "description": "Program konsol berbasis Kotlin yang mensimulasikan proses jual beli emas menggunakan konsep OOP (class, inheritance, polymorphism) serta penanganan exception. Aku mengembangkan project ini menggunakan Intellij IDEA dan JDK Azul 1.8.0.",
+      "techInformation": ["Intellij IDEA", "Kotlin"],
+      "button": {
+        "active": true,
+        "link": "https://github.com/yourksatra/JualBeliEmas.Kotlin",
+        "title": "Buka Repository"
+      },
+      "images": {
+        "folder":"githubThumbnail",
+        "thumbnail":"1.png",
+        "total":0
+      }
+    },
+    {
       "title": "Project Web Toko Kita",
       "description": "Project ini merupakan pengalaman pertama saya menggunakan framework CodeIgniter 3 untuk memperbaiki dan menambah fitur pada website toko online. Proyek ini dibuat sebagai tugas responsi UTS mata kuliah Digital Bisnis.",
       "techInformation": ["CodeIgniter", "PHP", "JavaScript", "Bootstrap"],
