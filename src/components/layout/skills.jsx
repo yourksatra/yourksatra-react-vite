@@ -34,7 +34,7 @@ const skills = ({ onSeeDetail }) => {
   }, []);
 
   return (
-    <div className="w-full pb-6 relative overflow-hidden bg-white dark:bg-gray-900">
+    <div className="w-full py-6 relative overflow-hidden bg-gray-100 dark:bg-gray-800">
       <div className="space-y-16">
         {rows.map((row, i) => (
           <div
@@ -58,7 +58,7 @@ const skills = ({ onSeeDetail }) => {
         ))}
       </div>
 
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-6">
         <button
           onClick={onSeeDetail}
           data-aos="fade-up"

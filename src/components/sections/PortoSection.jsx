@@ -62,7 +62,7 @@ export default function PortoSection({ selectedTab, setActivePage }) {
       </div>
 
       {/* Content with animation */}
-      <div className="mt-8 mb-8 w-full">
+      <div className="mt-4 mb-4 w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

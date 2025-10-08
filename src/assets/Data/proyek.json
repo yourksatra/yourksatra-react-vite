@@ -16,6 +16,21 @@
       }
     },
     {
+      "title":"Program Jual Beli Emas (JAVA)",
+      "description": "Program konsol sederhana untuk simulasi jual beli emas menggunakan bahasa Java dengan penerapan OOP dan exception handling. Proyek ini adalah versi Java dari simulasi jual beli emas berbasis konsol, didesain menggunakan konsep yang sama seperti pada versi Kotlin.",
+      "techInformation": ["Java", "Intellij IDEA"],
+      "button": {
+        "active": true,
+        "link": "https://github.com/yourksatra/JualBeliEmas-JavaVersion",
+        "title": "Buka Repository"
+      },
+      "images": {
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
+        "total": 0
+      }
+    },
+    {
       "title": "Inventarisasi Laboratorium Fisioterapi UMS",
       "description": "Saya mengembangkan sistem peminjaman alat laboratorium berbasis website untuk mendukung pengelolaan inventaris di Laboratorium Fisioterapi Universitas Muhammadiyah Surakarta. Aplikasi ini membantu proses peminjaman dan pelacakan alat agar lebih efisien dan terstruktur.",
       "techInformation": ["PHP", "CodeIgniter", "MySQL", "Bootstrap"],
@@ -100,9 +115,9 @@
         "title": "Buka Repository"
       },
       "images": {
-        "folder":"githubThumbnail",
-        "thumbnail":"1.png",
-        "total":0
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
+        "total": 0
       }
     },
     {

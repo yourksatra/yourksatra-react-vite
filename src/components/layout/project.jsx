@@ -69,8 +69,8 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
   }, [index, projects.length, isMobile]);
 
   return (
-    <section data-aos="fade-up" className="w-full relative">
-      <div className="max-w-7xl mx-auto">
+    <section data-aos="fade-up" className="w-full py-3 rounded-0 relative">
+      <div className="max-w-8xl mx-auto md:mx-15">
         {!isMobile && (
           <>
             <button
@@ -103,7 +103,7 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
             projects.map((p, i) => (
               <div
                 key={`${p.title}-${i}`}
-                className="flex-shrink-0 w-80 mx-2 snap-center"
+                className="flex-shrink-0 w-90 mx-2"
               >
                 <ProjectCard
                   project={p}
@@ -114,8 +114,8 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
           ) : (
             // 🟦 Mode animasi loop (desktop)
             <motion.div
-              className="flex gap-4 mx-2"
-              animate={{ x: `-${index * (105 / perView)}%` }}
+              className="flex gap-4 mx-1"
+              animate={{ x: `-${index * (104 / perView)}%` }}
               transition={
                 transitioning
                   ? { duration: 0.6, ease: "easeInOut" }
@@ -140,7 +140,7 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
         </div>
 
         {/* Tombol Lihat Semua */}
-        <div className="mt-8 pb-6 text-center">
+        <div className="mt-3 mb-1 text-center">
           <button
             onClick={onSeeMore}
             className="cursor-pointer px-6 py-2 rounded-md bg-sky-500 text-white font-medium 

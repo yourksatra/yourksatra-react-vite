@@ -73,7 +73,7 @@ export default function ProjectModal({ project, onClose }) {
         </button>
 
         {/* === DESKTOP VIEW === */}
-        <div className="hidden md:grid md:grid-cols-2 gap-2">
+        <div className="hidden md:grid md:grid-cols-2">
           <div className="relative flex flex-col items-center justify-between bg-gray-100 dark:bg-gray-900 p-4">
             {/* Main Image */}
             <div className="relative w-full h-auto aspect-video overflow-hidden rounded-lg">
@@ -82,7 +82,7 @@ export default function ProjectModal({ project, onClose }) {
                   key={i}
                   src={getImagePath(img)}
                   alt={`${project.title}-${i}`}
-                  className={`absolute inset-0 w-full h-auto object-cover transition-opacity duration-700 ${
+                  className={`absolute inset-0 w-full h-[50svh] object-cover transition-opacity duration-700 ${
                     i === index ? "opacity-100" : "opacity-0"
                   }`}
                 />
@@ -110,40 +110,43 @@ export default function ProjectModal({ project, onClose }) {
             </div>
 
             {/* Preview / Button */}
-            {images.length > 1 ? (
-              <div className="w-full flex items-center justify-center">
-                <div
-                  ref={scrollRef}
-                  onScroll={handleScroll}
-                  className="flex gap-2 overflow-x-auto scrollbar-hide"
-                >
-                  {images.map((img, i) => (
-                    <img
-                      key={i}
-                      src={getImagePath(img)}
-                      alt={`thumb-${i}`}
-                      onClick={() => setIndex(i)}
-                      className={`w-28 h-15 rounded-md object-cover cursor-pointer border ${
-                        i === index
-                          ? "border-sky-500"
-                          : "border-gray-300 dark:border-gray-700"
-                      }`}
-                    />
-                  ))}
+            <div className=" w-full my-2 rounded-lg">
+              {images.length > 1 ? (
+                <div className="w-full flex items-center justify-center">
+                  <div
+                    ref={scrollRef}
+                    onScroll={handleScroll}
+                    className="flex gap-2 overflow-x-auto"
+                  >
+                    {images.map((img, i) => (
+                      <img
+                        key={i}
+                        src={getImagePath(img)}
+                        alt={`thumb-${i}`}
+                        onClick={() => setIndex(i)}
+                        className={`w-28 h-15 rounded-md object-cover cursor-pointer border mb-1 ${
+                          i === index
+                            ? "border-sky-500"
+                            : "border-gray-300 dark:border-gray-700"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ) : (
-              project.button?.active && (
-                <a
-                  href={project.button.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full text-center py-3 rounded-lg bg-sky-500 text-white font-semibold flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  {project.button.title || "Buka Sumber"} <FaExternalLinkAlt />
-                </a>
-              )
-            )}
+              ) : (
+                project.button?.active && (
+                  <a
+                    href={project.button.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full text-center py-3 rounded-lg bg-sky-500 text-white font-semibold flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    {project.button.title || "Buka Sumber"}{" "}
+                    <FaExternalLinkAlt />
+                  </a>
+                )
+              )}
+            </div>
           </div>
 
           {/* Right: Info */}

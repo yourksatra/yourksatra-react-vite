@@ -12,30 +12,32 @@ export default function ProjectCard({ project, onOpen }) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
-      className="h-[100%] bg-white w-full dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+      className="h-full bg-white w-full dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col"
     >
       <div className="relative">
         <img
           src={getImagePath()}
           alt={project.title}
-          className="w-full h-56 md:h-64 object-cover"
+          className="w-full h-56 object-cover"
           loading="lazy"
         />
       </div>
 
-      <div className="p-5">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-          {project.title}
-        </h3>
+      <div className="p-5 flex flex-col justify-between flex-1">
+        <div>
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+            {project.title}
+          </h3>
 
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
-          {project.description}
-        </p>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+            {project.description}
+          </p>
+        </div>
 
-        <div className="flex items-center justify-between gap-3">
+        <div className="mt-auto">
           <button
             onClick={() => onOpen(project)}
-            className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-md bg-sky-500 text-white hover:bg-sky-600 transition"
+            className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-md bg-sky-500 text-white hover:bg-sky-600 transition w-auto"
           >
             Selengkapnya
           </button>
