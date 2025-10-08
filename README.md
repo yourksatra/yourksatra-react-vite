@@ -1,4 +1,4 @@
-# 🧭 YOURKSATRA-REACT-VITE
+# YOURKSATRA-REACT-VITE
 
 _Transforming Ideas into Seamless Digital Experiences_
 
@@ -15,7 +15,7 @@ _Transforming Ideas into Seamless Digital Experiences_
 - [Overview](#-overview)
 - [Warning](#-warning)
 - [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
+- [Installation](#️-installation)
 - [Usage](#-usage)
 - [Roadmap](#-roadmap)
 - [License](#-license)
@@ -77,38 +77,39 @@ Project ini membutuhkan:
    npm install
 
    ```
+---
 
 ## 🚀 Usage
 
-    Jalankan project secara lokal dengan:
+1. **Jalankan project secara lokal**
     ```bash
         npm run dev
     ```
     
-    Lalu buka browser dan akses:
-    ```arduino
+2. **Lalu buka browser dan akses**
+    ```bash
         http://localhost:5173
     ```
     
-    Untuk build production:
+3. **Untuk build production**
     ```bash
         npm run build
     ```
+---
 
 ## 🧭 Roadmap
 
-    Tampilan portfolio dasar
+- Tampilan portfolio dasar
 
-    Komponen dinamis
+- Komponen dinamis
 
-    Animasi interaktif
+- Animasi interaktif
 
-    🎮 Mini Game di halaman utama (further updates, in planning)
+- 🎮 Mini Game di halaman utama (further updates, in planning)
 
-    Integrasi API eksternal (planning update)
+- Integrasi API eksternal (planning update)
 
 ## 📝 License
 
-    Project ini dirilis di bawah lisensi MIT License.
-    
-    ➡️ Namun, data pribadi di dalamnya tetap dilindungi dan tidak termasuk dalam cakupan lisensi.
+Project ini dirilis di bawah lisensi MIT License.
+➡️ Namun, data pribadi di dalamnya tetap dilindungi dan tidak termasuk dalam cakupan lisensi.
