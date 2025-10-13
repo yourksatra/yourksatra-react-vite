@@ -1,4 +1,5 @@
 import React from "react";
+import icon3D from "../../assets/icon/icon3D.png";
 import { FaFilm, FaMusic } from "react-icons/fa";
 
 export default function Footer({ setActivePage }) {
@@ -37,7 +38,7 @@ export default function Footer({ setActivePage }) {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img
-            src="/src/assets/icon/icon3D.png"
+            src={icon3D}
             alt="logo"
             className="w-16 h-16 rounded-lg mb-3 object-cover"
           />

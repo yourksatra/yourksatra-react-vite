@@ -19,7 +19,7 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
   const [keyboardLayout, setKeyboardLayout] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [progressData, setProgressData] = useState([]);
-  const [segmentCounts, setSegmentCounts] = useState([0, 0, 0, 0, 0]);
+  const [segmentCounts, setSegmentCounts] = useState([0, 0, 0, 0]);
 
   const endTimeRef = useRef(null);
   const rafRef = useRef(null);
@@ -47,7 +47,7 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
     setScore({ correct: 0, wrong: 0 });
     setProgressData([]);
     answerCount.current = 0;
-    setSegmentCounts([0, 0, 0, 0, 0]);
+    setSegmentCounts([0, 0, 0, 0]);
     cancelAnimationFrame(rafRef.current);
   }, [layout, generateQuestion, duration]);
 
