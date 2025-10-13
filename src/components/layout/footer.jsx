@@ -1,5 +1,5 @@
 import React from "react";
-import icon3D from "../../assets/icon/icon3D.png";
+import icon3D from "../../assets/Icon/icon3D.png";
 import { FaFilm, FaMusic } from "react-icons/fa";
 
 export default function Footer({ setActivePage }) {
