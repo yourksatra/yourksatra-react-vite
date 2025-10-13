@@ -121,7 +121,7 @@ export default function ContactSection() {
       {/* Section Title */}
       <div data-aos="fade-up" className="mb-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900">
-          KONTAK SAYA
+          Kontak Saya
         </h2>
       </div>
 

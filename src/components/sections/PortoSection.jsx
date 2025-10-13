@@ -70,7 +70,6 @@ export default function PortoSection({ selectedTab, setActivePage }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md"
           >
             {renderContent()}
           </motion.div>

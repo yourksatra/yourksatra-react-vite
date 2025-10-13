@@ -148,7 +148,7 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
               <div className="relative group">
                 <button
                   onClick={() => setOpenDropdown((prev) => !prev)}
-                  className="cursor-pointer flex items-center gap-1 text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition"
+                  className="cursor-pointer flex items-center text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition"
                 >
                   Portofolio
                   <ChevronDown
@@ -162,21 +162,27 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
                   <div className="absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black/5 animate-[fadeInDown_0.3s_ease-out]">
                     <a
                       href="#portfolio"
-                      onClick={(e) => handlePortfolioNav(e, "experience", setActivePage)}
+                      onClick={(e) =>
+                        handlePortfolioNav(e, "experience", setActivePage)
+                      }
                       className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                       Experience
                     </a>
                     <a
                       href="#portfolio"
-                      onClick={(e) => handlePortfolioNav(e, "project", setActivePage)}
+                      onClick={(e) =>
+                        handlePortfolioNav(e, "project", setActivePage)
+                      }
                       className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                       Project
                     </a>
                     <a
                       href="#portfolio"
-                      onClick={(e) => handlePortfolioNav(e, "skills", setActivePage)}
+                      onClick={(e) =>
+                        handlePortfolioNav(e, "skills", setActivePage)
+                      }
                       className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                       Skills
@@ -184,6 +190,10 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
                   </div>
                 )}
               </div>
+
+              <MenuLink to="#games" setActivePage={setActivePage}>
+                Game's
+              </MenuLink>
 
               <MenuLink to="#contact" setActivePage={setActivePage}>
                 Kontak
@@ -275,7 +285,7 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
               <div className="relative">
                 <button
                   onClick={() => setOpenDropdown((prev) => !prev)}
-                  className="cursor-pointer flex justify-center items-center w-full gap-1 py-2 text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition"
+                  className="cursor-pointer flex justify-center items-center w-full py-2 text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition"
                 >
                   Portofolio
                   <ChevronDown
@@ -289,21 +299,27 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
                   <div className="flex flex-col items-center text-sm font-normal border border-gray-200 dark:border-gray-800 animate-[fadeInDown_0.3s_ease-out] w-full">
                     <a
                       href="#portfolio"
-                      onClick={(e) => handlePortfolioNav(e, "experience", setActivePage)}
+                      onClick={(e) =>
+                        handlePortfolioNav(e, "experience", setActivePage)
+                      }
                       className="w-full px-4 py-2 text-center rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     >
                       Experience
                     </a>
                     <a
                       href="#portfolio"
-                      onClick={(e) => handlePortfolioNav(e, "project", setActivePage)}
+                      onClick={(e) =>
+                        handlePortfolioNav(e, "project", setActivePage)
+                      }
                       className="w-full px-4 py-2 text-center rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     >
                       Project
                     </a>
                     <a
                       href="#portfolio"
-                      onClick={(e) => handlePortfolioNav(e, "skills", setActivePage)}
+                      onClick={(e) =>
+                        handlePortfolioNav(e, "skills", setActivePage)
+                      }
                       className="w-full px-4 py-2 text-center rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     >
                       Skills
@@ -311,6 +327,11 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
                   </div>
                 )}
               </div>
+
+              <MenuLink to="#games" setActivePage={setActivePage}>
+                Game's
+              </MenuLink>
+
               <MenuLink to="#contact" setActivePage={setActivePage}>
                 Kontak
               </MenuLink>

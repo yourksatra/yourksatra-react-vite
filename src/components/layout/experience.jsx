@@ -102,7 +102,7 @@ export default function experience({ jmlhdisplay, onSeeMore }) {
   return (
     <section id="experience">
       {/* Grid */}
-      <div className="grid grid-cols-2 gap-1 md:grid-cols-3 w-full">
+      <div className="grid grid-cols-2 gap-1 px-1 md:grid-cols-3 w-full">
         {displayList.map((exp, idx) => (
           <div
             key={idx}

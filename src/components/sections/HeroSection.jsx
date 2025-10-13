@@ -25,7 +25,7 @@ export default function HeroSection() {
   }, [images.length]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-white dark:bg-gray-900">
+    <section id="home" className="relative h-screen w-full overflow-hidden bg-white dark:bg-gray-900">
       <div className="hidden md:flex absolute inset-0">
         {/* Bagian kiri */}
         <div

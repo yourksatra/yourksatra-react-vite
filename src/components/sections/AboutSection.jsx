@@ -15,7 +15,7 @@ export default function AboutSection() {
         <h2
           data-aos="fade-up"
           data-aos-delay="100"
-          className="text-3xl md:text-4xl font-bold text-sky-500 dark:text-sky-400"
+          className="text-3xl md:text-4xl font-bold text-sky-500"
         >
           Tentang Saya
         </h2>

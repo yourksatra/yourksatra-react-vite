@@ -34,6 +34,7 @@ Website ini berfungsi sebagai portofolio pribadi dan akan terus dikembangkan sec
 - Animasi transisi smooth dengan Framer Motion
 - Komponen modular & mudah dikembangkan
 - Optimasi performa build menggunakan Vite
+- Mini Game (Test Koran/ Kraepelin Test)
 
 ---
 
@@ -105,7 +106,7 @@ Project ini membutuhkan:
 
 - Animasi interaktif
 
-- 🎮 Mini Game di halaman utama (further updates, in planning)
+- 🎮 Mini Game di halaman utama (last updates)
 
 - Integrasi API eksternal (planning update)
 
