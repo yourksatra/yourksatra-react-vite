@@ -209,6 +209,13 @@
             "level":"Intermediate",
             "group": "Lainnya",
             "img": "PowerPoint.svg"
+        },   
+        {
+            "name":"APIDOG",
+            "type":"API Testing",
+            "level":"Advanced",
+            "group": "Belajar",
+            "img": "postman.svg"
         }   
     ]
 }
