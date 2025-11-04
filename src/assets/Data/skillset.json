@@ -38,7 +38,7 @@
         {
             "name":"ChatGPT",
             "type":"AI Model",
-            "level":"Intermediate",
+            "level":"Advanced",
             "group": "Di Gunakan",
             "img": "ChatGPT.svg"
         },
@@ -101,14 +101,14 @@
         {
             "name": "GitHub",
             "type": "Repository",
-            "level": "Intermediate",
+            "level": "Advanced",
             "group": "Di Gunakan",
             "img": "Github.svg"
         },
         {
             "name":"Git",
             "type":"Version Control",
-            "level":"Basic",
+            "level":"Intermediate",
             "group": "Di Gunakan",
             "img": "Git.svg"
         },
@@ -178,7 +178,7 @@
         {
             "name": "DBeaver",
             "type": "Database Management Tool",
-            "level": "Basic",
+            "level": "Intermediate",
             "group": "Lainnya",
             "img": "DBeaver.svg"
         },
@@ -213,7 +213,7 @@
         {
             "name":"APIDOG",
             "type":"API Testing",
-            "level":"Advanced",
+            "level":"Basic",
             "group": "Belajar",
             "img": "apidog.svg"
         }   
