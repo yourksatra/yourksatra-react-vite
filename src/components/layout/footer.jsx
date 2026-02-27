@@ -36,7 +36,7 @@ export default function Footer({ setActivePage }) {
   return (
     <footer className="w-full bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-white/5">
       {/* Gradient accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-sky-600 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
@@ -61,7 +61,7 @@ export default function Footer({ setActivePage }) {
                 <li key={index}>
                   <button
                     onClick={() => handleNavClick(item.section, item.link)}
-                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200 cursor-pointer"
+                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors duration-200 cursor-pointer"
                   >
                     {item.name}
                   </button>
@@ -83,7 +83,7 @@ export default function Footer({ setActivePage }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-500/30 transition-all duration-200"
+                  className="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 hover:border-sky-600/30 transition-all duration-200"
                 >
                   <span className="text-lg">{s.icon}</span>
                 </a>

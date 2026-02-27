@@ -98,7 +98,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 py-20 bg-gradient-to-br from-indigo-600 via-violet-600 to-indigo-700 dark:from-slate-950 dark:via-indigo-950 dark:to-slate-950 overflow-hidden"
+      className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 py-20 bg-gradient-to-br from-sky-600 via-blue-600 to-sky-700 dark:from-slate-950 dark:via-sky-950 dark:to-slate-950 overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute inset-0 dot-pattern opacity-20" />
@@ -115,7 +115,7 @@ export default function ContactSection() {
         <motion.p
           variants={fadeUp}
           custom={0}
-          className="text-xs font-semibold uppercase tracking-widest text-indigo-200 dark:text-indigo-400 mb-2"
+          className="text-xs font-semibold uppercase tracking-widest text-sky-200 dark:text-sky-400 mb-2"
         >
           Get In Touch
         </motion.p>
@@ -154,7 +154,7 @@ export default function ContactSection() {
 
         {/* Right: Contact form */}
         <motion.div
-          className="glass-card-strong rounded-2xl p-6 md:p-8 bg-white/10 dark:bg-white/5"
+          className="bg-white/10 dark:bg-white/5 rounded-2xl p-6 md:p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -169,7 +169,7 @@ export default function ContactSection() {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
-              className="px-4 py-3 rounded-xl bg-white/10 dark:bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition-all duration-200 text-sm"
+              className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-blue-500 placeholder:text-white/40 focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all duration-200 text-sm"
             />
             {errors.name && <p className="text-red-300 text-xs">{errors.name}</p>}
 
@@ -180,7 +180,7 @@ export default function ContactSection() {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
-              className="px-4 py-3 rounded-xl bg-white/10 dark:bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition-all duration-200 text-sm"
+              className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all duration-200 text-sm"
             />
             {errors.email && <p className="text-red-300 text-xs">{errors.email}</p>}
 
@@ -191,13 +191,13 @@ export default function ContactSection() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               required
-              className="px-4 py-3 rounded-xl bg-white/10 dark:bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:ring-2 focus:ring-indigo-400 focus:border-transparent outline-none transition-all duration-200 text-sm resize-none"
+              className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all duration-200 text-sm resize-none"
             />
             {errors.message && <p className="text-red-300 text-xs">{errors.message}</p>}
 
             <button
               type="submit"
-              className="cursor-pointer w-full px-4 py-3 rounded-xl bg-white text-indigo-600 font-semibold text-sm hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
+              className="cursor-pointer w-full px-4 py-3 rounded-xl bg-white/5 text-white font-semibold text-sm hover:-translate-y-0.5 hover:ring-1 hover:ring-sky-400 hover:border-transparent outline-none transition-all duration-200"
             >
               Kirim Pesan
             </button>

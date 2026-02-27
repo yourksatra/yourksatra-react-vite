@@ -25,8 +25,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 dot-pattern opacity-60" />
 
       {/* Gradient orbs */}
-      <div className="absolute top-20 -left-32 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 -right-32 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 -left-32 w-96 h-96 bg-sky-600/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 -right-32 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
       {/* ── Desktop Layout ── */}
       <div className="hidden md:flex relative z-10 min-h-screen max-w-7xl mx-auto px-6 lg:px-8 items-center">
@@ -39,7 +39,7 @@ export default function HeroSection() {
           <motion.p
             variants={fadeUp}
             custom={0}
-            className="text-sm font-medium uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3"
+            className="text-sm font-medium uppercase tracking-widest text-sky-600 dark:text-sky-400 mb-3"
           >
             Hai, saya
           </motion.p>
@@ -66,28 +66,19 @@ export default function HeroSection() {
                 ))}
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <h3 className="text-base font-medium text-slate-600 dark:text-slate-400">
-                ASSETS CREATOR
-              </h3>
-              <div className="flex items-center gap-1.5">
-                <SiAdobephotoshop className="text-slate-500 dark:text-slate-400 text-sm" />
-                <SiAdobeillustrator className="text-slate-500 dark:text-slate-400 text-sm" />
-              </div>
-            </div>
           </motion.div>
 
           <motion.div variants={fadeUp} custom={3} className="flex items-center gap-3 mt-8">
             <a
               href="#contact&focus"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 hover:shadow-xl hover:shadow-sky-600/30 hover:-translate-y-0.5 transition-all duration-200"
             >
               Hubungi Sekarang
             </a>
             <a
               href="/CV/Resume.pdf"
               download="Resume_Yourksatra.pdf"
-              className="px-6 py-2.5 rounded-xl glass-card font-semibold text-sm text-slate-700 dark:text-slate-300 hover:border-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
+              className="px-6 py-2.5 rounded-xl glass-card font-semibold text-sm text-slate-700 dark:text-slate-300 hover:border-sky-600/30 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
               Download CV
               <FaDownload className="text-xs" />
@@ -104,7 +95,7 @@ export default function HeroSection() {
         >
           <div className="relative">
             {/* Glow behind image */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/20 to-violet-500/20 rounded-3xl blur-2xl" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-sky-600/20 to-blue-500/20 rounded-3xl blur-2xl" />
 
             <div className="relative overflow-hidden">
               <img
@@ -127,7 +118,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/15 to-violet-500/15 rounded-2xl blur-xl" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-sky-600/15 to-blue-500/15 rounded-2xl blur-xl" />
             <div className="relative overflow-hidden">
               <img
                 src={heroFoto}
@@ -147,7 +138,7 @@ export default function HeroSection() {
           <motion.p
             variants={fadeUp}
             custom={0}
-            className="text-xs font-medium uppercase tracking-widest text-indigo-500 dark:text-indigo-400"
+            className="text-xs font-medium uppercase tracking-widest text-sky-600 dark:text-sky-400"
           >
             Hi, saya
           </motion.p>
@@ -176,7 +167,7 @@ export default function HeroSection() {
           <motion.div variants={fadeUp} custom={3} className="flex items-center gap-3 pt-2">
             <a
               href="#contact&focus"
-              className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 transition-all"
+              className="px-5 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 transition-all"
             >
               Hubungi Sekarang
             </a>

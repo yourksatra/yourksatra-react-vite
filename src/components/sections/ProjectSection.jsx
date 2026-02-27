@@ -11,8 +11,8 @@ export default function ProjectSection({ setActivePage }) {
 
   const getImagePath = (project) =>
     project.images?.thumbnail
-      ? `${import.meta.env.BASE_URL}/projectFile/${project.images.folder}/${project.images.thumbnail}`
-      : `${import.meta.env.BASE_URL}/projectFile/${project.images.folder}/0.png`;
+      ? `/projectFile/${project.images.folder}/${project.images.thumbnail}`
+      : `/projectFile/${project.images.folder}/0.png`;
 
   return (
     <section id="projects" className="flex flex-col items-center min-w-full bg-slate-50 dark:bg-slate-950">
@@ -53,7 +53,7 @@ export default function ProjectSection({ setActivePage }) {
                       </div>
                     </div>
                     {/* Number badge */}
-                    <div className="absolute top-3 left-3 w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-xs font-bold shadow-lg">
+                    <div className="absolute top-3 left-3 w-8 h-8 rounded-lg bg-gradient-to-br from-sky-600 to-blue-500 flex items-center justify-center text-white text-xs font-bold shadow-lg">
                       {String(i + 1).padStart(2, "0")}
                     </div>
                   </div>
@@ -61,7 +61,7 @@ export default function ProjectSection({ setActivePage }) {
 
                 {/* Description */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-2">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400 mb-2">
                     Project #{String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">
@@ -84,7 +84,7 @@ export default function ProjectSection({ setActivePage }) {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setOpenProject(project)}
-                      className="cursor-pointer px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-sm font-semibold shadow-lg shadow-indigo-500/25 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
+                      className="cursor-pointer px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white text-sm font-semibold shadow-lg shadow-sky-600/25 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
                     >
                       Lihat Detail
                     </button>
@@ -93,7 +93,7 @@ export default function ProjectSection({ setActivePage }) {
                         href={project.button.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="cursor-pointer px-5 py-2.5 rounded-xl glass-card text-slate-700 dark:text-slate-300 text-sm font-semibold flex items-center gap-2 hover:border-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200"
+                        className="cursor-pointer px-5 py-2.5 rounded-xl glass-card text-slate-700 dark:text-slate-300 text-sm font-semibold flex items-center gap-2 hover:border-sky-600/30 hover:-translate-y-0.5 transition-all duration-200"
                       >
                         {project.button.title || "Buka"} <FaExternalLinkAlt className="text-xs" />
                       </a>

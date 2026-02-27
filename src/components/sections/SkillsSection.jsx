@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import skillsetData from "../../assets/Data/skillset.json";
 import Breadcrumb from "../reusable/Breadcrumb";
-import {
-  RadialBarChart,
-  RadialBar,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
 
 const groups = ["Di Gunakan", "Belajar", "Lainnya"];
 
@@ -62,7 +56,7 @@ const SkillsSection = ({ setActivePage }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3">Skill Level Legend</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400 mb-3">Skill Level Legend</p>
           <div className="flex flex-wrap gap-6">
             {Object.entries(levelConfig).map(([key, cfg]) => (
               <div key={key} className="flex items-center gap-3">
@@ -92,7 +86,7 @@ const SkillsSection = ({ setActivePage }) => {
           return (
             <div key={group} className="mb-12">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-6 rounded-full bg-gradient-to-b from-indigo-500 to-violet-500" />
+                <div className="w-1 h-6 rounded-full bg-gradient-to-b from-sky-600 to-blue-500" />
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
                   {group}
                 </h3>
@@ -105,7 +99,7 @@ const SkillsSection = ({ setActivePage }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.05 }}
-                    className="glass-card rounded-xl p-4 flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-lg hover:border-indigo-500/20 transition-all duration-200 group"
+                    className="glass-card rounded-xl p-4 flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-lg hover:border-sky-600/20 transition-all duration-200 group"
                   >
                     <img
                       src={`/skills/${skill.img}`}

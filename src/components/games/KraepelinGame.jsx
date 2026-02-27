@@ -188,7 +188,7 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
     <>
       <div className="w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl glass-card-strong">
         {/* Header Score & Timer */}
-        <div className="bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-3 flex justify-between items-center text-white">
+        <div className="bg-gradient-to-r from-sky-600 to-blue-500 px-5 py-3 flex justify-between items-center text-white">
           <div className="flex items-center gap-3 text-sm font-semibold">
             <span className="bg-white/20 rounded-lg px-2 py-0.5">✅ {score.correct}</span>
             <span className="bg-white/20 rounded-lg px-2 py-0.5">❌ {score.wrong}</span>
@@ -210,7 +210,7 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
               <button
                 key={index}
                 onClick={() => handleAnswer(num)}
-                className={`cursor-pointer bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-500/30 text-slate-900 dark:text-white transition-all duration-150 rounded-xl py-3.5 text-xl font-bold shadow-sm hover:-translate-y-0.5 active:scale-95 ${index === keyboardLayout.length - 1 ? "col-start-2" : ""
+                className={`cursor-pointer bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 hover:bg-sky-50 dark:hover:bg-sky-600/10 hover:border-sky-300 dark:hover:border-sky-600/30 text-slate-900 dark:text-white transition-all duration-150 rounded-xl py-3.5 text-xl font-bold shadow-sm hover:-translate-y-0.5 active:scale-95 ${index === keyboardLayout.length - 1 ? "col-start-2" : ""
                   }`}
               >
                 {num}
@@ -225,7 +225,7 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
             <div className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-2xl w-full max-w-lg shadow-2xl overflow-y-auto max-h-[90vh] border border-slate-200 dark:border-white/10">
               {/* Modal Header */}
-              <div className="bg-gradient-to-r from-indigo-500 to-violet-500 p-5 text-white">
+              <div className="bg-gradient-to-r from-sky-600 to-blue-500 p-5 text-white">
                 <h2 className="text-xl font-bold text-center">📊 Hasil Tes Kraepelin</h2>
               </div>
               <div className="p-5">
@@ -273,7 +273,7 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
                 {/* Tombol Kembali */}
                 <button
                   onClick={() => { setShowModal(false); onEnd({ score, progressData, segmentCounts }); }}
-                  className="cursor-pointer w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-indigo-500/25"
+                  className="cursor-pointer w-full py-3 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-sky-600/25"
                 >
                   Selesai
                 </button>

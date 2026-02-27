@@ -58,13 +58,13 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
           <>
             <button
               onClick={handlePrev}
-              className="absolute left-1 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 rounded-xl glass-card-strong flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:border-indigo-500/30 transition-all"
+              className="absolute left-1 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 rounded-xl glass-card-strong flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-sky-600 hover:border-sky-600/30 transition-all"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
-              className="absolute right-1 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 rounded-xl glass-card-strong flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:border-indigo-500/30 transition-all"
+              className="absolute right-1 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 rounded-xl glass-card-strong flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-sky-600 hover:border-sky-600/30 transition-all"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -74,8 +74,8 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
         {/* Container */}
         <div
           className={`relative ${isMobile
-              ? "flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-4 pb-4"
-              : "overflow-hidden"
+            ? "flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-4 pb-4"
+            : "overflow-hidden"
             }`}
         >
           {isMobile ? (
@@ -110,7 +110,7 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
         <div className="mt-4 mb-2 text-center">
           <button
             onClick={onSeeMore}
-            className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+            className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
           >
             Lihat semua proyek
           </button>

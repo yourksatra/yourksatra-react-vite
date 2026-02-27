@@ -45,7 +45,7 @@ const Skills = ({ onSeeDetail }) => {
                 className="flex-shrink-0 px-4 py-2 rounded-xl glass-card flex items-center gap-2"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}/skills/${skill.img}`}
+                  src={`/skills/${skill.img}`}
                   alt={skill.name}
                   className="h-8 w-auto object-contain"
                 />
@@ -61,7 +61,7 @@ const Skills = ({ onSeeDetail }) => {
       <div className="flex justify-center mt-8">
         <button
           onClick={onSeeDetail}
-          className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+          className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
         >
           Lihat Detail
         </button>

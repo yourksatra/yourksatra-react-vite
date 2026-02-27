@@ -95,7 +95,7 @@ export default function Experience({ jmlhdisplay, onSeeMore }) {
             transition={{ duration: 0.4, delay: idx * 0.05 }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}/pengalaman/${exp.directory}/${exp.Img[0]}`}
+              src={`/pengalaman/${exp.directory}/${exp.Img[0]}`}
               alt={exp.title}
               className="w-full h-44 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
@@ -132,7 +132,7 @@ export default function Experience({ jmlhdisplay, onSeeMore }) {
             {/* Slideshow */}
             <div className="relative flex items-center justify-center bg-slate-100 dark:bg-slate-900 p-4">
               <img
-                src={`${import.meta.env.BASE_URL}/pengalaman/${displayList[selected].directory}/${displayList[selected].Img[currentImg]}`}
+                src={`/pengalaman/${displayList[selected].directory}/${displayList[selected].Img[currentImg]}`}
                 alt={displayList[selected].caption?.[currentImg] || ""}
                 className="w-full h-44 md:w-full md:h-[60vh] object-contain rounded-lg"
               />
@@ -189,7 +189,7 @@ export default function Experience({ jmlhdisplay, onSeeMore }) {
         <div className="flex justify-center mt-4">
           <button
             onClick={onSeeMore}
-            className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+            className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
           >
             Lihat lainnya..
           </button>

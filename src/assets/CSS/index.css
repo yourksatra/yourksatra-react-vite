@@ -6,9 +6,9 @@
 /* ── Design System Custom Properties ── */
 :root {
   --font-sans: 'Outfit', 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --color-accent-1: #6366f1;
-  --color-accent-2: #8b5cf6;
-  --color-accent-3: #a78bfa;
+  --color-accent-1: #0ea5e9;
+  --color-accent-2: #3b82f6;
+  --color-accent-3: #60a5fa;
   --gradient-accent: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
   --gradient-accent-reverse: linear-gradient(135deg, var(--color-accent-2), var(--color-accent-1));
   --gradient-bg: linear-gradient(180deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);

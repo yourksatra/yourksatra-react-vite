@@ -47,7 +47,7 @@ export default function AboutSection() {
       className="relative min-h-screen flex flex-col justify-center items-center px-6 py-20 bg-slate-50 dark:bg-slate-950 overflow-hidden"
     >
       {/* Background accents */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-indigo-500/30" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-sky-600/30" />
 
       <div className="max-w-6xl w-full" ref={sectionRef}>
         {/* Section heading */}
@@ -60,7 +60,7 @@ export default function AboutSection() {
           <motion.p
             variants={fadeUp}
             custom={0}
-            className="text-xs font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-2"
+            className="text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400 mb-2"
           >
             About Me
           </motion.p>
@@ -141,7 +141,7 @@ export default function AboutSection() {
                 <h2 className="text-6xl md:text-7xl font-black gradient-text">
                   <AnimatedCounter target={totalProjects} />
                 </h2>
-                <Plus className="mt-1 w-8 h-8 text-indigo-500" />
+                <Plus className="mt-1 w-8 h-8 text-sky-600" />
               </div>
               <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">
                 Project Selesai

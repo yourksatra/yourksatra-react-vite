@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import icon3D from "../../assets/Icon/icon3D.png";
+import icon3D from "../../assets/Icon/icon3Dpng.png";
 
 const LoadingScreen = ({ duration = 2200 }) => {
   return (
@@ -12,7 +12,7 @@ const LoadingScreen = ({ duration = 2200 }) => {
         transition={{ duration: 0.5 }}
       >
         <div className="absolute w-28 h-28 rounded-full animate-pulse-glow" />
-        <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center shadow-lg overflow-hidden">
+        <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-sky-600 to-blue-500 flex items-center justify-center rounded-full shadow-lg overflow-hidden">
           <img
             src={icon3D}
             alt="Yourksatra"
@@ -34,7 +34,7 @@ const LoadingScreen = ({ duration = 2200 }) => {
       {/* Progress bar */}
       <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500"
+          className="h-full rounded-full bg-gradient-to-r from-sky-600 to-blue-500"
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: duration / 1000 - 0.3, ease: "easeInOut" }}

@@ -58,10 +58,10 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
       <a
         href={to}
         onClick={handleClick}
-        className="relative py-2 md:py-0 text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200 text-center md:text-left group"
+        className="relative py-2 md:py-0 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors duration-200 text-center md:text-left group"
       >
         {children}
-        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 group-hover:w-full transition-all duration-300 hidden md:block" />
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-600 to-blue-500 group-hover:w-full transition-all duration-300 hidden md:block" />
       </a>
     );
   };
@@ -87,8 +87,8 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
       <nav
         ref={navRef}
         className={`transition-all duration-500 ${showBg
-            ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-slate-200/50 dark:border-white/5"
-            : "bg-transparent"
+          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-slate-200/50 dark:border-white/5"
+          : "bg-transparent"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +114,7 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
               <div className="relative">
                 <button
                   onClick={() => setOpenDropdown((prev) => !prev)}
-                  className="cursor-pointer flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
+                  className="cursor-pointer flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors duration-200"
                 >
                   Portofolio
                   <ChevronDown
@@ -129,7 +129,7 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
                         key={tab}
                         href="#portfolio"
                         onClick={(e) => handlePortfolioNav(e, tab)}
-                        className="block px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-white/5 rounded-lg transition-all duration-150"
+                        className="block px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-white/5 rounded-lg transition-all duration-150"
                       >
                         {tab.charAt(0).toUpperCase() + tab.slice(1)}
                       </a>
@@ -145,8 +145,8 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
               <button
                 onClick={() => { toggleTheme(); setIsMenuOpen(false); }}
                 className={`cursor-pointer p-2 rounded-full transition-colors duration-200 ${showBg
-                    ? "hover:bg-slate-100 dark:hover:bg-white/10"
-                    : "hover:bg-white/10"
+                  ? "hover:bg-slate-100 dark:hover:bg-white/10"
+                  : "hover:bg-white/10"
                   }`}
                 aria-label="Toggle Theme"
                 title={theme === "light" ? "Dark Mode" : "Light Mode"}
@@ -164,8 +164,8 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
               <button
                 onClick={toggleTheme}
                 className={`cursor-pointer p-2 rounded-full transition-colors duration-200 ${showBg
-                    ? "hover:bg-slate-100 dark:hover:bg-white/10"
-                    : "hover:bg-white/10"
+                  ? "hover:bg-slate-100 dark:hover:bg-white/10"
+                  : "hover:bg-white/10"
                   }`}
                 aria-label="Toggle Theme"
               >
@@ -202,7 +202,7 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
               <div className="relative">
                 <button
                   onClick={() => setOpenDropdown((prev) => !prev)}
-                  className="cursor-pointer flex justify-center items-center w-full py-2 text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition"
+                  className="cursor-pointer flex justify-center items-center w-full py-2 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition"
                 >
                   Portofolio
                   <ChevronDown
@@ -217,7 +217,7 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
                         key={tab}
                         href="#portfolio"
                         onClick={(e) => handlePortfolioNav(e, tab)}
-                        className="w-full px-4 py-2.5 text-center rounded-lg text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-white/5 transition-colors"
+                        className="w-full px-4 py-2.5 text-center rounded-lg text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-white/5 transition-colors"
                       >
                         {tab.charAt(0).toUpperCase() + tab.slice(1)}
                       </a>
@@ -226,7 +226,6 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
                 )}
               </div>
 
-              <MenuLink to="#games">Game&apos;s</MenuLink>
               <MenuLink to="#contact">Kontak</MenuLink>
             </div>
           </div>

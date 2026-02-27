@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 export default function ProjectCard({ project, onOpen }) {
   const getImagePath = () =>
     project.images?.thumbnail
-      ? `${import.meta.env.BASE_URL}/projectFile/${project.images.folder}/${project.images.thumbnail}`
-      : `${import.meta.env.BASE_URL}/projectFile/${project.images.folder}/0.png`;
+      ? `/projectFile/${project.images.folder}/${project.images.thumbnail}`
+      : `/projectFile/${project.images.folder}/0.png`;
 
   return (
     <motion.article
@@ -49,7 +49,7 @@ export default function ProjectCard({ project, onOpen }) {
         <div className="mt-auto">
           <button
             onClick={() => onOpen(project)}
-            className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-sm font-medium shadow-md shadow-indigo-500/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+            className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-sky-600 to-blue-500 text-white text-sm font-medium shadow-md shadow-sky-600/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
           >
             Selengkapnya
           </button>

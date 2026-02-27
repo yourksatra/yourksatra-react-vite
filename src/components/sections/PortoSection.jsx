@@ -36,7 +36,7 @@ export default function PortoSection({ selectedTab, setActivePage }) {
       className="relative min-h-[100svh] flex flex-col items-center bg-slate-50 dark:bg-slate-950 overflow-hidden py-20"
     >
       {/* Background accents — sama dengan section lain */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-indigo-500/30" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-sky-600/30" />
 
       {/* Section Heading */}
       <motion.div
@@ -46,7 +46,7 @@ export default function PortoSection({ selectedTab, setActivePage }) {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-xs font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-2">
+        <p className="text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400 mb-2">
           My Work
         </p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -70,14 +70,14 @@ export default function PortoSection({ selectedTab, setActivePage }) {
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={`relative cursor-pointer px-6 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 ${activeTab === tab.id
-                ? "text-white"
-                : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+              ? "text-white"
+              : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
               }`}
           >
             {activeTab === tab.id && (
               <motion.div
                 layoutId="active-tab-pill"
-                className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 shadow-lg shadow-indigo-500/25"
+                className="absolute inset-0 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 shadow-lg shadow-sky-600/25"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
               />
             )}

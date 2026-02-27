@@ -6,7 +6,7 @@ export default function Breadcrumb({ title, setActivePage }) {
       <div className="max-w-6xl mx-auto flex items-center gap-2 text-sm">
         <button
           onClick={() => setActivePage("home")}
-          className="cursor-pointer text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors font-medium"
+          className="cursor-pointer text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors font-medium"
         >
           Home
         </button>

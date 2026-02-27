@@ -72,8 +72,8 @@ export default function GamesSection() {
     >
       {/* Background accents */}
       <div className="absolute inset-0 dot-pattern opacity-40" />
-      <div className="absolute top-20 -right-32 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 -left-32 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 -right-32 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 -left-32 w-96 h-96 bg-sky-600/10 rounded-full blur-3xl" />
 
       {/* Section heading */}
       <motion.div
@@ -83,7 +83,7 @@ export default function GamesSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-xs font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-2">
+        <p className="text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400 mb-2">
           Mini Games
         </p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -132,14 +132,14 @@ export default function GamesSection() {
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5 mb-5">
                       {game.tags.map((tag, idx) => (
-                        <span key={idx} className="text-[11px] px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">
+                        <span key={idx} className="text-[11px] px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-600/10 text-sky-600 dark:text-sky-400 font-medium">
                           {tag}
                         </span>
                       ))}
                     </div>
 
                     {/* Play Button */}
-                    <button className="cursor-pointer w-full py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 group-hover:shadow-xl group-hover:shadow-indigo-500/30 transition-all duration-200">
+                    <button className="cursor-pointer w-full py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 group-hover:shadow-xl group-hover:shadow-sky-600/30 transition-all duration-200">
                       ▶ Play
                     </button>
                   </motion.div>
@@ -177,7 +177,7 @@ export default function GamesSection() {
                 <div className="flex flex-col items-center gap-4 w-full max-w-2xl">
                   <button
                     onClick={handleGameEnd}
-                    className="self-start cursor-pointer px-4 py-2 rounded-xl glass-card text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-indigo-500/30 transition-all"
+                    className="self-start cursor-pointer px-4 py-2 rounded-xl glass-card text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-sky-600/30 transition-all"
                   >
                     ← Kembali ke Game List
                   </button>
