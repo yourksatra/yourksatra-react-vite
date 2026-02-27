@@ -101,20 +101,24 @@ export default function GamesSection() {
             <motion.div
               key="game-grid"
               className="w-full max-w-4xl"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial="pageInitial"
+              animate="pageAnimate"
+              exit="pageExit"
+              variants={{
+                pageInitial: { opacity: 0 },
+                pageAnimate: { opacity: 1, transition: { staggerChildren: 0.1 } },
+                pageExit: { opacity: 0 }
+              }}
             >
               {/* Game Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {gameRegistry.map((game, i) => (
                   <motion.div
                     key={game.id}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    custom={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-50px" }}
                     className="glass-card rounded-2xl p-6 gradient-border glow-shadow flex flex-col hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer group"
                     onClick={() => handleCardClick(game)}
                   >
@@ -147,11 +151,10 @@ export default function GamesSection() {
 
                 {/* Coming Soon placeholder — selalu tampil */}
                 <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={gameRegistry.length}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: gameRegistry.length * 0.1, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-50px" }}
                   className="glass-card rounded-2xl p-6 flex flex-col items-center justify-center text-center border-dashed min-h-52"
                 >
                   <span className="text-4xl mb-3 opacity-40">🎮</span>

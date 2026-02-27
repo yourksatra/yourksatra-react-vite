@@ -6,12 +6,14 @@ import useProjects from "../../hooks/useProjects";
 function AnimatedCounter({ target, duration = 2 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  // Tambahkan margin negative agar trigger sedikit lebih cepat/konsisten
+  const isInView = useInView(ref, { once: true, amount: "all" });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || target === 0) return;
     let start = 0;
-    const step = target / (duration * 60);
+    // Gunakan Math.max untuk memastikan step setidaknya 1 jika target kecil
+    const step = Math.max(target / (duration * 60), 0.5);
     const timer = setInterval(() => {
       start += step;
       if (start >= target) {
