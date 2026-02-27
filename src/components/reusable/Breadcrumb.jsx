@@ -1,21 +1,18 @@
+import { ChevronRight } from "lucide-react";
+
 export default function Breadcrumb({ title, setActivePage }) {
   return (
-    <nav data-aos="fade-in" className="fixed z-1 w-full bg-gray-100 dark:bg-gray-800 py-2 px-4 shadow-sm text-gray-900 dark:text-white">
-      <span
-        onClick={() => {
-          setActivePage("home");
-          setTimeout(() => {
-            document
-              .querySelector("#")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }, 50);
-        }}
-        className="cursor-pointer text-sky-500 hover:underline"
-      >
-        Home
-      </span>{" "}
-      /{" "}
-      <span className="font-medium">{title}</span>
-    </nav>
+    <div className="w-full px-6 py-4 bg-slate-100/50 dark:bg-slate-900/50 border-b border-slate-200/50 dark:border-white/5">
+      <div className="max-w-6xl mx-auto flex items-center gap-2 text-sm">
+        <button
+          onClick={() => setActivePage("home")}
+          className="cursor-pointer text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors font-medium"
+        >
+          Home
+        </button>
+        <ChevronRight size={14} className="text-slate-400 dark:text-slate-500" />
+        <span className="font-semibold gradient-text">{title}</span>
+      </div>
+    </div>
   );
 }

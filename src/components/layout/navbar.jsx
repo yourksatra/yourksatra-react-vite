@@ -1,29 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import useTheme from "../../hooks/useTheme";
-
-// LOGO
 import iconWhite from "../../assets/Icon/iconWhite.svg";
 import iconBlack from "../../assets/Icon/iconBlack.svg";
-
-// ICON THEME
 import sunIcon from "../../assets/Icon/sun.svg";
 import moonIcon from "../../assets/Icon/moon.svg";
-
-// ICON DROPDOWN
 import { ChevronDown } from "lucide-react";
 
-export default function navbar({ setSelectedTab, activePage, setActivePage }) {
+export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuMaxHeight, setMenuMaxHeight] = useState(0);
   const [openDropdown, setOpenDropdown] = useState(false);
-
   const { theme, toggleTheme } = useTheme();
-
   const navRef = useRef(null);
   const menuRef = useRef(null);
 
-  // efek scroll -> ubah background & shadow
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 0);
     onScroll();
@@ -31,15 +22,9 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // animasi slide: ukur tinggi menu saat buka/tutup
   useEffect(() => {
     if (!menuRef.current) return;
-    if (isMenuOpen) {
-      const h = menuRef.current.scrollHeight;
-      setMenuMaxHeight(h);
-    } else {
-      setMenuMaxHeight(0);
-    }
+    setMenuMaxHeight(isMenuOpen ? menuRef.current.scrollHeight : 0);
   }, [isMenuOpen, openDropdown]);
 
   useEffect(() => {
@@ -52,19 +37,12 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
         setIsMenuOpen(false);
       }
     };
-
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    if (isMenuOpen) document.addEventListener("mousedown", handleClickOutside);
+    else document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
-  const MenuLink = ({ to, children, setActivePage }) => {
+  const MenuLink = ({ to, children }) => {
     const handleClick = (e) => {
       e.preventDefault();
       setActivePage("home");
@@ -80,136 +58,96 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
       <a
         href={to}
         onClick={handleClick}
-        className="block py-2 md:py-0 text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition text-center md:text-left"
+        className="relative py-2 md:py-0 text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200 text-center md:text-left group"
       >
         {children}
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 group-hover:w-full transition-all duration-300 hidden md:block" />
       </a>
     );
   };
 
-  const handlePortfolioNav = (e, tab, setActivePage) => {
+  const handlePortfolioNav = (e, tab) => {
     e.preventDefault();
-
-    // balik dulu ke home
     setActivePage("home");
-
     setTimeout(() => {
       const el = document.querySelector("#portfolio");
       if (!el) return;
-
       const top = el.getBoundingClientRect().top + window.scrollY - 64;
-
       window.scrollTo({ top, behavior: "smooth" });
-
-      // set tab di PortoSection
       setSelectedTab(tab);
       setIsMenuOpen(false);
       setOpenDropdown(false);
     }, 100);
   };
 
+  const showBg = isScrolled || isMenuOpen || activePage !== "home";
+
   return (
-    <span
-      data-aos="fade-in"
-      data-once="false"
-      data-aos-delay="800"
-      className="fixed top-0 left-0 w-full z-50"
-    >
+    <span data-aos="fade-in" data-once="false" data-aos-delay="800" className="fixed top-0 left-0 w-full z-50">
       <nav
         ref={navRef}
-        className={`transition-all duration-300 ${
-          isScrolled || isMenuOpen || activePage !== "home"
-            ? "bg-white/95 dark:bg-gray-900/95 shadow-md backdrop-blur"
+        className={`transition-all duration-500 ${showBg
+            ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-slate-200/50 dark:border-white/5"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Bar utama */}
+          {/* Main bar */}
           <div className="flex items-center justify-between h-16">
-            {/* Logo & Branding */}
-            <div className="flex items-end gap-2">
+            {/* Logo */}
+            <div className="flex items-end gap-2.5">
               <img
                 src={theme === "light" ? iconBlack : iconWhite}
                 alt="Brand"
                 className="h-8 w-8"
               />
-              <span className="sm:block font-bold text-2xl text-gray-900 dark:text-white hidden">
+              <span className="hidden sm:block font-bold text-xl tracking-tight text-slate-900 dark:text-white">
                 Yourksatra
               </span>
             </div>
 
-            {/* Menu desktop */}
-            <div className="hidden md:flex items-center font-medium gap-6">
-              <MenuLink to="#about" setActivePage={setActivePage}>
-                Tentang
-              </MenuLink>
+            {/* Desktop menu */}
+            <div className="hidden md:flex items-center font-medium gap-8 text-sm">
+              <MenuLink to="#about">Tentang</MenuLink>
 
-              {/* Dropdown Portofolio */}
-              <div className="relative group">
+              {/* Portfolio dropdown */}
+              <div className="relative">
                 <button
                   onClick={() => setOpenDropdown((prev) => !prev)}
-                  className="cursor-pointer flex items-center text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition"
+                  className="cursor-pointer flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
                 >
                   Portofolio
                   <ChevronDown
-                    size={16}
-                    className={`transition-transform ${
-                      openDropdown ? "rotate-180" : ""
-                    }`}
+                    size={14}
+                    className={`transition-transform duration-200 ${openDropdown ? "rotate-180" : ""}`}
                   />
                 </button>
                 {openDropdown && (
-                  <div className="absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black/5 animate-[fadeInDown_0.3s_ease-out]">
-                    <a
-                      href="#portfolio"
-                      onClick={(e) =>
-                        handlePortfolioNav(e, "experience", setActivePage)
-                      }
-                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      Experience
-                    </a>
-                    <a
-                      href="#portfolio"
-                      onClick={(e) =>
-                        handlePortfolioNav(e, "project", setActivePage)
-                      }
-                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      Project
-                    </a>
-                    <a
-                      href="#portfolio"
-                      onClick={(e) =>
-                        handlePortfolioNav(e, "skills", setActivePage)
-                      }
-                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      Skills
-                    </a>
+                  <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-44 rounded-xl glass-card-strong shadow-xl p-1.5 animate-slide-down">
+                    {["experience", "project", "skills"].map((tab) => (
+                      <a
+                        key={tab}
+                        href="#portfolio"
+                        onClick={(e) => handlePortfolioNav(e, tab)}
+                        className="block px-4 py-2.5 text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-white/5 rounded-lg transition-all duration-150"
+                      >
+                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
 
-              <MenuLink to="#games" setActivePage={setActivePage}>
-                Game's
-              </MenuLink>
+              <MenuLink to="#games">Game&apos;s</MenuLink>
+              <MenuLink to="#contact">Kontak</MenuLink>
 
-              <MenuLink to="#contact" setActivePage={setActivePage}>
-                Kontak
-              </MenuLink>
-
-              {/* Toggle theme */}
+              {/* Theme toggle */}
               <button
-                onClick={() => {
-                  toggleTheme();
-                  setIsMenuOpen(false);
-                }}
-                className={`cursor-pointer p-2 rounded-full transition ${
-                  isScrolled || isMenuOpen || activePage !== "home"
-                    ? "hover:bg-gray-200 dark:hover:bg-gray-700"
-                    : "hover:bg-sky-400 dark:hover:bg-sky-600"
-                }`}
+                onClick={() => { toggleTheme(); setIsMenuOpen(false); }}
+                className={`cursor-pointer p-2 rounded-full transition-colors duration-200 ${showBg
+                    ? "hover:bg-slate-100 dark:hover:bg-white/10"
+                    : "hover:bg-white/10"
+                  }`}
                 aria-label="Toggle Theme"
                 title={theme === "light" ? "Dark Mode" : "Light Mode"}
               >
@@ -221,120 +159,75 @@ export default function navbar({ setSelectedTab, activePage, setActivePage }) {
               </button>
             </div>
 
-            {/* Hamburger + theme (mobile) */}
+            {/* Mobile: theme + hamburger */}
             <div className="flex items-center gap-2 md:hidden">
-              {/* Theme toggle */}
               <button
                 onClick={toggleTheme}
-                className={`cursor-pointer p-2 rounded-full transition ${
-                  isScrolled || isMenuOpen || activePage !== "home"
-                    ? "hover:bg-gray-200 dark:hover:bg-gray-700"
-                    : "hover:bg-sky-400 dark:hover:bg-sky-600"
-                }`}
+                className={`cursor-pointer p-2 rounded-full transition-colors duration-200 ${showBg
+                    ? "hover:bg-slate-100 dark:hover:bg-white/10"
+                    : "hover:bg-white/10"
+                  }`}
                 aria-label="Toggle Theme"
-                title={theme === "light" ? "Dark Mode" : "Light Mode"}
               >
                 <img
                   src={theme === "light" ? moonIcon : sunIcon}
-                  alt={theme === "light" ? "Dark Mode" : "Light Mode"}
+                  alt="Theme"
                   className="w-5 h-5"
                 />
               </button>
-              {/* toggle hamburger */}
               <button
                 onClick={() => setIsMenuOpen((v) => !v)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+                className="inline-flex items-center justify-center p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 transition"
                 aria-label="Toggle Menu"
                 aria-expanded={isMenuOpen}
               >
                 <div className="space-y-1.5">
-                  <span
-                    className={`block h-0.5 w-6 bg-current transition-transform ${
-                      isMenuOpen ? "translate-y-2 rotate-45" : ""
-                    }`}
-                  />
-                  <span
-                    className={`block h-0.5 w-6 bg-current transition-opacity ${
-                      isMenuOpen ? "opacity-0" : "opacity-100"
-                    }`}
-                  />
-                  <span
-                    className={`block h-0.5 w-6 bg-current transition-transform ${
-                      isMenuOpen ? "-translate-y-2 -rotate-45" : ""
-                    }`}
-                  />
+                  <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isMenuOpen ? "translate-y-2 rotate-45" : ""}`} />
+                  <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isMenuOpen ? "opacity-0" : "opacity-100"}`} />
+                  <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isMenuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
                 </div>
               </button>
             </div>
           </div>
 
-          {/* Menu mobile */}
+          {/* Mobile menu */}
           <div
             className="md:hidden overflow-hidden text-center transition-[max-height,opacity] duration-300 ease-out"
             style={{ maxHeight: menuMaxHeight, opacity: isMenuOpen ? 1 : 0 }}
           >
-            <div
-              ref={menuRef}
-              className="pb-3 pt-2 text-lg font-semibold border-gray-200 dark:border-gray-800"
-            >
-              <MenuLink to="#about" setActivePage={setActivePage}>
-                Tentang
-              </MenuLink>
+            <div ref={menuRef} className="pb-4 pt-2 text-base font-medium space-y-1">
+              <MenuLink to="#about">Tentang</MenuLink>
 
-              {/* Dropdown Portofolio Mobile */}
+              {/* Dropdown mobile */}
               <div className="relative">
                 <button
                   onClick={() => setOpenDropdown((prev) => !prev)}
-                  className="cursor-pointer flex justify-center items-center w-full py-2 text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition"
+                  className="cursor-pointer flex justify-center items-center w-full py-2 text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition"
                 >
                   Portofolio
                   <ChevronDown
-                    size={16}
-                    className={`transition-transform ${
-                      openDropdown ? "rotate-180" : ""
-                    }`}
+                    size={14}
+                    className={`ml-1 transition-transform duration-200 ${openDropdown ? "rotate-180" : ""}`}
                   />
                 </button>
                 {openDropdown && (
-                  <div className="flex flex-col items-center text-sm font-normal border border-gray-200 dark:border-gray-800 animate-[fadeInDown_0.3s_ease-out] w-full">
-                    <a
-                      href="#portfolio"
-                      onClick={(e) =>
-                        handlePortfolioNav(e, "experience", setActivePage)
-                      }
-                      className="w-full px-4 py-2 text-center rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                    >
-                      Experience
-                    </a>
-                    <a
-                      href="#portfolio"
-                      onClick={(e) =>
-                        handlePortfolioNav(e, "project", setActivePage)
-                      }
-                      className="w-full px-4 py-2 text-center rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                    >
-                      Project
-                    </a>
-                    <a
-                      href="#portfolio"
-                      onClick={(e) =>
-                        handlePortfolioNav(e, "skills", setActivePage)
-                      }
-                      className="w-full px-4 py-2 text-center rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                    >
-                      Skills
-                    </a>
+                  <div className="flex flex-col items-center text-sm font-normal glass-card rounded-xl mx-4 p-1 animate-slide-down">
+                    {["experience", "project", "skills"].map((tab) => (
+                      <a
+                        key={tab}
+                        href="#portfolio"
+                        onClick={(e) => handlePortfolioNav(e, tab)}
+                        className="w-full px-4 py-2.5 text-center rounded-lg text-slate-600 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-white/5 transition-colors"
+                      >
+                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
 
-              <MenuLink to="#games" setActivePage={setActivePage}>
-                Game's
-              </MenuLink>
-
-              <MenuLink to="#contact" setActivePage={setActivePage}>
-                Kontak
-              </MenuLink>
+              <MenuLink to="#games">Game&apos;s</MenuLink>
+              <MenuLink to="#contact">Kontak</MenuLink>
             </div>
           </div>
         </div>

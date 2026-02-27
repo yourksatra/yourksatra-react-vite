@@ -24,17 +24,10 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
   ];
 
   const handleNext = () => {
-    if (!transitioning) {
-      setTransitioning(true);
-      setIndex((prev) => prev + 1);
-    }
+    if (!transitioning) { setTransitioning(true); setIndex((prev) => prev + 1); }
   };
-
   const handlePrev = () => {
-    if (!transitioning) {
-      setTransitioning(true);
-      setIndex((prev) => prev - 1);
-    }
+    if (!transitioning) { setTransitioning(true); setIndex((prev) => prev - 1); }
   };
 
   useEffect(() => {
@@ -44,75 +37,54 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // 🔁 Loop dua sisi
   useEffect(() => {
-    if (isMobile) return; // tidak pakai animasi loop di mobile
-
+    if (isMobile) return;
     if (index >= projects.length + 2) {
-      const timeout = setTimeout(() => {
-        setTransitioning(false);
-        setIndex(2);
-      }, 550);
+      const timeout = setTimeout(() => { setTransitioning(false); setIndex(2); }, 550);
       return () => clearTimeout(timeout);
     }
-
     if (index <= 1) {
-      const timeout = setTimeout(() => {
-        setTransitioning(false);
-        setIndex(projects.length + 1);
-      }, 500);
+      const timeout = setTimeout(() => { setTransitioning(false); setIndex(projects.length + 1); }, 500);
       return () => clearTimeout(timeout);
     }
-
     const timeout = setTimeout(() => setTransitioning(false), 600);
     return () => clearTimeout(timeout);
   }, [index, projects.length, isMobile]);
 
   return (
-    <section data-aos="fade-up" className="w-full py-3 rounded-0 relative">
-      <div className="max-w-8xl mx-auto md:mx-15">
+    <section className="w-full py-4 relative">
+      <div className="max-w-8xl mx-auto md:mx-12 lg:mx-16">
         {!isMobile && (
           <>
             <button
               onClick={handlePrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 
-                cursor-pointer text-sky-500 hover:text-sky-600"
+              className="absolute left-1 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 rounded-xl glass-card-strong flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:border-indigo-500/30 transition-all"
             >
-              <ChevronLeft className="w-13 h-20" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 
-                cursor-pointer text-sky-500 hover:text-sky-600"
+              className="absolute right-1 top-1/2 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 rounded-xl glass-card-strong flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:border-indigo-500/30 transition-all"
             >
-              <ChevronRight className="w-13 h-20" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </>
         )}
 
-        {/* Container Card */}
+        {/* Container */}
         <div
-          className={`relative ${
-            isMobile
+          className={`relative ${isMobile
               ? "flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-4 pb-4"
               : "overflow-hidden"
-          }`}
+            }`}
         >
           {isMobile ? (
-            // 🟢 Mode scroll manual (mobile)
             projects.map((p, i) => (
-              <div
-                key={`${p.title}-${i}`}
-                className="flex-shrink-0 w-90 mx-2"
-              >
-                <ProjectCard
-                  project={p}
-                  onOpen={(proj) => setOpenProject(proj)}
-                />
+              <div key={`${p.title}-${i}`} className="flex-shrink-0 w-80 mx-2 snap-center">
+                <ProjectCard project={p} onOpen={(proj) => setOpenProject(proj)} />
               </div>
             ))
           ) : (
-            // 🟦 Mode animasi loop (desktop)
             <motion.div
               className="flex gap-4 mx-1"
               animate={{ x: `-${index * (104 / perView)}%` }}
@@ -125,26 +97,20 @@ export default function ProjectLayout({ limit = 6, onSeeMore }) {
               {extendedProjects.map((p, i) => (
                 <div
                   key={`${p.title}-${i}`}
-                  className={`w-full ${
-                    perView === 3 ? "md:w-1/3" : "w-full"
-                  } flex-shrink-0 my-2`}
+                  className={`w-full ${perView === 3 ? "md:w-1/3" : "w-full"} flex-shrink-0 my-2`}
                 >
-                  <ProjectCard
-                    project={p}
-                    onOpen={(proj) => setOpenProject(proj)}
-                  />
+                  <ProjectCard project={p} onOpen={(proj) => setOpenProject(proj)} />
                 </div>
               ))}
             </motion.div>
           )}
         </div>
 
-        {/* Tombol Lihat Semua */}
-        <div className="mt-3 mb-1 text-center">
+        {/* View all button */}
+        <div className="mt-4 mb-2 text-center">
           <button
             onClick={onSeeMore}
-            className="cursor-pointer px-6 py-2 rounded-md bg-sky-500 text-white font-medium 
-              hover:bg-sky-600 transition-colors duration-200"
+            className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
           >
             Lihat semua proyek
           </button>

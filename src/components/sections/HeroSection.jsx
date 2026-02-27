@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { FaDownload, FaReact } from "react-icons/fa";
 import {
   SiAdobeillustrator,
@@ -6,195 +6,190 @@ import {
   SiCodeigniter,
   SiLaravel,
 } from "react-icons/si";
-import gambarSatu from "../../assets/Img/hero1.png";
-import gambarDua from "../../assets/Img/hero2.png";
+import heroFoto from "../../assets/Img/FOTO.png";
 
 export default function HeroSection() {
-  const images = [gambarSatu, gambarDua];
-  const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => {
-        const next = (prev + 1) % images.length;
-        // console.log("Changing slide:", next); // cek perubahan index
-        return next;
-      });
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+    }),
+  };
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden bg-white dark:bg-gray-900">
-      <div className="hidden md:flex absolute inset-0">
-        {/* Bagian kiri */}
-        <div
-          data-aos="fade-down"
-          data-aos-delay="100"
-          data-once="true"
-          className="w-1/2 flex items-center"
-        >
-          <div className="relative z-10 flex flex-col justify-center h-full px-5 md:px-12 min-w-3xl">
-            <h3 className="text-2xl text-gray-600 dark:text-gray-300">
-              Hai, saya
-            </h3>
-            <h1 className="text-4xl underline md:text-6xl font-bold text-sky-500 dark:text-sky-500">
-              N. Satria Bagass, S.Kom
-            </h1>
-            <div className="space-y-0 mt-5">
-              <div className="flex items-center flex-wrap gap-2">
-                <h2 className="text-xl md:text-2xl text-gray-900 dark:text-white font-bold">
-                  FULLSTACK WEB DEVELOPER
-                </h2>
-                <div className="flex items-center gap-2">
-                  <div className="p-2 rounded-lg bg-gray-100/60 dark:bg-gray-800">
-                    <FaReact className="text-gray-900 dark:text-white text-lg" />
-                  </div>
-                  <div className="p-2 rounded-lg bg-gray-100/60 dark:bg-gray-800">
-                    <SiLaravel className="text-gray-900 dark:text-white text-lg" />
-                  </div>
-                  <div className="p-2 rounded-lg bg-gray-100/60 dark:bg-gray-800">
-                    <SiCodeigniter className="text-gray-900 dark:text-white text-lg" />
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center flex-wrap gap-2">
-                <h2 className="text-xl md:text-xl text-gray-900 dark:text-white font-semibold">
-                  ASSETS CREATOR
-                </h2>
-                <div className="flex items-center gap-2">
-                  <SiAdobephotoshop className="text-gray-900 dark:text-white text-lg" />
-                  <SiAdobeillustrator className="text-gray-900 dark:text-white text-lg" />
-                </div>
-              </div>
-            </div>
-            <div className="flex items-end-safe gap-2 mt-5">
-              <a
-                href="#contact&focus"
-                className="cursor-pointer px-3 py-1 rounded-lg border bg-sky-500 border-sky-500 text-white dark:text-gray-900 
-    hover:bg-white hover:text-gray-900 hover:border-gray-900 
-    dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-white 
-    font-medium flex items-center gap-2 transition-colors duration-200"
-              >
-                HUBUNGI SEKARANG
-              </a>
-              <a
-                href="/CV/Resume.pdf"
-                download="Resume_Yourksatra.pdf"
-                className="cursor-pointer px-2 py-1 rounded-lg border border-gray-900 dark:border-white 
-    text-gray-900 dark:text-white 
-    hover:bg-sky-500 hover:border-sky-500 hover:text-white 
-    dark:hover:text-gray-900
-    font-medium flex items-center gap-2 transition-colors duration-200"
-              >
-                Download CV
-                <FaDownload className="text-sm" />
-              </a>
-            </div>
-          </div>
-        </div>
+    <section id="home" className="relative min-h-screen w-full overflow-hidden bg-slate-50 dark:bg-slate-950">
+      {/* Background dot pattern */}
+      <div className="absolute inset-0 dot-pattern opacity-60" />
 
-        {/* Bagian kanan */}
-        <div
-          data-aos="slide-up"
-          data-aos-delay="200"
-          data-once="true"
-          className="w-1/2 relative bg-sky-500 clip-diagonal"
+      {/* Gradient orbs */}
+      <div className="absolute top-20 -left-32 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 -right-32 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
+
+      {/* ── Desktop Layout ── */}
+      <div className="hidden md:flex relative z-10 min-h-screen max-w-7xl mx-auto px-6 lg:px-8 items-center">
+        {/* Left: Text */}
+        <motion.div
+          className="w-1/2 flex flex-col justify-center pr-12"
+          initial="hidden"
+          animate="visible"
         >
-          <div className="absolute bottom-0 left-3/5 transform -translate-x-1/2 z-10 w-full flex justify-center">
-            {images.map((img, index) => (
+          <motion.p
+            variants={fadeUp}
+            custom={0}
+            className="text-sm font-medium uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3"
+          >
+            Hai, saya
+          </motion.p>
+
+          <motion.h1
+            variants={fadeUp}
+            custom={1}
+            className="text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight"
+          >
+            N. Satria Bagass,{" "}
+            <span className="gradient-text">S.Kom</span>
+          </motion.h1>
+
+          <motion.div variants={fadeUp} custom={2} className="mt-6 space-y-3">
+            <div className="flex items-center gap-3">
+              <h2 className="text-lg font-semibold text-slate-700 dark:text-slate-200 tracking-tight">
+                FULLSTACK WEB DEVELOPER
+              </h2>
+              <div className="flex items-center gap-1.5">
+                {[FaReact, SiLaravel, SiCodeigniter].map((Icon, i) => (
+                  <div key={i} className="p-1.5 rounded-lg glass-card">
+                    <Icon className="text-slate-500 dark:text-slate-400 text-sm" />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <h3 className="text-base font-medium text-slate-600 dark:text-slate-400">
+                ASSETS CREATOR
+              </h3>
+              <div className="flex items-center gap-1.5">
+                <SiAdobephotoshop className="text-slate-500 dark:text-slate-400 text-sm" />
+                <SiAdobeillustrator className="text-slate-500 dark:text-slate-400 text-sm" />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} custom={3} className="flex items-center gap-3 mt-8">
+            <a
+              href="#contact&focus"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Hubungi Sekarang
+            </a>
+            <a
+              href="/CV/Resume.pdf"
+              download="Resume_Yourksatra.pdf"
+              className="px-6 py-2.5 rounded-xl glass-card font-semibold text-sm text-slate-700 dark:text-slate-300 hover:border-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
+            >
+              Download CV
+              <FaDownload className="text-xs" />
+            </a>
+          </motion.div>
+        </motion.div>
+
+        {/* Right: Image */}
+        <motion.div
+          className="w-1/2 flex items-end justify-center relative"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="relative">
+            {/* Glow behind image */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/20 to-violet-500/20 rounded-3xl blur-2xl" />
+
+            <div className="relative overflow-hidden">
               <img
-                key={index}
-                src={img}
-                alt={`Hero ${index}`}
-                className={`absolute bottom-0 -translate-x-1/2 h-[90vh] w-auto drop-shadow-2xl transition-all duration-1000 ease-in-out
-        ${
-          index === current
-            ? "opacity-0 translate-x-0"
-            : "opacity-100 -translate-x-10"
-        }`}
+                src={heroFoto}
+                alt="Satria Bagas"
+                className="h-[75vh] w-auto object-cover"
               />
-            ))}
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-      {/* Mobile Version */}
-      <div className="md:hidden relative h-screen w-full bg-sky-500 overflow-hidden">
-        {/* Gambar full background */}
-        <div
-          data-aos="fade-in"
-          data-aos-delay="300"
-          data-once="true"
-          className="absolute inset-0"
-        >
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`Hero ${index}`}
-              className={`h-[90vh] absolute bottom-0 w-full object-cover transition-opacity duration-1000 ease-in-out
-          ${index === current ? "opacity-100" : "opacity-0"}`}
-            />
-          ))}
-        </div>
 
-        {/* Overlay text di atas gambar */}
-        <div
-          data-aos="slide-up"
-          data-aos-delay="300"
-          data-once="true"
-          className="h-[35vh] w-[101%] absolute bottom-0 left-0 right-0 px-6 pt-10 
-                bg-white/75 dark:bg-gray-900/75 backdrop-blur-sm overlay-diagonal
-                flex flex-row justify-between items-center"
+      {/* ── Mobile Layout ── */}
+      <div className="md:hidden relative z-10 min-h-screen flex flex-col">
+        {/* Image top */}
+        <motion.div
+          className="flex-1 relative flex items-end justify-center pt-20 px-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {/* Bagian informasi di kiri */}
-          <div className="flex flex-col justify-center mt-10">
-            <p className="text-sm text-gray-700 dark:text-gray-300">Hi, saya</p>
-            <h1 className="text-3xl font-bold underline text-sky-500 dark:text-sky-500">
-              N. Satria Bagass, S.Kom
-            </h1>
-            <div className="flex items-center mt-2 mb-2 gap-2 max-w-fit rounded-lg">
-              <p className="text-m font-bold text-gray-900 dark:text-white">
-                Fullstack Web Developer
-              </p>
-              <div className="flex items-center gap-2">
-                <div className="p-1 rounded-sm bg-gray-100/50 dark:bg-gray-800">
-                  <FaReact className="text-gray-900 dark:text-white text-sm" />
-                </div>
-                <div className="p-1 rounded-sm bg-gray-100/50 dark:bg-gray-800">
-                  <SiLaravel className="text-gray-900 dark:text-white text-sm" />
-                </div>
-                <div className="p-1 rounded-sm bg-gray-100/50 dark:bg-gray-800">
-                  <SiCodeigniter className="text-gray-900 dark:text-white text-sm" />
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <a
-                href="#contact&focus"
-                className="cursor-pointer px-3 py-1 rounded-lg border bg-sky-600 dark:bg-sky-400 border-sky-600 dark:border-sky-400 text-white dark:text-gray-900 
-    hover:bg-white hover:text-gray-900 hover:border-gray-900 
-    dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-white 
-    text-sm font-medium flex items-center gap-2 transition-colors duration-200"
-              >
-                HUBUNGI SEKARANG
-              </a>
-
-              <a
-                href="/CV/Resume.pdf"
-                download="Resume_Yourksatra.pdf"
-                className="cursor-pointer px-2 py-1 rounded-lg border border-gray-900 dark:border-white 
-    text-gray-900 dark:text-white 
-    hover:bg-sky-600 hover:border-sky-600 hover:text-white 
-    dark:hover:bg-sky-400 dark:hover:border-sky-400 dark:hover:text-gray-900
-    text-sm font-medium flex items-center gap-2 transition-colors duration-200"
-              >
-                Download CV
-                <FaDownload className="text-sm" />
-              </a>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/15 to-violet-500/15 rounded-2xl blur-xl" />
+            <div className="relative overflow-hidden">
+              <img
+                src={heroFoto}
+                alt="Satria Bagas"
+                className="h-[45vh] w-auto object-cover"
+              />
             </div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Text bottom */}
+        <motion.div
+          className="px-6 py-8 space-y-4"
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p
+            variants={fadeUp}
+            custom={0}
+            className="text-xs font-medium uppercase tracking-widest text-indigo-500 dark:text-indigo-400"
+          >
+            Hi, saya
+          </motion.p>
+
+          <motion.h1
+            variants={fadeUp}
+            custom={1}
+            className="text-3xl font-black tracking-tight text-slate-900 dark:text-white leading-tight"
+          >
+            N. Satria Bagass, <span className="gradient-text">S.Kom</span>
+          </motion.h1>
+
+          <motion.div variants={fadeUp} custom={2} className="flex items-center gap-2">
+            <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+              Fullstack Web Developer
+            </p>
+            <div className="flex items-center gap-1">
+              {[FaReact, SiLaravel, SiCodeigniter].map((Icon, i) => (
+                <div key={i} className="p-1 rounded-md glass-card">
+                  <Icon className="text-slate-500 dark:text-slate-400 text-xs" />
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} custom={3} className="flex items-center gap-3 pt-2">
+            <a
+              href="#contact&focus"
+              className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 transition-all"
+            >
+              Hubungi Sekarang
+            </a>
+            <a
+              href="/CV/Resume.pdf"
+              download="Resume_Yourksatra.pdf"
+              className="px-4 py-2 rounded-xl glass-card font-semibold text-sm text-slate-700 dark:text-slate-300 flex items-center gap-2 transition-all"
+            >
+              Download CV
+              <FaDownload className="text-xs" />
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

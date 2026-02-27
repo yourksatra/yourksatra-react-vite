@@ -10,7 +10,14 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Environment variables
+# .env dan .env.production BOLEH di-commit (tidak ada secret, hanya config path)
+# .env.local dan .env.*.local JANGAN di-commit (bisa berisi kredensial pribadi)
 *.local
+
+# .env.example SELALU di-commit sebagai dokumentasi
+!.env.example
 
 # Editor directories and files
 .vscode/*

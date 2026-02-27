@@ -1,6 +1,5 @@
-import React from "react";
 import icon3D from "../../assets/Icon/icon3D.png";
-import { FaFilm, FaMusic } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 export default function Footer({ setActivePage }) {
   const navItems = [
@@ -13,71 +12,90 @@ export default function Footer({ setActivePage }) {
     { name: "Kontak", section: "home", link: "contact" },
   ];
 
+  const socialLinks = [
+    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/yourksatra", label: "LinkedIn" },
+    { icon: <FaGithub />, href: "https://github.com/yourksatra", label: "GitHub" },
+    { icon: <FaInstagram />, href: "https://instagram.com/yourksatra", label: "Instagram" },
+  ];
+
   const handleNavClick = (section, link) => {
     if (section) {
       setActivePage(section);
-
       if (section === "home" && link) {
         setTimeout(() => {
           const target = document.getElementById(link);
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          }
+          if (target) target.scrollIntoView({ behavior: "smooth" });
         }, 100);
       }
     } else if (link) {
       const target = document.getElementById(link);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+      if (target) target.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <footer className="w-full bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 border-t border-sky-500 py-10 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <img
-            src={icon3D}
-            alt="logo"
-            className="w-16 h-16 rounded-lg mb-3 object-cover"
-          />
-          <h3 className="font-bold text-lg text-black dark:text-white">
-            Satria Bagas
-          </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            Alias:{" "}
-            <span className="text-gray-900 dark:text-white">Yourksatra</span>
-          </p>
-          <p className="text-sm flex items-center gap-1 mt-1">
-            <span>Hobi:</span> Entertainment Enjoyer
-            <FaFilm className="inline text-gray-400" />
-            <FaMusic className="inline text-gray-400" />
-          </p>
-          <p className="hidden text-xs md:block text-gray-500 mt-4">
-            © 2025 Yourksatra. All rights reserved.
-          </p>
-        </div>
-        <div className="flex flex-col items-center md:items-start">
-          <h3 className="font-bold text-lg text-black dark:text-white mb-3">
-            Navigasi
-          </h3>
-          <ul className="grid grid-cols-3 sm:grid-cols-3 gap-2">
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <button
-                  onClick={() => handleNavClick(item.section, item.link)}
-                  className="hover:text-black dark:hover:text-white hover:underline underline-offset-2 text-sm transition-colors duration-200 cursor-pointer"
+    <footer className="w-full bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-white/5">
+      {/* Gradient accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          {/* Branding */}
+          <div className="flex flex-col items-center md:items-start">
+            <img src={icon3D} alt="logo" className="w-12 h-12 rounded-xl mb-3 object-cover" />
+            <h3 className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
+              Satria Bagas
+            </h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+              Fullstack Web Developer
+            </p>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
+              Navigasi
+            </h4>
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
+              {navItems.map((item, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => handleNavClick(item.section, item.link)}
+                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200 cursor-pointer"
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div className="flex flex-col items-center md:items-end">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
+              Connect
+            </h4>
+            <div className="flex gap-3">
+              {socialLinks.map((s, i) => (
+                <a
+                  key={i}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-500/30 transition-all duration-200"
                 >
-                  {item.name}
-                </button>
-              </li>
-            ))}
-          </ul>
+                  <span className="text-lg">{s.icon}</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="md:hidden">
-          <p className="text-xs text-center text-gray-500 mt-4">
-            © 2025 Yourksatra. All rights reserved.
+
+        {/* Copyright */}
+        <div className="mt-10 pt-6 border-t border-slate-200 dark:border-white/5 text-center">
+          <p className="text-xs text-slate-400 dark:text-slate-500">
+            © {new Date().getFullYear()} Yourksatra. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import skillsetData from "../../assets/Data/skillset.json";
 
-const skills = ({ onSeeDetail }) => {
+const Skills = ({ onSeeDetail }) => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
@@ -12,16 +12,13 @@ const skills = ({ onSeeDetail }) => {
       const rowCount = window.innerWidth < 768 ? 4 : 3;
       const perRow = Math.ceil(data.length / rowCount);
 
-      // Bagi data ke beberapa baris
       let grouped = Array.from({ length: rowCount }, (_, i) =>
         data.slice(i * perRow, (i + 1) * perRow)
       );
 
-      // Untuk tiap baris, shift array dengan offset berbeda
       grouped = grouped.map((row, i) => {
         const offset = i * 2;
         const shifted = [...row.slice(offset), ...row.slice(0, offset)];
-        // Gandakan biar infinite loop mulus
         return [...shifted, ...shifted, ...shifted, ...shifted];
       });
 
@@ -34,35 +31,37 @@ const skills = ({ onSeeDetail }) => {
   }, []);
 
   return (
-    <div className="w-full py-6 relative overflow-hidden bg-gray-100 dark:bg-gray-800">
-      <div className="space-y-16">
+    <div className="w-full py-8 relative overflow-hidden bg-slate-100/50 dark:bg-slate-900/50">
+      <div className="space-y-12">
         {rows.map((row, i) => (
           <div
             key={i}
-            data-aos="fade-up"
-            data-aos-delay={i * 100}
-            className="flex animate-marquee space-x-5 md:space-x-10"
-            style={{
-              animationDuration: `${20 + i * 5}s`,
-            }}
+            className="flex animate-marquee space-x-4 md:space-x-8"
+            style={{ animationDuration: `${20 + i * 5}s` }}
           >
             {row.map((skill, idx) => (
-              <img
+              <div
                 key={idx}
-                src={`/skills/${skill.img}`}
-                alt={skill.name}
-                className="h-12 w-auto object-contain"
-              />
+                className="flex-shrink-0 px-4 py-2 rounded-xl glass-card flex items-center gap-2"
+              >
+                <img
+                  src={`${import.meta.env.BASE_URL}/skills/${skill.img}`}
+                  alt={skill.name}
+                  className="h-8 w-auto object-contain"
+                />
+                <span className="text-xs font-medium text-slate-600 dark:text-slate-400 whitespace-nowrap hidden md:inline">
+                  {skill.name}
+                </span>
+              </div>
             ))}
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-8">
         <button
           onClick={onSeeDetail}
-          data-aos="fade-up"
-          className="cursor-pointer px-5 py-2 rounded-lg bg-sky-500 text-white dark:text-gray-900 font-medium hover:bg-sky-600 transition"
+          className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
         >
           Lihat Detail
         </button>
@@ -71,4 +70,4 @@ const skills = ({ onSeeDetail }) => {
   );
 };
 
-export default skills;
+export default Skills;

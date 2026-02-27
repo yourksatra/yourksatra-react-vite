@@ -20,18 +20,13 @@ export default function App() {
   const [activePage, setActivePage] = useState("home");
   const [selectedTab, setSelectedTab] = useState("project");
 
+  const LOADING_DURATION = 2500; // ms — satu-satunya sumber timer loading
+
   useEffect(() => {
-    // loading 2500ms sesuai LoadingScreen
     const timer = setTimeout(() => {
       setLoading(false);
-
-      // init AOS setelah loading selesai
-      AOS.init({
-        duration: 800,
-        offset: 50,
-      });
-    }, 2500);
-
+      AOS.init({ duration: 600, offset: 50, once: true });
+    }, LOADING_DURATION);
     return () => clearTimeout(timer);
   }, []);
 
@@ -42,9 +37,9 @@ export default function App() {
   }, [activePage]);
 
   return (
-    <>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
       {loading ? (
-        <LoadingScreen />
+        <LoadingScreen duration={LOADING_DURATION} />
       ) : (
         <>
           <ScrollToTopButton />
@@ -74,9 +69,9 @@ export default function App() {
           {activePage === "ProjectSection" && (
             <ProjectSection setActivePage={setActivePage} />
           )}
-          <Footer setActivePage={setActivePage}/>
+          <Footer setActivePage={setActivePage} />
         </>
       )}
-    </>
+    </div>
   );
 }

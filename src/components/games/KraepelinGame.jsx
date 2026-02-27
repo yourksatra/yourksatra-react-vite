@@ -151,15 +151,15 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
   const hanker =
     segmentCounts[0] > 0
       ? Math.max(
-          0,
-          Math.min(
-            100,
-            (
-              (segmentCounts[segmentCounts.length - 1] / segmentCounts[0]) *
-              100
-            ).toFixed(0)
-          )
+        0,
+        Math.min(
+          100,
+          (
+            (segmentCounts[segmentCounts.length - 1] / segmentCounts[0]) *
+            100
+          ).toFixed(0)
         )
+      )
       : 0;
 
   const getLabel = (metric, value) => {
@@ -185,90 +185,104 @@ export default function KraepelinGame({ duration, layout, onEnd }) {
   }));
 
   return (
-    <div className="w-full max-w-md mx-auto bg-sky-500 text-white rounded-lg p-4 shadow-lg">
-      {/* Header Score & Timer */}
-      <div className="flex justify-between items-center mb-3 text-sm">
-        <div>Score {score.correct} | {score.wrong}</div>
-        <div>{formatTime(timeLeft)}</div>
-      </div>
+    <>
+      <div className="w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl glass-card-strong">
+        {/* Header Score & Timer */}
+        <div className="bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-3 flex justify-between items-center text-white">
+          <div className="flex items-center gap-3 text-sm font-semibold">
+            <span className="bg-white/20 rounded-lg px-2 py-0.5">✅ {score.correct}</span>
+            <span className="bg-white/20 rounded-lg px-2 py-0.5">❌ {score.wrong}</span>
+          </div>
+          <div className="text-lg font-black tracking-widest font-mono">{formatTime(timeLeft)}</div>
+        </div>
 
-      {/* Soal */}
-      <div className="bg-sky-600 text-center py-4 rounded mb-4 text-2xl font-bold">
-        {question.a} + {question.b} = ?
-      </div>
+        <div className="p-5 bg-slate-50 dark:bg-slate-900">
+          {/* Soal */}
+          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 text-center py-6 rounded-2xl mb-5 shadow-sm">
+            <span className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+              {question.a} + {question.b} = ?
+            </span>
+          </div>
 
-      {/* Tombol Jawaban */}
-      <div className="grid grid-cols-3 gap-2 items-start">
-        {keyboardLayout.map((num, index) => (
-          <button
-            key={index}
-            onClick={() => handleAnswer(num)}
-            className={`cursor-pointer bg-sky-600 hover:bg-sky-700 transition rounded py-3 text-xl font-semibold ${
-              index === keyboardLayout.length - 1 ? "col-start-2" : ""
-            }`}
-          >
-            {num}
-          </button>
-        ))}
-      </div>
-
-      {/* Modal Hasil Tes */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-white text-black rounded-lg p-6 w-[95%] max-w-lg shadow-xl overflow-y-auto max-h-[90vh]">
-            <h2 className="text-xl font-bold mb-4 text-center">📊 Hasil Tes Kraepelin</h2>
-
-            {/* Grafik */}
-            <div className="mb-6">
-              <h3 className="font-semibold mb-2 text-center">
-                Grafik Produktivitas per Segmen
-              </h3>
-              <ResponsiveContainer width="100%" height={200}>
-                <LineChart data={segmentChartData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="segment" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line
-                    type="monotone"
-                    dataKey="jumlah"
-                    stroke="#0ea5e9"
-                    strokeWidth={2}
-                    dot={true}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* Statistik */}
-            <div className="text-sm md:text-base space-y-2 mb-6">
-              <div className="flex justify-between"><span>Total Soal</span><span>{totalQuestions}</span></div>
-              <div className="flex justify-between"><span>Benar</span><span>{score.correct}</span></div>
-              <div className="flex justify-between"><span>Salah</span><span>{score.wrong}</span></div>
-              <div className="flex justify-between"><span>Persentase Benar</span><span>{percentCorrect}%</span></div>
-              <div className="flex justify-between"><span>Total Waktu</span><span>{duration} menit</span></div>
-              <div className="flex justify-between"><span>Waktu per Segment (S)</span><span>{Math.round(SEGMENT_DURATION)} detik</span></div>
-              <div className="flex justify-between"><span>⚡ Kecepatan kerja (PANKER)</span><span>{panker} ({getLabel("panker", Number(panker))})</span></div>
-              <div className="flex justify-between"><span>🎯 Ketelitian kerja (TINKER)</span><span>{tinker} ({getLabel("tinker", Number(tinker))})</span></div>
-              <div className="flex justify-between"><span>📈 Keajegan kerja (JANKER)</span><span>{janker} ({getLabel("janker", Number(janker))})</span></div>
-              <div className="flex justify-between"><span>💪 Ketahanan kerja (HANKER)</span><span>{hanker} ({getLabel("hanker", Number(hanker))})</span></div>
-            </div>
-
-            {/* Tombol Kembali */}
-            <div className="flex justify-center">
+          {/* Tombol Jawaban */}
+          <div className="grid grid-cols-3 gap-2.5 items-start">
+            {keyboardLayout.map((num, index) => (
               <button
-                onClick={() => {
-                  setShowModal(false);
-                  onEnd({ score, progressData, segmentCounts });
-                }}
-                className="cursor-pointer bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-500"
+                key={index}
+                onClick={() => handleAnswer(num)}
+                className={`cursor-pointer bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-500/30 text-slate-900 dark:text-white transition-all duration-150 rounded-xl py-3.5 text-xl font-bold shadow-sm hover:-translate-y-0.5 active:scale-95 ${index === keyboardLayout.length - 1 ? "col-start-2" : ""
+                  }`}
               >
-                Kembali
+                {num}
               </button>
-            </div>
+            ))}
           </div>
         </div>
-      )}
-    </div>
+      </div>
+
+      {
+        showModal && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-2xl w-full max-w-lg shadow-2xl overflow-y-auto max-h-[90vh] border border-slate-200 dark:border-white/10">
+              {/* Modal Header */}
+              <div className="bg-gradient-to-r from-indigo-500 to-violet-500 p-5 text-white">
+                <h2 className="text-xl font-bold text-center">📊 Hasil Tes Kraepelin</h2>
+              </div>
+              <div className="p-5">
+                {/* Grafik */}
+                <div className="mb-6">
+                  <h3 className="font-semibold mb-3 text-center text-slate-700 dark:text-slate-200">
+                    Grafik Produktivitas per Segmen
+                  </h3>
+                  <ResponsiveContainer width="100%" height={200}>
+                    <LineChart data={segmentChartData}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(99,102,241,0.15)" />
+                      <XAxis dataKey="segment" tick={{ fontSize: 12, fill: '#64748b' }} />
+                      <YAxis tick={{ fontSize: 12, fill: '#64748b' }} />
+                      <Tooltip
+                        contentStyle={{ background: '#1e293b', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 8, fontSize: 12 }}
+                        labelStyle={{ color: '#a5b4fc' }}
+                        itemStyle={{ color: '#e2e8f0' }}
+                      />
+                      <Line type="monotone" dataKey="jumlah" stroke="#6366f1" strokeWidth={2.5} dot={{ fill: '#6366f1', r: 4 }} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* Statistik */}
+                <div className="space-y-2 mb-6">
+                  {[
+                    { label: "Total Soal", val: totalQuestions },
+                    { label: "Benar", val: score.correct, color: "text-green-500" },
+                    { label: "Salah", val: score.wrong, color: "text-red-500" },
+                    { label: "Persentase Benar", val: `${percentCorrect}%` },
+                    { label: "Total Waktu", val: `${duration} menit` },
+                    { label: "Waktu per Segment", val: `${Math.round(SEGMENT_DURATION)} detik` },
+                    { label: "⚡ PANKER", val: `${panker} (${getLabel("panker", Number(panker))})` },
+                    { label: "🎯 TINKER", val: `${tinker} (${getLabel("tinker", Number(tinker))})` },
+                    { label: "📈 JANKER", val: `${janker} (${getLabel("janker", Number(janker))})` },
+                    { label: "💪 HANKER", val: `${hanker} (${getLabel("hanker", Number(hanker))})` },
+                  ].map(({ label, val, color }) => (
+                    <div key={label} className="flex justify-between items-center text-sm py-1.5 border-b border-slate-100 dark:border-white/5 last:border-0">
+                      <span className="text-slate-600 dark:text-slate-400">{label}</span>
+                      <span className={`font-semibold ${color || "text-slate-900 dark:text-white"}`}>{val}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Tombol Kembali */}
+                <button
+                  onClick={() => { setShowModal(false); onEnd({ score, progressData, segmentCounts }); }}
+                  className="cursor-pointer w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-indigo-500/25"
+                >
+                  Selesai
+                </button>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    </>
   );
 }
+

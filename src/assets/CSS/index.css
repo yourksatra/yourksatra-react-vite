@@ -1,16 +1,116 @@
 @import "tailwindcss";
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ── Design System Custom Properties ── */
+:root {
+  --font-sans: 'Outfit', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --color-accent-1: #6366f1;
+  --color-accent-2: #8b5cf6;
+  --color-accent-3: #a78bfa;
+  --gradient-accent: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
+  --gradient-accent-reverse: linear-gradient(135deg, var(--color-accent-2), var(--color-accent-1));
+  --gradient-bg: linear-gradient(180deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg-strong: rgba(255, 255, 255, 0.1);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  --glow-accent: 0 0 40px rgba(99, 102, 241, 0.15);
+  --glow-accent-strong: 0 0 60px rgba(99, 102, 241, 0.25);
+}
+
+.light {
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-bg-strong: rgba(255, 255, 255, 0.85);
+  --glass-border-strong: rgba(0, 0, 0, 0.12);
+  --glow-accent: 0 0 40px rgba(99, 102, 241, 0.1);
+  --glow-accent-strong: 0 0 60px rgba(99, 102, 241, 0.2);
+}
+
+/* ── Base ── */
+* {
+  font-family: var(--font-sans);
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
-html {
-  scroll-padding-top: 4rem;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
+
+/* ── Utility Classes ── */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card-strong {
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-accent);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.glow-shadow {
+  box-shadow: var(--glow-accent);
+}
+
+.glow-shadow-strong {
+  box-shadow: var(--glow-accent-strong);
+}
+
+/* ── Hero Clip Paths ── */
 .clip-diagonal {
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
 }
@@ -19,7 +119,7 @@ html {
   clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 150%);
 }
 
-
+/* ── Animations ── */
 @keyframes slide-down {
   0% {
     transform: translateY(-10%);
@@ -49,4 +149,74 @@ html {
 .animate-marquee {
   display: flex;
   animation: marquee linear infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 60px rgba(99, 102, 241, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.5), 0 0 80px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* ── Dot Pattern Background ── */
+.dot-pattern {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.light .dot-pattern {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+}
+
+/* ── Section Transition Gradient ── */
+.section-gradient-dark {
+  background: linear-gradient(180deg, #0f172a, #1e1b4b 50%, #0f172a);
+}
+
+.section-gradient-light {
+  background: linear-gradient(180deg, #f8fafc, #eef2ff 50%, #f8fafc);
 }

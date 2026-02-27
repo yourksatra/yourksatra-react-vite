@@ -11,7 +11,11 @@ export default function PortoSection({ selectedTab, setActivePage }) {
     if (selectedTab) setActiveTab(selectedTab);
   }, [selectedTab]);
 
-  const tabs = ["experience", "project", "skills"];
+  const tabs = [
+    { id: "experience", label: "Experience" },
+    { id: "project", label: "Project" },
+    { id: "skills", label: "Skills" },
+  ];
 
   const renderContent = () => {
     switch (activeTab) {
@@ -20,7 +24,7 @@ export default function PortoSection({ selectedTab, setActivePage }) {
       case "project":
         return <Projects onSeeMore={() => setActivePage("ProjectSection")} />;
       case "skills":
-        return <Skills onSeeDetail={() => setActivePage("SkillsSection")} />;;
+        return <Skills onSeeDetail={() => setActivePage("SkillsSection")} />;
       default:
         return null;
     }
@@ -29,47 +33,68 @@ export default function PortoSection({ selectedTab, setActivePage }) {
   return (
     <section
       id="portfolio"
-      className="min-h-[100svh] flex flex-col items-center bg-white dark:bg-gray-900"
+      className="relative min-h-[100svh] flex flex-col items-center bg-slate-50 dark:bg-slate-950 overflow-hidden py-20"
     >
-      {/* Title */}
-      <div
-        data-aos="fade-up"
-        className="h-15 w-full flex items-center justify-center bg-sky-500 md:h-20"
+      {/* Background accents — sama dengan section lain */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-indigo-500/30" />
+
+      {/* Section Heading */}
+      <motion.div
+        className="w-full text-center mb-10 px-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900">
-          PORTOFOLIO
+        <p className="text-xs font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-2">
+          My Work
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+          Portofolio
         </h2>
-      </div>
-      {/* tabs */}
-      <div
-        data-aos="fade-up"
-        data-aos-delay="200"
-        className="flex gap-6 mt-6 border-b border-gray-300 dark:border-gray-700"
+        <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm max-w-lg mx-auto">
+          Perjalanan, proyek, dan keahlian yang telah saya kembangkan
+        </p>
+      </motion.div>
+
+      {/* Tab Navigation — mirip navbar pill */}
+      <motion.div
+        className="flex gap-1 p-1 rounded-2xl glass-card mb-8"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.1 }}
       >
         {tabs.map((tab) => (
           <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`cursor-pointer pb-2 px-4 text-sm md:text-base font-medium text-center transition relative ${
-              activeTab === tab
-                ? "text-sky-500 border-b-2 border-sky-500"
-                : "text-gray-500 hover:text-sky-400"
-            }`}
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`relative cursor-pointer px-6 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 ${activeTab === tab.id
+                ? "text-white"
+                : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+              }`}
           >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            {activeTab === tab.id && (
+              <motion.div
+                layoutId="active-tab-pill"
+                className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 shadow-lg shadow-indigo-500/25"
+                transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+              />
+            )}
+            <span className="relative z-10">{tab.label}</span>
           </button>
         ))}
-      </div>
+      </motion.div>
 
       {/* Content with animation */}
-      <div className="mt-4 mb-4 w-full">
+      <div className="w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.35 }}
           >
             {renderContent()}
           </motion.div>
@@ -78,3 +103,4 @@ export default function PortoSection({ selectedTab, setActivePage }) {
     </section>
   );
 }
+

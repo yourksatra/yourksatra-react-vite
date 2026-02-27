@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import data from "../../assets/Data/experience.json";
 
-export default function experience({ jmlhdisplay, onSeeMore }) {
+export default function Experience({ jmlhdisplay, onSeeMore }) {
   const [selected, setSelected] = useState(null);
   const [currentImg, setCurrentImg] = useState(0);
   const modalContentRef = useRef(null);
   const intervalRef = useRef(null);
 
-  // 1) Sort data berdasarkan tanggal (newest -> oldest)
   const sorted = (data?.experience || []).slice().sort((a, b) => {
     const getDateKey = (item) => {
       try {
@@ -31,16 +31,12 @@ export default function experience({ jmlhdisplay, onSeeMore }) {
 
   useEffect(() => {
     if (selected === null) return;
-    // clear existing
     if (intervalRef.current) clearInterval(intervalRef.current);
-
     const len = (displayList[selected]?.Img || []).length;
     if (len <= 1) return;
-
     intervalRef.current = setInterval(() => {
       setCurrentImg((p) => (p + 1) % len);
     }, 30000);
-
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -56,15 +52,11 @@ export default function experience({ jmlhdisplay, onSeeMore }) {
       document.body.style.overflow = "";
       setCurrentImg(0);
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [selected]);
 
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") setSelected(null);
-    };
+    const onKey = (e) => { if (e.key === "Escape") setSelected(null); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
@@ -73,108 +65,92 @@ export default function experience({ jmlhdisplay, onSeeMore }) {
     if (selected === null) return;
     const len = displayList[selected]?.Img?.length || 1;
     setCurrentImg((p) => (p === 0 ? len - 1 : p - 1));
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
+    if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null; }
   };
 
   const handleNext = () => {
     if (selected === null) return;
     const len = displayList[selected]?.Img?.length || 1;
     setCurrentImg((p) => (p + 1) % len);
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
+    if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null; }
   };
 
   const handleBackdropClick = (e) => {
-    if (!modalContentRef.current) {
-      setSelected(null);
-      return;
-    }
-    if (!modalContentRef.current.contains(e.target)) {
-      setSelected(null);
-    }
+    if (!modalContentRef.current) { setSelected(null); return; }
+    if (!modalContentRef.current.contains(e.target)) setSelected(null);
   };
 
   return (
     <section id="experience">
       {/* Grid */}
-      <div className="grid grid-cols-2 gap-1 px-1 md:grid-cols-3 w-full">
+      <div className="grid grid-cols-2 gap-2 px-2 md:grid-cols-3 md:gap-3 w-full">
         {displayList.map((exp, idx) => (
-          <div
+          <motion.div
             key={idx}
-            className="relative cursor-pointer overflow-hidden rounded-sm group"
-            onClick={() => {
-              setSelected(idx);
-              setCurrentImg(0);
-            }}
+            className="relative cursor-pointer overflow-hidden rounded-xl group"
+            onClick={() => { setSelected(idx); setCurrentImg(0); }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: idx * 0.05 }}
           >
             <img
-              data-aos="fade-up"
-              data-aos-delay="200"
-              src={`/pengalaman/${exp.directory}/${exp.Img[0]}`}
+              src={`${import.meta.env.BASE_URL}/pengalaman/${exp.directory}/${exp.Img[0]}`}
               alt={exp.title}
-              className="w-full h-45 md:h-80 border border-sky-500 object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-44 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-              <span className="text-white font-semibold">Lihat detail</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span className="text-white font-semibold text-sm">{exp.title}</span>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Modal */}
       {selected !== null && displayList[selected] && (
         <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-2 md:p-6"
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-2 md:p-6"
           onMouseDown={handleBackdropClick}
           onTouchStart={handleBackdropClick}
         >
           <div
             ref={modalContentRef}
-            className="bg-white dark:bg-gray-800 rounded-md w-full max-w-xl
-            md:max-w-5xl grid grid-cols-1 md:grid-cols-2 overflow-hidden relative"
+            className="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-xl md:max-w-5xl grid grid-cols-1 md:grid-cols-2 overflow-hidden relative shadow-2xl"
             onMouseDown={(e) => e.stopPropagation()}
             onTouchStart={(e) => e.stopPropagation()}
           >
             {/* close */}
             <button
               onClick={() => setSelected(null)}
-              className="cursor-pointer absolute top-3 right-3 p-2 rounded-full text-gray-700 dark:text-gray-200 bg-white/60 dark:bg-gray-700/60 z-20"
+              className="cursor-pointer absolute top-3 right-3 p-2 rounded-full glass-card-strong z-20 hover:bg-white/20 transition"
               aria-label="Close modal"
             >
-              <X size={20} />
+              <X size={18} className="text-slate-700 dark:text-slate-200" />
             </button>
 
-            {/* Slideshow kiri */}
-            <div className="relative flex items-center justify-center bg-black/5 p-4">
+            {/* Slideshow */}
+            <div className="relative flex items-center justify-center bg-slate-100 dark:bg-slate-900 p-4">
               <img
-                src={`/pengalaman/${displayList[selected].directory}/${displayList[selected].Img[currentImg]}`}
+                src={`${import.meta.env.BASE_URL}/pengalaman/${displayList[selected].directory}/${displayList[selected].Img[currentImg]}`}
                 alt={displayList[selected].caption?.[currentImg] || ""}
-                className="w-full h-45 md:w-full md:h-[60vh] object-contain"
+                className="w-full h-44 md:w-full md:h-[60vh] object-contain rounded-lg"
               />
-              {/* caption */}
-              <p className="absolute text-xs bottom-0 left-1 right-1 md:bottom-3 md:left-4 md:right-4 md:text-sm text-white bg-gray-600 rounded-sm text-center">
+              <p className="absolute text-xs bottom-0 left-1 right-1 md:bottom-3 md:left-4 md:right-4 md:text-sm text-white bg-black/50 backdrop-blur-sm rounded-lg text-center py-1 px-2">
                 {displayList[selected].caption?.[currentImg] || ""}
               </p>
-
-              {/* prev/next */}
               {(displayList[selected].Img || []).length > 1 && (
                 <>
                   <button
                     onClick={handlePrev}
-                    className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
+                    className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm rounded-full text-white hover:bg-black/60 transition"
                     aria-label="Previous"
                   >
                     <ChevronLeft size={18} />
                   </button>
                   <button
                     onClick={handleNext}
-                    className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
+                    className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm rounded-full text-white hover:bg-black/60 transition"
                     aria-label="Next"
                   >
                     <ChevronRight size={18} />
@@ -183,39 +159,37 @@ export default function experience({ jmlhdisplay, onSeeMore }) {
               )}
             </div>
 
-            {/* Info kanan */}
-            <div className="p-4 md:p-6 overflow-y-auto text-sm md:text-base">
-              <h3 className="text-lg md:text-2xl font-bold mb-2 text-sky-500">
+            {/* Info */}
+            <div className="p-5 md:p-8 overflow-y-auto text-sm md:text-base">
+              <h3 className="text-lg md:text-2xl font-bold mb-3 gradient-text">
                 {displayList[selected].title}
               </h3>
-              <div className="flex flex-col mb-2 text-gray-700 dark:text-gray-300">
-                <div className="font-medium">
+              <div className="flex flex-col mb-3 text-slate-600 dark:text-slate-300">
+                <div className="font-medium text-slate-800 dark:text-slate-200">
                   {displayList[selected].organizer}
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-slate-500 dark:text-slate-400">
                   {displayList[selected].location}
                 </div>
-                <div className="text-sm text-gray-500 mt-1">
+                <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                   {displayList[selected].type === "period"
-                    ? `${displayList[selected].startDate} s.d ${
-                        displayList[selected].endDate ?? ""
-                      }`
+                    ? `${displayList[selected].startDate} s.d ${displayList[selected].endDate ?? ""}`
                     : displayList[selected].date}
                 </div>
               </div>
-
-              <p className="text-justify text-gray-800 dark:text-gray-200 leading-relaxed">
+              <p className="text-justify text-slate-700 dark:text-slate-300 leading-relaxed">
                 {displayList[selected].description}
               </p>
             </div>
           </div>
         </div>
       )}
+
       {displayList.length < 7 && (
-        <div data-aos="fade-up" className="flex justify-center mt-2">
+        <div className="flex justify-center mt-4">
           <button
             onClick={onSeeMore}
-            className="cursor-pointer bg-sky-500 w-full text-white py-2 px-4 hover:bg-sky-600 transition-colors"
+            className="cursor-pointer px-8 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
           >
             Lihat lainnya..
           </button>
