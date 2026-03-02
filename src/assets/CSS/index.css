@@ -64,16 +64,16 @@ body {
 /* ── Utility Classes ── */
 .glass-card {
   background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-card-strong {
   background: var(--glass-bg-strong);
-  border: 1px solid var(--glass-border-strong);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border-strong);
 }
 
 .gradient-text {
