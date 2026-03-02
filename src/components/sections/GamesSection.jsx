@@ -119,7 +119,7 @@ export default function GamesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-50px" }}
-                    className="gradient-border glass-card rounded-2xl p-6 glow-shadow flex flex-col hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                    className="glass-card gradient-border rounded-2xl p-6 glow-shadow flex flex-col hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer group"
                     onClick={() => handleCardClick(game)}
                   >
                     <div className="relative z-10 flex flex-col h-full">

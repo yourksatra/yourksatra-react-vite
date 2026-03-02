@@ -137,7 +137,7 @@ export default function AboutSection() {
             <motion.div
               variants={fadeUp}
               custom={5}
-              className="gradient-border glass-card rounded-2xl p-8 flex flex-col justify-center items-center"
+              className="glass-card gradient-border rounded-2xl p-8 flex flex-col justify-center items-center"
             >
               <div className="relative z-10 flex flex-col items-center">
                 <div className="flex items-start">
