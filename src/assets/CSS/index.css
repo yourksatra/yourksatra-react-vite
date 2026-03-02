@@ -85,12 +85,14 @@ body {
 
 .gradient-border {
   position: relative;
+  isolation: isolate;
 }
 
 .gradient-border::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: -1;
   border-radius: inherit;
   padding: 1px;
   background: var(--gradient-accent);

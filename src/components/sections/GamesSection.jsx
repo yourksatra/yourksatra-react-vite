@@ -122,30 +122,32 @@ export default function GamesSection() {
                     className="glass-card rounded-2xl p-6 gradient-border glow-shadow flex flex-col hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer group"
                     onClick={() => handleCardClick(game)}
                   >
-                    {/* Icon */}
-                    <div className="text-4xl mb-4">{game.icon}</div>
+                    <div className="relative z-10 flex flex-col h-full">
+                      {/* Icon */}
+                      <div className="text-4xl mb-4">{game.icon}</div>
 
-                    {/* Title & Desc */}
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight mb-2">
-                      {game.title}
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5 flex-1">
-                      {game.description}
-                    </p>
+                      {/* Title & Desc */}
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+                        {game.title}
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                        {game.description}
+                      </p>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {game.tags.map((tag, idx) => (
-                        <span key={idx} className="text-[11px] px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-600/10 text-sky-600 dark:text-sky-400 font-medium">
-                          {tag}
-                        </span>
-                      ))}
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1.5 mb-5">
+                        {game.tags.map((tag, idx) => (
+                          <span key={idx} className="text-[11px] px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-600/10 text-sky-600 dark:text-sky-400 font-medium">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Play Button */}
+                      <button className="cursor-pointer w-full py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 group-hover:shadow-xl group-hover:shadow-sky-600/30 transition-all duration-200">
+                        ▶ Play
+                      </button>
                     </div>
-
-                    {/* Play Button */}
-                    <button className="cursor-pointer w-full py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-600/25 group-hover:shadow-xl group-hover:shadow-sky-600/30 transition-all duration-200">
-                      ▶ Play
-                    </button>
                   </motion.div>
                 ))}
 

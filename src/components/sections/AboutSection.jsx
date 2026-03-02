@@ -139,15 +139,17 @@ export default function AboutSection() {
               custom={5}
               className="glass-card rounded-2xl p-8 flex flex-col justify-center items-center gradient-border"
             >
-              <div className="flex items-start">
-                <h2 className="text-6xl md:text-7xl font-black gradient-text">
-                  <AnimatedCounter target={totalProjects} />
-                </h2>
-                <Plus className="mt-1 w-8 h-8 text-sky-600" />
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="flex items-start">
+                  <h2 className="text-6xl md:text-7xl font-black gradient-text">
+                    <AnimatedCounter target={totalProjects} />
+                  </h2>
+                  <Plus className="mt-1 w-8 h-8 text-sky-600" />
+                </div>
+                <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">
+                  Project Selesai
+                </p>
               </div>
-              <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">
-                Project Selesai
-              </p>
             </motion.div>
           </div>
         </motion.div>
