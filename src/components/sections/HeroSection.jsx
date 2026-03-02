@@ -6,7 +6,7 @@ import {
   SiCodeigniter,
   SiLaravel,
 } from "react-icons/si";
-import heroFoto from "../../assets/Img/FOTO.png";
+import heroFoto from "../../assets/Img/FOTO.webp";
 
 export default function HeroSection() {
 

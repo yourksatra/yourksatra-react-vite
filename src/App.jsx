@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -9,11 +9,23 @@ import AboutSection from "./components/sections/AboutSection";
 import HeroSection from "./components/sections/HeroSection";
 import PortoSection from "./components/sections/PortoSection";
 import ContactSection from "./components/sections/ContactSection";
-import ExperienceSection from "./components/sections/ExperienceSection";
-import SkillsSection from "./components/sections/SkillsSection";
-import ProjectSection from "./components/sections/ProjectSection";
 import GamesSection from "./components/sections/GamesSection";
 import ScrollToTopButton from "./components/reusable/ScrollToTopButton";
+
+// Lazy-loaded: hanya ditampilkan saat navigasi, bukan di home
+const ExperienceSection = lazy(() => import("./components/sections/ExperienceSection"));
+const SkillsSection = lazy(() => import("./components/sections/SkillsSection"));
+const ProjectSection = lazy(() => import("./components/sections/ProjectSection"));
+
+// Fallback spinner saat lazy section sedang dimuat
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950">
+      <div className="w-8 h-8 rounded-full border-2 border-sky-600 border-t-transparent animate-spin" />
+    </div>
+  );
+}
+
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -61,13 +73,19 @@ export default function App() {
             </>
           )}
           {activePage === "ExperienceSection" && (
-            <ExperienceSection setActivePage={setActivePage} />
+            <Suspense fallback={<PageLoader />}>
+              <ExperienceSection setActivePage={setActivePage} />
+            </Suspense>
           )}
           {activePage === "SkillsSection" && (
-            <SkillsSection setActivePage={setActivePage} />
+            <Suspense fallback={<PageLoader />}>
+              <SkillsSection setActivePage={setActivePage} />
+            </Suspense>
           )}
           {activePage === "ProjectSection" && (
-            <ProjectSection setActivePage={setActivePage} />
+            <Suspense fallback={<PageLoader />}>
+              <ProjectSection setActivePage={setActivePage} />
+            </Suspense>
           )}
           <Footer setActivePage={setActivePage} />
         </>
