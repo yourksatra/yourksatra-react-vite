@@ -86,13 +86,14 @@ body {
 .gradient-border {
   position: relative;
   isolation: isolate;
+  border: 1px solid transparent;
+  background-clip: padding-box;
 }
 
 .gradient-border::before {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: -1;
   border-radius: inherit;
   padding: 1px;
   background: var(--gradient-accent);
@@ -101,6 +102,7 @@ body {
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   pointer-events: none;
+  z-index: -1;
 }
 
 .glow-shadow {
