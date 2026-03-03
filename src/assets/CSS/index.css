@@ -62,22 +62,17 @@ body {
 }
 
 /* ── Utility Classes ── */
-@layer utilities {
-  .glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    isolation: isolate;
-    will-change: transform;
-  }
+/* Note: intentionally outside @layer so these always win over Tailwind layers in prod build */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
 
-  .glass-card-strong {
-    background: var(--glass-bg-strong);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    isolation: isolate;
-    will-change: transform;
-  }
+.glass-card-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 .gradient-text {
@@ -87,26 +82,10 @@ body {
   background-clip: text;
 }
 
+/* gradient-border: pakai border (bukan box-shadow) agar tidak konflik
+   dengan class lain yg juga pakai box-shadow (contoh: glow-shadow). */
 .gradient-border {
-  position: relative;
-  isolation: isolate;
-  border: 1px solid transparent;
-  background-clip: padding-box;
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: var(--gradient-accent);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  pointer-events: none;
-  z-index: -1;
+  border: 1px solid rgba(14, 165, 233, 0.35);
 }
 
 .glow-shadow {
