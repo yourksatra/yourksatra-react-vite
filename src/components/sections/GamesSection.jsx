@@ -4,9 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import StartModal from "../reusable/StartModal";
 import KraepelinGame from "../games/KraepelinGame";
 
-// ── Game Registry ──────────────────────────────────────────────
-// Untuk menambahkan game baru, cukup tambahkan objek ke array ini
-// dan import komponen game-nya. Tidak perlu ubah layout/UI section.
+// ── Game Registry
 const gameRegistry = [
   {
     id: "kraepelin",
@@ -18,25 +16,31 @@ const gameRegistry = [
     component: "kraepelin",
     hasConfig: true,
   },
-  // Contoh slot kosong untuk game berikutnya (hapus comment ini saat ditambah):
-  // {
-  //   id: "memory",
-  //   title: "Memory Match",
-  //   description: "...",
-  //   icon: "🃏",
-  //   tags: ["Memori", "Strategi"],
-  //   component: "memory",
-  //   hasConfig: false,
-  // },
+  {
+    id: "memory",
+    title: "Memory Matrix",
+    description:
+      "Uji kecepatan dan ketajaman ingatanmu! Cocokkan pasangan kartu sebelum waktu habis.",
+    icon: "🧩",
+    tags: ["Memori", "Strategi", "Kognitif Thinking"],
+    component: "memory",
+    hasConfig: false,
+    activePage: "MemoryGame",
+  },
 ];
 
-export default function GamesSection() {
+export default function GamesSection({ setActivePage }) {
   const [activeGame, setActiveGame] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [gameConfig, setGameConfig] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleCardClick = (game) => {
+    // Games with a dedicated activePage open as a full page via App.jsx
+    if (game.activePage && setActivePage) {
+      setActivePage(game.activePage);
+      return;
+    }
     setActiveGame(game);
     if (game.hasConfig) {
       setShowModal(true);

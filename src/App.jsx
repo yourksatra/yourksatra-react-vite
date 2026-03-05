@@ -16,6 +16,7 @@ import ScrollToTopButton from "./components/reusable/ScrollToTopButton";
 const ExperienceSection = lazy(() => import("./components/sections/ExperienceSection"));
 const SkillsSection = lazy(() => import("./components/sections/SkillsSection"));
 const ProjectSection = lazy(() => import("./components/sections/ProjectSection"));
+const MemoryGame = lazy(() => import("./components/games/MemoryGame"));
 
 // Fallback spinner saat lazy section sedang dimuat
 function PageLoader() {
@@ -68,7 +69,7 @@ export default function App() {
                 selectedTab={selectedTab}
                 setActivePage={setActivePage}
               />
-              <GamesSection />
+              <GamesSection setActivePage={setActivePage} />
               <ContactSection />
             </>
           )}
@@ -85,6 +86,11 @@ export default function App() {
           {activePage === "ProjectSection" && (
             <Suspense fallback={<PageLoader />}>
               <ProjectSection setActivePage={setActivePage} />
+            </Suspense>
+          )}
+          {activePage === "MemoryGame" && (
+            <Suspense fallback={<PageLoader />}>
+              <MemoryGame setActivePage={setActivePage} />
             </Suspense>
           )}
           <Footer setActivePage={setActivePage} />
