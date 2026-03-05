@@ -5,6 +5,12 @@ import Breadcrumb from "../../reusable/Breadcrumb";
  * Deck themes for the Theme Switcher
  */
 export const THEMES = {
+    Alphabet: {
+        label: "Alphabet",
+        description: "Good for beginners",
+        icon: "🆎",
+        symbols: ["AB", "CD", "EF", "GH", "IJ", "KL", "MN", "OP", "QR", "ST", "UV", "WX"],
+    },
     Binaries: {
         label: "Binaries",
         description: "You're here for a challenge",
@@ -16,12 +22,6 @@ export const THEMES = {
         description: "You here, cuz you're weak",
         icon: "⚙️",
         symbols: ["🐍", "🗄️", "🐘", "🐙", "🛢️", "☁️", "🐳", "🔒", "🧬", "📡", "🔗", "🗝️"],
-    },
-    Alphabet: {
-        label: "Alphabet",
-        description: "Good for beginners",
-        icon: "🆎",
-        symbols: ["AB", "CD", "EF", "GH", "IJ", "KL", "MN", "OP", "QR", "ST", "UV", "WX"],
     },
 };
 

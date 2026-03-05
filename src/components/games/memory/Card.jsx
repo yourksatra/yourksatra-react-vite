@@ -12,7 +12,7 @@ export default function Card({ card, onClick }) {
     return (
         <motion.div
             className="relative cursor-pointer select-none"
-            style={{ perspective: "700px" }}
+            style={{ perspective: "1000px" }}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.25 }}
@@ -48,7 +48,7 @@ export default function Card({ card, onClick }) {
                         transform: "rotateY(180deg)",
                     }}
                 >
-                    <span className="text-4xl drop-shadow-md">{symbol}</span>
+                    <span className="lg:text-4xl text-2xl drop-shadow-md">{symbol}</span>
                     {isMatched && (
                         <motion.div
                             className="absolute inset-0 rounded-2xl border-2 border-emerald-400/60"
