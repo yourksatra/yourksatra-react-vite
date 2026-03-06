@@ -69,7 +69,7 @@ export default function ThemeSwitcher({ onStart, onBack }) {
                         <motion.button
                             key={key}
                             onClick={() => onStart(key)}
-                            className="glass-card gradient-border rounded-2xl p-6 flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-600/10 transition-all duration-300 cursor-pointer group"
+                            className="glass-card gradient-border rounded-2xl p-6 flex flex-col items-center text-center shadow-xl hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-600/20 transition-all duration-300 cursor-pointer group"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
