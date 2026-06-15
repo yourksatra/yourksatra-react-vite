@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 
 export default function ProjectCard({ project, onOpen }) {
+  const hasImage = project.images && project.images.thumbnail;
   const getImagePath = () =>
-    project.images?.thumbnail
+    hasImage
       ? `/projectFile/${project.images.folder}/${project.images.thumbnail}`
-      : `/projectFile/${project.images.folder}/0.png`;
+      : "";
 
   return (
     <motion.article
@@ -14,13 +15,20 @@ export default function ProjectCard({ project, onOpen }) {
       exit={{ opacity: 0 }}
       className="h-full bg-white dark:bg-slate-800/50 w-full rounded-xl glass-card overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
     >
-      <div className="relative overflow-hidden">
-        <img
-          src={getImagePath()}
-          alt={project.title}
-          className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+      <div className="relative overflow-hidden h-52 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+        {hasImage ? (
+          <img
+            src={getImagePath()}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+             <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-sky-500 via-transparent to-transparent blur-xl"></div>
+             <span className="text-slate-500 font-mono text-sm tracking-widest uppercase">Private Repository</span>
+          </div>
+        )}
         {/* Gradient overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
           <div className="flex flex-wrap gap-1.5">

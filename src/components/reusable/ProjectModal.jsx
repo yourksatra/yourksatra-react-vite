@@ -8,15 +8,16 @@ export default function ProjectModal({ project, onClose }) {
   const timerRef = useRef(null);
   const scrollRef = useRef(null);
 
+  const hasImages = project.images && project.images.thumbnail;
   const images =
-    project.images && project.images.total > 1
+    hasImages && project.images.total > 1
       ? Array.from({ length: project.images.total }, (_, i) => `${i + 1}.png`)
-      : project.images && project.images.thumbnail
+      : hasImages
         ? [project.images.thumbnail]
-        : ["1.png"];
+        : []; // empty array for no images
 
   const getImagePath = (img) =>
-    `/projectFile/${project.images.folder}/${img}`;
+    hasImages ? `/projectFile/${project.images.folder}/${img}` : "";
 
   // Auto slideshow
   useEffect(() => {
@@ -75,34 +76,43 @@ export default function ProjectModal({ project, onClose }) {
         <div className="hidden md:grid md:grid-cols-2">
           <div className="relative flex flex-col items-center justify-between bg-slate-100 dark:bg-slate-900 p-4">
             {/* Main Image */}
-            <div className="relative w-full h-auto aspect-video overflow-hidden rounded-xl">
-              {images.map((img, i) => (
-                <img
-                  key={i}
-                  src={getImagePath(img)}
-                  alt={`${project.title}-${i}`}
-                  className={`absolute inset-0 w-full h-[50svh] object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
-                    }`}
-                />
-              ))}
-
-              {images.length > 1 && (
+            <div className="relative w-full h-auto aspect-video overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+              {images.length > 0 ? (
                 <>
-                  <button
-                    onClick={() =>
-                      setIndex((i) => (i === 0 ? images.length - 1 : i - 1))
-                    }
-                    className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer hover:bg-black/60 transition"
-                  >
-                    <ChevronLeft />
-                  </button>
-                  <button
-                    onClick={() => setIndex((i) => (i + 1) % images.length)}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer hover:bg-black/60 transition"
-                  >
-                    <ChevronRight />
-                  </button>
+                  {images.map((img, i) => (
+                    <img
+                      key={i}
+                      src={getImagePath(img)}
+                      alt={`${project.title}-${i}`}
+                      className={`absolute inset-0 w-full h-[50svh] object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                  ))}
+
+                  {images.length > 1 && (
+                    <>
+                      <button
+                        onClick={() =>
+                          setIndex((i) => (i === 0 ? images.length - 1 : i - 1))
+                        }
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer hover:bg-black/60 transition"
+                      >
+                        <ChevronLeft />
+                      </button>
+                      <button
+                        onClick={() => setIndex((i) => (i + 1) % images.length)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer hover:bg-black/60 transition"
+                      >
+                        <ChevronRight />
+                      </button>
+                    </>
+                  )}
                 </>
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+                   <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-sky-500 via-transparent to-transparent blur-xl"></div>
+                   <span className="text-slate-500 font-mono text-lg tracking-widest uppercase">Private Repository</span>
+                </div>
               )}
             </div>
 
@@ -185,34 +195,43 @@ export default function ProjectModal({ project, onClose }) {
             {project.title}
           </h3>
 
-          <div className="relative w-full aspect-video overflow-hidden rounded-xl mb-4">
-            {images.map((img, i) => (
-              <img
-                key={i}
-                src={getImagePath(img)}
-                alt={`${project.title}-${i}`}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
-                  }`}
-              />
-            ))}
-
-            {images.length > 1 && (
+          <div className="relative w-full aspect-video overflow-hidden rounded-xl mb-4 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+            {images.length > 0 ? (
               <>
-                <button
-                  onClick={() =>
-                    setIndex((i) => (i === 0 ? images.length - 1 : i - 1))
-                  }
-                  className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer"
-                >
-                  <ChevronLeft size={16} />
-                </button>
-                <button
-                  onClick={() => setIndex((i) => (i + 1) % images.length)}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer"
-                >
-                  <ChevronRight size={16} />
-                </button>
+                {images.map((img, i) => (
+                  <img
+                    key={i}
+                    src={getImagePath(img)}
+                    alt={`${project.title}-${i}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
+                      }`}
+                  />
+                ))}
+
+                {images.length > 1 && (
+                  <>
+                    <button
+                      onClick={() =>
+                        setIndex((i) => (i === 0 ? images.length - 1 : i - 1))
+                      }
+                      className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer"
+                    >
+                      <ChevronLeft size={16} />
+                    </button>
+                    <button
+                      onClick={() => setIndex((i) => (i + 1) % images.length)}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm text-white rounded-full cursor-pointer"
+                    >
+                      <ChevronRight size={16} />
+                    </button>
+                  </>
+                )}
               </>
+            ) : (
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+                   <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-sky-500 via-transparent to-transparent blur-xl"></div>
+                   <span className="text-slate-500 font-mono text-sm tracking-widest uppercase">Private Repository</span>
+              </div>
             )}
           </div>
 

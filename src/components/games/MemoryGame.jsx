@@ -29,6 +29,7 @@ export default function MemoryGame({ setActivePage }) {
         totalPairs,
         accuracyRate,
         isWon,
+        reset: resetGame,
     } = useMemoryGame(theme?.symbols ?? []);
 
     const handleTimeUp = () => {
@@ -46,11 +47,13 @@ export default function MemoryGame({ setActivePage }) {
 
     // When all pairs matched → stop timer and show result
     useEffect(() => {
-        if (isWon && screen === "playing") {
+        // Only trigger result if the screen is still 'playing' and the game is actually won.
+        // We ensure we don't trigger this right after a game is reset (where totalPairs might be 0 momentarily).
+        if (isWon && screen === "playing" && totalPairs > 0) {
             stopTimer();
             setScreen("result");
         }
-    }, [isWon, screen, stopTimer]);
+    }, [isWon, screen, stopTimer, totalPairs]);
 
     const handleThemeStart = (themeKey) => {
         setSelectedTheme(themeKey);
@@ -68,12 +71,17 @@ export default function MemoryGame({ setActivePage }) {
     const handleReplay = () => {
         stopTimer();
         resetTimer();
+        resetGame();
         setSelectedTheme(null);
         setScreen("theme-select");
     };
 
     const handleBackToGames = () => {
         stopTimer();
+        resetTimer();
+        resetGame();
+        setSelectedTheme(null);
+        setScreen("theme-select");
         setActivePage("home");
         // Scroll to #games section after navigation
         setTimeout(() => {

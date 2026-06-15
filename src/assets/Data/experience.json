@@ -1,6 +1,18 @@
 {
     "experience": [
         {
+            "title": "Back-End Programmer",
+            "type": "period",
+            "startDate": "2025-10",
+            "endDate": "2026-04",
+            "description": "Selama bekerja di PT. Javan Cipta Solusi, saya berkontribusi pada beberapa proyek skala enterprise: (1) PROGRAMMER DASHBOARD (Internal): Mengembangkan sistem monitoring (NextJS & ExpressJS) menggunakan Prisma ORM, integrasi OTP via bot Telegram, implementasi JWT Session, Sentry, Rate Limiting, serta pipeline CI/CD menuju SonarQube. (2) TELKOM E-AUCTION: Meningkatkan UI halaman bid (React JSX), merevisi logika controller untuk validasi bidding dan tie-breaking mechanism, serta meningkatkan coverage via PHPUnit. (3) KPK SINERGI, DIGITAL NASIONAL, & KPK DEWAS A: Mengembangkan backend service layer untuk log modul KPM dan berhasil memperbaiki pipeline SonarQube (Failed → Pass) melalui remediasi bugs & security hotspots, pembuatan ekstensif unit testing, dan refactoring untuk menurunkan code smells.",
+            "organizer": "PT. Javan Cipta Solusi",
+            "location": "Yogyakarta, Indonesia",
+            "directory": "javancs",
+            "Img": ["Kantor.jpg", "PejuangKontrak.jpg"],
+            "caption": ["Kantor PT. Javan Cipta Solusi", "Tim Programmer Kontrak"]
+        },
+        {
             "title": "Programmer Internship",
             "type": "period",
             "startDate": "2024-09",

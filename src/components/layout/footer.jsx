@@ -47,7 +47,7 @@ export default function Footer({ setActivePage }) {
               Satria Bagas
             </h3>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
-              Fullstack Web Developer
+              Backend Developer
             </p>
           </div>
 

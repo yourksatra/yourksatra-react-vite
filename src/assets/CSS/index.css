@@ -206,3 +206,155 @@ body {
 .section-gradient-light {
   background: linear-gradient(180deg, #f8fafc, #eef2ff 50%, #f8fafc);
 }
+
+/* ── Code Terminal ── */
+.code-terminal {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', ui-monospace, monospace;
+}
+
+.code-terminal-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Additional Animations ── */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(15px) rotate(-2deg); }
+}
+
+@keyframes blink-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+.cursor-blink {
+  animation: blink-cursor 1s step-end infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Status Badge Pulse ── */
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+.status-dot {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* ── Phase 6: Polish & Micro-interactions ── */
+
+/* Smooth section fade-in on scroll */
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-reveal {
+  animation: section-reveal 0.6s ease-out both;
+}
+
+/* Refined glass-card hover lift */
+.glass-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+}
+
+/* Subtle animated underline for inline links */
+.animated-underline {
+  position: relative;
+  display: inline;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Focus ring for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent-1);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Improved gradient placeholder shimmer for private repos */
+@keyframes private-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.private-placeholder {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 1) 0%,
+    rgba(30, 41, 59, 1) 25%,
+    rgba(15, 23, 42, 1) 50%,
+    rgba(30, 41, 59, 1) 75%,
+    rgba(15, 23, 42, 1) 100%
+  );
+  background-size: 400% 100%;
+  animation: private-shimmer 8s linear infinite;
+}
+
+/* Smooth page transitions */
+#root {
+  min-height: 100vh;
+}
+
+/* Prevent layout shifts on image loading */
+img {
+  content-visibility: auto;
+}

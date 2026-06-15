@@ -1,9 +1,83 @@
 {
   "projects": [
     {
-      "title": "Website Pelaporan SPM-BK di Dinas Kesehatan Kab Sumbawa",
-      "description": "Project ini dikembangkan untuk memfasilitasi pelaporan data capaian Standar Pelayanan Minimal (SPM) Bidang Kesehatan di Dinas Kesehatan Kabupaten Sumbawa. Sistem dibangun menggunakan Laravel 10 dengan basis data MySQL untuk memastikan pengelolaan dan pelaporan data yang akurat dan efisien.",
-      "techInformation": ["PHP", "JavaScript", "Laravel", "MySQL", "Bootstrap", "JQuery"],
+      "title": "TELKOM E-AUCTION",
+      "description": "Platform pelelangan elektronik berskala nasional. Fokus pada logika backend transaksional seperti mekanisme tie-breaking pada proses bidding, validasi limit digit budget, dan analisis historical bid. Juga melakukan perbaikan pada UI vendor dashboard menggunakan React JSX, serta menambahkan unit testing menggunakan PHPUnit untuk memastikan reliabilitas fitur lelang.",
+      "techInformation": [
+        "Laravel",
+        "React JSX",
+        "MySQL",
+        "PHPUnit",
+        "GitLab CI"
+      ],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": null
+    },
+    {
+      "title": "PROGRAMMER DASHBOARD (Internal)",
+      "description": "Sistem monitoring aktivitas programmer dengan arsitektur terpisah (NextJS & ExpressJS). Merancang service layer menggunakan Prisma ORM, membangun API autentikasi via bot Telegram (OTP & JWT), dan mengimplementasikan Rate Limiter. Menerapkan standar kualitas tinggi dengan Sentry logging, unit testing, dan setup CI/CD pipeline otomatis menuju SonarQube.",
+      "techInformation": [
+        "ExpressJS",
+        "NextJS",
+        "Prisma",
+        "PostgreSQL",
+        "Sentry",
+        "SonarQube"
+      ],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": null
+    },
+    {
+      "title": "KPK SINERGI & DEWAS A",
+      "description": "Aplikasi internal operasional berskala enterprise. Bertanggung jawab dalam pengembangan service layer untuk pencatatan log aktivitas modul, serta secara intensif memelihara kualitas sistem dengan menambahkan unit test untuk meningkatkan coverage dan melakukan refactoring kode untuk menurunkan point code smells.",
+      "techInformation": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "PHPUnit",
+        "Refactoring"
+      ],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": null
+    },
+    {
+      "title": "DIGITAL NASIONAL",
+      "description": "Optimasi kode dan keamanan untuk layanan digital nasional. Berhasil membalikkan status SonarQube pipeline dari Failed menjadi Pass dengan strategi: membuat puluhan unit test baru untuk meningkatkan coverage, meresolve bugs dan security hotspots, serta refactoring untuk mengeliminasi code smells.",
+      "techInformation": [
+        "Laravel",
+        "PHP",
+        "SonarQube",
+        "Security",
+        "Testing"
+      ],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": null
+    },
+    {
+      "title": "Website Pelaporan SPM-BK di Dinas Kesehatan",
+      "description": "Sistem pelaporan data capaian Standar Pelayanan Minimal (SPM) Bidang Kesehatan Kabupaten Sumbawa. Sistem dibangun menggunakan Laravel 10 dengan basis data MySQL untuk memastikan agregasi, pelaporan, dan pengelolaan data fasilitas kesehatan yang akurat.",
+      "techInformation": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "Bootstrap"
+      ],
       "button": {
         "active": false,
         "link": null,
@@ -16,24 +90,33 @@
       }
     },
     {
-      "title":"Program Jual Beli Emas (JAVA)",
-      "description": "Program konsol sederhana untuk simulasi jual beli emas menggunakan bahasa Java dengan penerapan OOP dan exception handling. Proyek ini adalah versi Java dari simulasi jual beli emas berbasis konsol, didesain menggunakan konsep yang sama seperti pada versi Kotlin.",
-      "techInformation": ["Java", "Intellij IDEA"],
+      "title": "HealthyDoc Medical Record System",
+      "description": "Platform rekam medis elektronik. Fokus pada sisi backend menggunakan CodeIgniter 3 untuk mengelola manajemen data riwayat pasien secara aman, membangun relasi database, dan mengimplementasikan sistem autentikasi perawat/dokter.",
+      "techInformation": [
+        "PHP",
+        "CodeIgniter",
+        "MySQL",
+        "JavaScript"
+      ],
       "button": {
-        "active": true,
-        "link": "https://github.com/yourksatra/JualBeliEmas-JavaVersion",
-        "title": "Buka Repository"
+        "active": false,
+        "link": null,
+        "title": null
       },
       "images": {
-        "folder": "githubThumbnail",
+        "folder": "project4",
         "thumbnail": "1.png",
-        "total": 0
+        "total": 17
       }
     },
     {
-      "title": "Inventarisasi Laboratorium Fisioterapi UMS",
-      "description": "Saya mengembangkan sistem peminjaman alat laboratorium berbasis website untuk mendukung pengelolaan inventaris di Laboratorium Fisioterapi Universitas Muhammadiyah Surakarta. Aplikasi ini membantu proses peminjaman dan pelacakan alat agar lebih efisien dan terstruktur.",
-      "techInformation": ["PHP", "CodeIgniter", "MySQL", "Bootstrap"],
+      "title": "Web Inventarisasi Laboratorium UMS",
+      "description": "Sistem peminjaman alat laboratorium Fisioterapi Universitas Muhammadiyah Surakarta. Mengelola siklus peminjaman barang dan mengimplementasikan validasi ketersediaan stok lab secara otomatis pada backend PHP CodeIgniter.",
+      "techInformation": [
+        "PHP",
+        "CodeIgniter",
+        "MySQL"
+      ],
       "button": {
         "active": false,
         "link": null,
@@ -46,9 +129,72 @@
       }
     },
     {
+      "title": "Program Jual Beli Emas (JAVA & Kotlin)",
+      "description": "Aplikasi konsol backend-heavy yang mensimulasikan proses komputasi transaksional jual beli emas menggunakan konsep Object-Oriented Programming (OOP) dan penanganan Exception yang ketat.",
+      "techInformation": [
+        "Java",
+        "Kotlin",
+        "Intellij IDEA",
+        "OOP"
+      ],
+      "button": {
+        "active": true,
+        "link": "https://github.com/yourksatra/JualBeliEmas.Kotlin",
+        "title": "Buka Repository"
+      },
+      "images": {
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "REST-AJAX-CURL Integration",
+      "description": "Project eksperimental untuk integrasi REST API, manipulasi data DOM, dan CURL. Fokus pada pengolahan format data (JSON, XML, CSV) pada sisi server menggunakan PHP dan mekanisme pengambilan data eksternal.",
+      "techInformation": [
+        "PHP",
+        "REST API",
+        "CURL",
+        "Ajax"
+      ],
+      "button": {
+        "active": true,
+        "link": "https://github.com/yourksatra/REST-AJAX-CURL",
+        "title": "Buka Repository"
+      },
+      "images": {
+        "folder": "githubThumbnail",
+        "thumbnail": "1.png",
+        "total": 0
+      }
+    },
+    {
+      "title": "Program Kasir Rental Mobil (CPP)",
+      "description": "Program CLI kasir menggunakan bahasa C++. Fokus murni pada algoritma dan logika transaksional backend, perhitungan biaya dinamis, serta pengelolaan data di memori secara real-time.",
+      "techInformation": [
+        "C++",
+        "CLI",
+        "Logic"
+      ],
+      "button": {
+        "active": false,
+        "link": null,
+        "title": null
+      },
+      "images": {
+        "folder": "project5",
+        "thumbnail": "1.png",
+        "total": 11
+      }
+    },
+    {
       "title": "Yourksatra Github Page",
       "description": "Project ini merupakan portofolio web pertama saya yang dikembangkan menggunakan HTML5, Bootstrap, dan JavaScript. Website ini menampilkan informasi profil secara responsif dalam satu halaman yang sederhana namun fungsional.",
-      "techInformation": ["HTML", "JavaScript", "Bootstrap"],
+      "techInformation": [
+        "HTML",
+        "JavaScript",
+        "Bootstrap"
+      ],
       "button": {
         "active": true,
         "link": "https://yourksatra.github.io",
@@ -63,7 +209,11 @@
     {
       "title": "Sistem Rekomendasi Film (IPYNB)",
       "description": "Project ini merupakan sistem rekomendasi film berbasis Python yang memanfaatkan Spearman Rank Correlation dan Item-Based Collaborative Filtering. Dibangun menggunakan Google Colab, proyek ini bertujuan memberikan rekomendasi film berdasarkan genre dan pemeran (aktor).",
-      "techInformation": ["Python", "Google Colab", "Kaggle"],
+      "techInformation": [
+        "Python",
+        "Google Colab",
+        "Kaggle"
+      ],
       "button": {
         "active": false,
         "link": null,
@@ -76,54 +226,14 @@
       }
     },
     {
-      "title": "HealthyDoc",
-      "description": "Saya merancang dan mengembangkan platform rekam medis elektronik bernama HealthyDoc menggunakan CodeIgniter 3. Website ini berfungsi sebagai sistem digital untuk penyimpanan dan pengelolaan data kesehatan pasien dengan tampilan modern dan interaktif.",
-      "techInformation": ["PHP", "CodeIgniter", "Bootstrap", "JavaScript", "JQuery", "MySQL"],
-      "button": {
-        "active": false,
-        "link": null,
-        "title": null
-      },
-      "images": {
-        "folder": "project4",
-        "thumbnail": "1.png",
-        "total": 17
-      }
-    },
-    {
-      "title": "Program Kasir Rental atau Peminjaman Mobil (CPP)",
-      "description": "Project ini merupakan program kasir sederhana untuk sistem peminjaman mobil yang dikembangkan menggunakan bahasa C++. Aplikasi dijalankan melalui CMD dengan fitur input data pelanggan, perhitungan biaya, dan tampilan transaksi berbasis teks.",
-      "techInformation": ["CPP/C++", "MinGW", "CMD"],
-      "button": {
-        "active": false,
-        "link": null,
-        "title": null
-      },
-      "images": {
-        "folder": "project5",
-        "thumbnail": "1.png",
-        "total": 11
-      }
-    },
-    {
-      "title": "Program Jual Beli Emas",
-      "description": "Program konsol berbasis Kotlin yang mensimulasikan proses jual beli emas menggunakan konsep OOP (class, inheritance, polymorphism) serta penanganan exception. Aku mengembangkan project ini menggunakan Intellij IDEA dan JDK Azul 1.8.0.",
-      "techInformation": ["Intellij IDEA", "Kotlin"],
-      "button": {
-        "active": true,
-        "link": "https://github.com/yourksatra/JualBeliEmas.Kotlin",
-        "title": "Buka Repository"
-      },
-      "images": {
-        "folder": "githubThumbnail",
-        "thumbnail": "1.png",
-        "total": 0
-      }
-    },
-    {
       "title": "Project Web Toko Kita",
       "description": "Project ini merupakan pengalaman pertama saya menggunakan framework CodeIgniter 3 untuk memperbaiki dan menambah fitur pada website toko online. Proyek ini dibuat sebagai tugas responsi UTS mata kuliah Digital Bisnis.",
-      "techInformation": ["CodeIgniter", "PHP", "JavaScript", "Bootstrap"],
+      "techInformation": [
+        "CodeIgniter",
+        "PHP",
+        "JavaScript",
+        "Bootstrap"
+      ],
       "button": {
         "active": false,
         "link": null,
@@ -138,7 +248,11 @@
     {
       "title": "Program Reservasi Hotel Sederhana (CPP)",
       "description": "Project ini adalah program reservasi hotel berbasis C++ dengan penerapan konsep linked list untuk mengelola data kamar dan pelanggan. Aplikasi ini memiliki fitur check-in, check-out, pencarian, serta pengurutan data pelanggan secara otomatis.",
-      "techInformation": ["CPP/C++", "MinGW", "CMD"],
+      "techInformation": [
+        "CPP/C++",
+        "MinGW",
+        "CMD"
+      ],
       "button": {
         "active": true,
         "link": "https://github.com/yourksatra/First_CPP_Project",
@@ -153,7 +267,11 @@
     {
       "title": "Web Promosi Resto Mr.B",
       "description": "Project ini merupakan tampilan front-end sederhana untuk website promosi bisnis kuliner. Dibuat menggunakan HTML, CSS, dan JavaScript sebagai tugas akhir mata kuliah pengenalan perancangan web dengan desain yang bersih dan interaktif.",
-      "techInformation": ["HTML", "CSS", "JavaScript"],
+      "techInformation": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "button": {
         "active": false,
         "link": null,
@@ -168,7 +286,12 @@
     {
       "title": "Test Build FrontEnd APP Using NextJS",
       "description": "Project ini merupakan percobaan awal saya dalam membangun aplikasi front-end menggunakan Next.js dan Tailwind CSS. Fitur utama yang dibuat meliputi halaman login, register, serta autentikasi lokal menuju dashboard pengguna.",
-      "techInformation": ["NextJS", "TSX", "JavaScript", "Tailwind CSS"],
+      "techInformation": [
+        "NextJS",
+        "TSX",
+        "JavaScript",
+        "Tailwind CSS"
+      ],
       "button": {
         "active": false,
         "link": null,
@@ -181,24 +304,13 @@
       }
     },
     {
-      "title": "REST-AJAX-CURL",
-      "description": "Project ini mempelajari integrasi REST, AJAX, dan CURL dalam pengambilan serta manipulasi data web. Implementasi meliputi manipulasi DOM, pengolahan data JSON, XML, dan CSV, serta penggunaan XHR dan CURL untuk koneksi API.",
-      "techInformation": ["HTML", "PHP", "JavaScript", "Ajax", "CURL"],
-      "button": {
-        "active": true,
-        "link": "https://github.com/yourksatra/REST-AJAX-CURL",
-        "title": "Buka Repository"
-      },
-      "images": {
-        "folder": "githubThumbnail",
-        "thumbnail": "1.png",
-        "total": 0
-      }
-    },
-    {
       "title": "Project Website Baca Komik Sederhana",
       "description": "Project ini merupakan website baca komik sederhana yang dikembangkan menggunakan JavaScript untuk manipulasi DOM. Pengguna dapat menavigasi komik melalui tombol Prev, Daftar Chapter, dan Next dalam satu halaman HTML.",
-      "techInformation": ["HTML", "JavaScript", "Bootstrap"],
+      "techInformation": [
+        "HTML",
+        "JavaScript",
+        "Bootstrap"
+      ],
       "button": {
         "active": false,
         "link": null,
@@ -213,7 +325,10 @@
     {
       "title": "Latihan HTML-CSS",
       "description": "Project latihan untuk memahami struktur HTML dan penerapan CSS eksternal. Fokus utama proyek ini adalah membuat tampilan web yang proporsional, terorganisir, dan mudah diatur dari sisi tampilan.",
-      "techInformation": ["HTML", "CSS"],
+      "techInformation": [
+        "HTML",
+        "CSS"
+      ],
       "button": {
         "active": true,
         "link": "https://github.com/yourksatra/Latihan-HTML-CSS",
@@ -228,7 +343,9 @@
     {
       "title": "First Try Kotlin",
       "description": "Project pertama menggunakan Kotlin untuk memahami konsep dasar seperti fungsi ekstensi dan lambda expression. Program ini menghitung luas serta keliling persegi panjang dengan pendekatan pemrograman fungsional sederhana.",
-      "techInformation": ["Kotlin"],
+      "techInformation": [
+        "Kotlin"
+      ],
       "button": {
         "active": true,
         "link": "https://github.com/yourksatra/Latihan-Kotlin-BP1",
@@ -243,7 +360,10 @@
     {
       "title": "Project Pertama Membuat Web",
       "description": "Project pertama saya dalam belajar pengembangan web menggunakan HTML dasar dan Bootstrap. Fokus utamanya adalah memahami elemen-elemen HTML seperti heading, list, dan table untuk membangun tampilan web terstruktur.",
-      "techInformation": ["HTML", "Bootstrap"],
+      "techInformation": [
+        "HTML",
+        "Bootstrap"
+      ],
       "button": {
         "active": true,
         "link": "https://github.com/yourksatra/FirstWebProject",

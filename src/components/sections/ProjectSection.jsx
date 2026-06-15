@@ -12,7 +12,7 @@ export default function ProjectSection({ setActivePage }) {
   const getImagePath = (project) =>
     project.images?.thumbnail
       ? `/projectFile/${project.images.folder}/${project.images.thumbnail}`
-      : `/projectFile/${project.images.folder}/0.png`;
+      : null;
 
   return (
     <section id="projects" className="flex flex-col items-center min-w-full bg-slate-50 dark:bg-slate-950">
@@ -36,12 +36,19 @@ export default function ProjectSection({ setActivePage }) {
                 {/* Image */}
                 <div className="w-full md:w-1/2 group">
                   <div className="relative overflow-hidden rounded-2xl glass-card glow-shadow">
-                    <img
-                      src={getImagePath(project)}
-                      alt={project.title}
-                      className="w-full h-56 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                    {getImagePath(project) ? (
+                      <img
+                        src={getImagePath(project)}
+                        alt={project.title}
+                        className="w-full h-56 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-56 md:h-72 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+                        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-sky-500 via-transparent to-transparent blur-xl"></div>
+                        <span className="text-slate-500 font-mono text-sm tracking-widest uppercase">Private Repository</span>
+                      </div>
+                    )}
                     {/* Tech badge overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <div className="flex flex-wrap gap-1.5">

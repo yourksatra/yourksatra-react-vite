@@ -2,17 +2,17 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Plus } from "lucide-react";
 import useProjects from "../../hooks/useProjects";
+import heroPhoto from "../../assets/Img/Hero1.png";
 
+/* ── Animated Counter ── */
 function AnimatedCounter({ target, duration = 2 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  // Tambahkan margin negative agar trigger sedikit lebih cepat/konsisten
   const isInView = useInView(ref, { once: true, amount: "all" });
 
   useEffect(() => {
     if (!isInView || target === 0) return;
     let start = 0;
-    // Gunakan Math.max untuk memastikan step setidaknya 1 jika target kecil
     const step = Math.max(target / (duration * 60), 0.5);
     const timer = setInterval(() => {
       start += step;
@@ -29,13 +29,13 @@ function AnimatedCounter({ target, duration = 2 }) {
   return <span ref={ref}>{count}</span>;
 }
 
+/* ── About Section ── */
 export default function AboutSection() {
   const projects = useProjects();
   const totalProjects = projects.length;
-  const sectionRef = useRef(null);
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 24 },
     visible: (i = 0) => ({
       opacity: 1,
       y: 0,
@@ -46,18 +46,18 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col justify-center items-center px-6 py-20 bg-slate-50 dark:bg-slate-950 overflow-hidden"
+      className="relative flex flex-col justify-center items-center px-6 py-24 md:py-32 bg-slate-50 dark:bg-slate-950 overflow-hidden"
     >
-      {/* Background accents */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-sky-600/30" />
+      {/* Subtle top divider line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent to-sky-600/20" />
 
-      <div className="max-w-6xl w-full" ref={sectionRef}>
-        {/* Section heading */}
+      <div className="max-w-5xl w-full">
+        {/* Section label */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-14"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
           <motion.p
             variants={fadeUp}
@@ -73,83 +73,121 @@ export default function AboutSection() {
           >
             Tentang Saya
           </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            custom={2}
-            className="mt-3 text-slate-500 dark:text-slate-400 text-sm max-w-lg mx-auto"
-          >
-            Sekilas mengenai perjalanan dan pengalaman saya di dunia teknologi
-          </motion.p>
         </motion.div>
 
-        {/* Bento Grid */}
+        {/* ── Main content: Photo + Text ── */}
         <motion.div
-          className="space-y-4"
+          className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-14"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
-          {/* Large intro card */}
-          <motion.div
-            variants={fadeUp}
-            custom={3}
-            className="glass-card rounded-2xl p-8 md:p-10 glow-shadow"
-          >
-            <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base leading-relaxed">
-              Saya memiliki ketertarikan yang kuat dalam bidang pengembangan
-              website, khususnya di sisi{" "}
-              <span className="font-semibold gradient-text">
-                Back-End Development
-              </span>
-              . Spesialisasi saya adalah membangun aplikasi web yang efisien dan
-              skalabel menggunakan{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">Laravel</span>{" "}
-              maupun{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">CodeIgniter</span>.
-              Saya terbiasa mengelola basis data menggunakan{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">MySQL</span> dan
-              juga menguasai bahasa pemrograman lain seperti{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">JavaScript</span>,{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">Python</span>,
-              serta{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">C++</span>.
-            </p>
+          {/* Photo */}
+          <motion.div variants={fadeUp} custom={2} className="flex-shrink-0">
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-br from-sky-600/20 to-blue-500/20 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <img
+                src={heroPhoto}
+                alt="N. Satria Bagass"
+                className="relative w-48 h-48 md:w-56 md:h-62 rounded-2xl object-cover object-top shadow-lg"
+              />
+            </div>
           </motion.div>
 
-          {/* Bottom grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Philosophy card */}
+          {/* Text content */}
+          <div className="flex-1 min-w-0 text-center md:text-left">
+            <motion.p
+              variants={fadeUp}
+              custom={3}
+              className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed"
+            >
+              Saya adalah{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                Backend Developer
+              </span>{" "}
+              dengan pengalaman membangun aplikasi web berskala nasional di{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                PT. Javan Cipta Solusi
+              </span>
+              . Spesialisasi saya mencakup perancangan arsitektur API, pengembangan
+              layanan backend menggunakan{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                Laravel
+              </span>{" "}
+              dan{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">
+                Node.js
+              </span>
+              , serta menjaga kualitas kode melalui unit testing, SonarQube, dan
+              CI/CD.
+            </motion.p>
+
+            {/* Stats row */}
             <motion.div
               variants={fadeUp}
               custom={4}
-              className="md:col-span-2 glass-card rounded-2xl p-8 flex flex-col justify-center"
+              className="flex items-center justify-center md:justify-start gap-8 mt-7"
             >
-              <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base leading-relaxed">
-                Saya adalah pembelajar yang proaktif dan detail-oriented,
-                menjunjung tinggi praktik penulisan kode yang bersih dan
-                kolaborasi tim. Bagi saya, setiap baris kode adalah jembatan
-                menuju inovasi, dan setiap teknologi baru adalah pintu untuk
-                memperluas pengetahuan.
-              </p>
+              {/* Project count */}
+              <div className="text-center md:text-left">
+                <div className="flex items-baseline gap-0.5">
+                  <span className="text-3xl font-black gradient-text">
+                    <AnimatedCounter target={totalProjects} />
+                  </span>
+                  <Plus className="w-5 h-5 text-sky-600" />
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
+                  Project
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="w-px h-10 bg-slate-200 dark:bg-slate-700" />
+
+              {/* Enterprise projects */}
+              <div className="text-center md:text-left">
+                <span className="text-3xl font-black gradient-text">4</span>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
+                  Proyek Enterprise
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="w-px h-10 bg-slate-200 dark:bg-slate-700" />
+
+              {/* SonarQube */}
+              <div className="text-center md:text-left">
+                <span className="text-3xl font-black text-green-500">✓</span>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
+                  SonarQube Pass
+                </p>
+              </div>
             </motion.div>
 
-            {/* Stat card */}
+            {/* Tech badges */}
             <motion.div
               variants={fadeUp}
               custom={5}
-              className="glass-card gradient-border rounded-2xl p-8 flex flex-col justify-center items-center"
+              className="flex flex-wrap justify-center md:justify-start gap-2 mt-6"
             >
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="flex items-start">
-                  <h2 className="text-6xl md:text-7xl font-black gradient-text">
-                    <AnimatedCounter target={totalProjects} />
-                  </h2>
-                  <Plus className="mt-1 w-8 h-8 text-sky-600" />
-                </div>
-                <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">
-                  Project Selesai
-                </p>
-              </div>
+              {[
+                "PHP",
+                "Laravel",
+                "Node.js",
+                "Express",
+                "MySQL",
+                "REST API",
+                "PHPUnit",
+                "Docker",
+                "CI/CD",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="text-xs px-3 py-1.5 rounded-lg glass-card font-medium text-slate-600 dark:text-slate-400"
+                >
+                  {tech}
+                </span>
+              ))}
             </motion.div>
           </div>
         </motion.div>

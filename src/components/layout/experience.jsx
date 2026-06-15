@@ -94,12 +94,21 @@ export default function Experience({ jmlhdisplay, onSeeMore }) {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: idx * 0.05 }}
           >
-            <img
-              src={`/pengalaman/${exp.directory}/${exp.Img[0]}`}
-              alt={exp.title}
-              className="w-full h-44 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
+            {exp.Img && exp.Img.length > 0 ? (
+              <img
+                src={`/pengalaman/${exp.directory}/${exp.Img[0]}`}
+                alt={exp.title}
+                className="w-full h-44 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ) : (
+              <div className="w-full h-44 md:h-72 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+                <div className="text-center px-4">
+                  <p className="text-slate-400 font-semibold text-sm">{exp.organizer}</p>
+                  <p className="text-slate-500 text-xs mt-1">{exp.title}</p>
+                </div>
+              </div>
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span className="text-white font-semibold text-sm">{exp.title}</span>
             </div>
@@ -131,31 +140,42 @@ export default function Experience({ jmlhdisplay, onSeeMore }) {
 
             {/* Slideshow */}
             <div className="relative flex items-center justify-center bg-slate-100 dark:bg-slate-900 p-4">
-              <img
-                src={`/pengalaman/${displayList[selected].directory}/${displayList[selected].Img[currentImg]}`}
-                alt={displayList[selected].caption?.[currentImg] || ""}
-                className="w-full h-44 md:w-full md:h-[60vh] object-contain rounded-lg"
-              />
-              <p className="absolute text-xs bottom-0 left-1 right-1 md:bottom-3 md:left-4 md:right-4 md:text-sm text-white bg-black/50 backdrop-blur-sm rounded-lg text-center py-1 px-2">
-                {displayList[selected].caption?.[currentImg] || ""}
-              </p>
-              {(displayList[selected].Img || []).length > 1 && (
+              {(displayList[selected].Img || []).length > 0 ? (
                 <>
-                  <button
-                    onClick={handlePrev}
-                    className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm rounded-full text-white hover:bg-black/60 transition"
-                    aria-label="Previous"
-                  >
-                    <ChevronLeft size={18} />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm rounded-full text-white hover:bg-black/60 transition"
-                    aria-label="Next"
-                  >
-                    <ChevronRight size={18} />
-                  </button>
+                  <img
+                    src={`/pengalaman/${displayList[selected].directory}/${displayList[selected].Img[currentImg]}`}
+                    alt={displayList[selected].caption?.[currentImg] || ""}
+                    className="w-full h-44 md:w-full md:h-[60vh] object-contain rounded-lg"
+                  />
+                  <p className="absolute text-xs bottom-0 left-1 right-1 md:bottom-3 md:left-4 md:right-4 md:text-sm text-white bg-black/50 backdrop-blur-sm rounded-lg text-center py-1 px-2">
+                    {displayList[selected].caption?.[currentImg] || ""}
+                  </p>
+                  {displayList[selected].Img.length > 1 && (
+                    <>
+                      <button
+                        onClick={handlePrev}
+                        className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm rounded-full text-white hover:bg-black/60 transition"
+                        aria-label="Previous"
+                      >
+                        <ChevronLeft size={18} />
+                      </button>
+                      <button
+                        onClick={handleNext}
+                        className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 backdrop-blur-sm rounded-full text-white hover:bg-black/60 transition"
+                        aria-label="Next"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    </>
+                  )}
                 </>
+              ) : (
+                <div className="w-full h-44 md:h-[60vh] bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="text-slate-400 font-semibold">{displayList[selected].organizer}</p>
+                    <p className="text-slate-500 text-sm mt-1">{displayList[selected].title}</p>
+                  </div>
+                </div>
               )}
             </div>
 

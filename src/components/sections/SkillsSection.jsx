@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import skillsetData from "../../assets/Data/skillset.json";
 import Breadcrumb from "../reusable/Breadcrumb";
 
-const groups = ["Di Gunakan", "Belajar", "Lainnya"];
+const groups = ["Backend & Database", "Tools & Infrastructure", "Frontend Development"];
 
 const levelConfig = {
   Basic: { value: 20, color: "#94a3b8", label: "Basic" },
