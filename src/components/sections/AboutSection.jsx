@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Plus } from "lucide-react";
 import useProjects from "../../hooks/useProjects";
+import useProfile from "../../hooks/useProfile";
 import heroPhoto from "../../assets/Img/Hero1.png";
 
 /* ── Animated Counter ── */
@@ -32,6 +33,7 @@ function AnimatedCounter({ target, duration = 2 }) {
 /* ── About Section ── */
 export default function AboutSection() {
   const projects = useProjects();
+  const profile = useProfile();
   const totalProjects = projects.length;
 
   const fadeUp = {
@@ -101,25 +103,13 @@ export default function AboutSection() {
               custom={3}
               className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed"
             >
-              Saya adalah{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">
-                Backend Developer
-              </span>{" "}
-              dengan pengalaman membangun aplikasi web berskala nasional di{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">
-                PT. Javan Cipta Solusi
-              </span>
-              . Spesialisasi saya mencakup perancangan arsitektur API, pengembangan
-              layanan backend menggunakan{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">
-                Laravel
-              </span>{" "}
-              dan{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">
-                Node.js
-              </span>
-              , serta menjaga kualitas kode melalui unit testing, SonarQube, dan
-              CI/CD.
+              {profile.bio.split(new RegExp(`(${profile.bioHighlights.map(h => h.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')).join('|')})`, 'g')).map((part, i) =>
+                profile.bioHighlights.includes(part) ? (
+                  <span key={i} className="font-semibold text-slate-900 dark:text-white">{part}</span>
+                ) : (
+                  <span key={i}>{part}</span>
+                )
+              )}
             </motion.p>
 
             {/* Stats row */}
@@ -146,7 +136,7 @@ export default function AboutSection() {
 
               {/* Enterprise projects */}
               <div className="text-center md:text-left">
-                <span className="text-3xl font-black gradient-text">4</span>
+                <span className="text-3xl font-black gradient-text">{profile.stats.enterpriseProjects}</span>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
                   Proyek Enterprise
                 </p>
@@ -170,17 +160,7 @@ export default function AboutSection() {
               custom={5}
               className="flex flex-wrap justify-center md:justify-start gap-2 mt-6"
             >
-              {[
-                "PHP",
-                "Laravel",
-                "Node.js",
-                "Express",
-                "MySQL",
-                "REST API",
-                "PHPUnit",
-                "Docker",
-                "CI/CD",
-              ].map((tech) => (
+              {profile.techBadges.map((tech) => (
                 <span
                   key={tech}
                   className="text-xs px-3 py-1.5 rounded-lg glass-card font-medium text-slate-600 dark:text-slate-400"

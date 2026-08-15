@@ -1,6 +1,4 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 import Navbar from "./components/layout/navbar";
 import Footer from "./components/layout/footer";
@@ -38,7 +36,6 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-      AOS.init({ duration: 600, offset: 50, once: true });
     }, LOADING_DURATION);
     return () => clearTimeout(timer);
   }, []);

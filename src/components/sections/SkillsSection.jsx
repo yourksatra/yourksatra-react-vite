@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import skillsetData from "../../assets/Data/skillset.json";
+import useSkills from "../../hooks/useSkills";
 import Breadcrumb from "../reusable/Breadcrumb";
 
 const groups = ["Backend & Database", "Tools & Infrastructure", "Frontend Development"];
@@ -12,7 +12,6 @@ const levelConfig = {
 
 function SkillLevelChart({ level }) {
   const config = levelConfig[level] || levelConfig["Basic"];
-  const data = [{ name: level, value: config.value, fill: config.color }];
 
   return (
     <div className="w-full mt-2">
@@ -41,6 +40,7 @@ function SkillLevelChart({ level }) {
 }
 
 const SkillsSection = ({ setActivePage }) => {
+  const { skills } = useSkills();
   return (
     <section className="flex flex-col items-center min-w-full bg-slate-50 dark:bg-slate-950">
       <div className="w-full mt-16">
@@ -78,7 +78,7 @@ const SkillsSection = ({ setActivePage }) => {
         </motion.div>
 
         {groups.map((group) => {
-          const filtered = skillsetData.skillset.filter(
+          const filtered = skills.filter(
             (s) => s.group === group
           );
           if (filtered.length === 0) return null;

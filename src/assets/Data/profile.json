@@ -1,0 +1,19 @@
+{
+  "profile": {
+    "name": "N. Satria Bagass",
+    "degree": "S.Kom",
+    "greeting": "Hai, saya",
+    "title": "BACKEND DEVELOPER",
+    "description": "Membangun sistem backend yang skalabel & andal.",
+    "specialties": ["Arsitektur API", "Kualitas Kode", "Desain Sistem"],
+    "bio": "Saya adalah Backend Developer dengan pengalaman membangun aplikasi web berskala nasional di PT. Javan Cipta Solusi. Spesialisasi saya mencakup perancangan arsitektur API, pengembangan layanan backend menggunakan Laravel dan Node.js, serta menjaga kualitas kode melalui unit testing, SonarQube, dan CI/CD.",
+    "bioHighlights": ["Backend Developer", "PT. Javan Cipta Solusi", "Laravel", "Node.js"],
+    "resumeUrl": "/CV/Resume.pdf",
+    "resumeFilename": "Resume_Yourksatra.pdf",
+    "stats": {
+      "enterpriseProjects": 4,
+      "sonarQubePass": true
+    },
+    "techBadges": ["PHP", "Laravel", "Node.js", "Express", "MySQL", "REST API", "PHPUnit", "Docker", "CI/CD"]
+  }
+}

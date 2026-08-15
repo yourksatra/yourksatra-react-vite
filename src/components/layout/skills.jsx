@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import skillsetData from "../../assets/Data/skillset.json";
+import useSkills from "../../hooks/useSkills";
 
 const Skills = ({ onSeeDetail }) => {
+  const { skills } = useSkills();
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
     const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
 
     const buildRows = () => {
-      const data = shuffle(skillsetData.skillset);
+      const data = shuffle(skills);
       const rowCount = window.innerWidth < 768 ? 4 : 3;
       const perRow = Math.ceil(data.length / rowCount);
 
@@ -28,7 +29,7 @@ const Skills = ({ onSeeDetail }) => {
     buildRows();
     window.addEventListener("resize", buildRows);
     return () => window.removeEventListener("resize", buildRows);
-  }, []);
+  }, [skills]);
 
   return (
     <div className="w-full py-8 relative overflow-hidden bg-slate-100/50 dark:bg-slate-900/50">

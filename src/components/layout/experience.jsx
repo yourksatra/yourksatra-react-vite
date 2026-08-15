@@ -1,31 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import data from "../../assets/Data/experience.json";
+import useExperience from "../../hooks/useExperience";
 
 export default function Experience({ jmlhdisplay, onSeeMore }) {
+  const { experiences } = useExperience();
   const [selected, setSelected] = useState(null);
   const [currentImg, setCurrentImg] = useState(0);
   const modalContentRef = useRef(null);
   const intervalRef = useRef(null);
 
-  const sorted = (data?.experience || []).slice().sort((a, b) => {
-    const getDateKey = (item) => {
-      try {
-        if (item.type === "period") {
-          const d = item.endDate || item.startDate;
-          return d ? new Date(d.length === 7 ? d + "-01" : d) : new Date(0);
-        }
-        if (item.type === "onetime") {
-          return item.date ? new Date(item.date) : new Date(0);
-        }
-        return new Date(0);
-      } catch {
-        return new Date(0);
-      }
-    };
-    return getDateKey(b) - getDateKey(a);
-  });
+  const sorted = experiences;
 
   const displayList = sorted.slice(0, jmlhdisplay || sorted.length);
 

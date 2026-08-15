@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import useTheme from "../../hooks/useTheme";
 import iconWhite from "../../assets/Icon/iconWhite.svg";
 import iconBlack from "../../assets/Icon/iconBlack.svg";
@@ -83,7 +84,12 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
   const showBg = isScrolled || isMenuOpen || activePage !== "home";
 
   return (
-    <span data-aos="fade-in" data-once="false" data-aos-delay="800" className="fixed top-0 left-0 w-full z-50">
+    <motion.span
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.8 }}
+      className="fixed top-0 left-0 w-full z-50"
+    >
       <nav
         ref={navRef}
         className={`transition-all duration-500 ${showBg
@@ -231,6 +237,6 @@ export default function Navbar({ setSelectedTab, activePage, setActivePage }) {
           </div>
         </div>
       </nav>
-    </span>
+    </motion.span>
   );
 }

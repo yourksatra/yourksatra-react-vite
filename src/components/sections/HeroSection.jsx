@@ -2,35 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaDownload, FaArrowRight } from "react-icons/fa";
 import { SiLaravel, SiNodedotjs, SiMysql, SiPhp } from "react-icons/si";
-import experienceData from "../../assets/Data/experience.json";
-
-/* ────────────────────────────────────────────
-   Dynamic status badge — reads experience.json
-   If latest experience endDate >= current month → green "Saat ini di …"
-   Otherwise → blue "Terbuka untuk Peluang Baru"
-   ──────────────────────────────────────────── */
-function getStatusBadge() {
-  const experiences = (experienceData?.experience || [])
-    .filter((e) => e.type === "period" && e.startDate)
-    .sort((a, b) => {
-      const endA = a.endDate || a.startDate;
-      const endB = b.endDate || b.startDate;
-      return endB.localeCompare(endA);
-    });
-
-  const latest = experiences[0];
-  if (!latest) return { active: false, text: "Terbuka untuk Peluang Baru" };
-
-  const now = new Date();
-  const nowYM = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
-
-  // No endDate (ongoing) or endDate >= current month → active
-  if (!latest.endDate || latest.endDate >= nowYM) {
-    return { active: true, text: `Saat ini di ${latest.organizer}` };
-  }
-
-  return { active: false, text: "Terbuka untuk Peluang Baru" };
-}
+import useProfile from "../../hooks/useProfile";
 
 /* ────────────────────────────────────────────
    Test Terminal — overlapping mini terminal
@@ -216,7 +188,8 @@ function CodeTerminal() {
    Hero Section
    ──────────────────────────────────────────── */
 export default function HeroSection() {
-  const status = getStatusBadge();
+  const profile = useProfile();
+  const status = profile.statusBadge;
   const [frontTerminal, setFrontTerminal] = useState("test"); // "code" | "test"
 
   const fadeUp = {
@@ -280,7 +253,7 @@ export default function HeroSection() {
             custom={1}
             className="text-sm font-medium uppercase tracking-widest text-sky-600 dark:text-sky-400 mb-3"
           >
-            Hai, saya
+            {profile.greeting}
           </motion.p>
 
           <motion.h1
@@ -288,14 +261,14 @@ export default function HeroSection() {
             custom={2}
             className="text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight"
           >
-            N. Satria Bagass,{" "}
-            <span className="gradient-text">S.Kom</span>
+            {profile.name},{" "}
+            <span className="gradient-text">{profile.degree}</span>
           </motion.h1>
 
           <motion.div variants={fadeUp} custom={3} className="mt-5">
             <div className="flex items-center gap-3 flex-wrap">
               <h2 className="text-lg font-semibold text-slate-700 dark:text-slate-200 tracking-tight">
-                BACKEND DEVELOPER
+                {profile.title}
               </h2>
               <div className="flex items-center gap-1.5">
                 {techIcons.map((Icon, i) => (
@@ -315,18 +288,13 @@ export default function HeroSection() {
             custom={4}
             className="mt-4 text-sm text-slate-500 dark:text-slate-400 max-w-md leading-relaxed"
           >
-            Membangun sistem backend yang skalabel & andal.{" "}
-            <span className="text-slate-700 dark:text-slate-300 font-medium">
-              Arsitektur API
-            </span>
-            {" · "}
-            <span className="text-slate-700 dark:text-slate-300 font-medium">
-              Kualitas Kode
-            </span>
-            {" · "}
-            <span className="text-slate-700 dark:text-slate-300 font-medium">
-              Desain Sistem
-            </span>
+            {profile.description}{" "}
+            {profile.specialties.map((s, i) => (
+              <span key={i}>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">{s}</span>
+                {i < profile.specialties.length - 1 ? " · " : ""}
+              </span>
+            ))}
           </motion.p>
 
           <motion.div
@@ -342,8 +310,8 @@ export default function HeroSection() {
               <FaArrowRight className="text-xs" />
             </a>
             <a
-              href="/CV/Resume.pdf"
-              download="Resume_Yourksatra.pdf"
+              href={profile.resumeUrl}
+              download={profile.resumeFilename}
               className="px-6 py-2.5 rounded-xl glass-card font-semibold text-sm text-slate-700 dark:text-slate-300 hover:border-sky-600/30 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
               Download CV
@@ -431,8 +399,8 @@ export default function HeroSection() {
                 <span className="text-white">whoami</span>
               </p>
               <p className="mt-2 text-slate-400 font-sans">
-                <span className="text-xl sm:text-2xl font-bold text-slate-100">N. Satria Bagass, </span>
-                <span className="text-lg sm:text-xl font-bold text-sky-400">S.Kom</span>
+                <span className="text-xl sm:text-2xl font-bold text-slate-100">{profile.name}, </span>
+                <span className="text-lg sm:text-xl font-bold text-sky-400">{profile.degree}</span>
               </p>
             </motion.div>
 
@@ -446,7 +414,7 @@ export default function HeroSection() {
                 <span className="text-white">cat role.txt</span>
               </p>
               <div className="mt-2 flex items-center gap-2">
-                <p className="text-base sm:text-lg font-bold text-sky-300 tracking-wide font-sans">BACKEND DEVELOPER</p>
+                <p className="text-base sm:text-lg font-bold text-sky-300 tracking-wide font-sans">{profile.title}</p>
                 <div className="flex items-center gap-1.5 ml-1 border-l border-slate-700 pl-2">
                   {techIcons.map((Icon, i) => (
                     <Icon key={i} className="text-slate-400 text-sm" />
@@ -471,7 +439,7 @@ export default function HeroSection() {
                     [{status.text}]
                   </span>
                   <br />
-                  <span className="text-slate-500">Membangun sistem backend yang skalabel & andal.</span>
+                  <span className="text-slate-500">{profile.description}</span>
                 </p>
               </div>
             </motion.div>
@@ -502,8 +470,8 @@ export default function HeroSection() {
             <FaArrowRight className="text-[10px]" />
           </a>
           <a
-            href="/CV/Resume.pdf"
-            download="Resume_Yourksatra.pdf"
+            href={profile.resumeUrl}
+            download={profile.resumeFilename}
             className="w-full py-3.5 rounded-xl bg-slate-200/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-300 dark:border-slate-700 font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-300 flex items-center justify-center gap-2 active:scale-95 transition-transform"
           >
             Download CV

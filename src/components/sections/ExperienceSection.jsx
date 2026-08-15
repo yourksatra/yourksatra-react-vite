@@ -1,10 +1,10 @@
 import Experience from "../layout/experience";
 import Breadcrumb from "../reusable/Breadcrumb";
-import data from "../../assets/Data/experience.json";
 import { motion } from "framer-motion";
+import useExperience from "../../hooks/useExperience";
 
 export default function ExperienceSection({ setActivePage }) {
-  const hasData = data?.experience?.length > 0;
+  const { hasData } = useExperience();
 
   return (
     <section className="min-h-[100svh] flex flex-col items-center bg-slate-50 dark:bg-slate-950">

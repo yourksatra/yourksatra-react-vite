@@ -1,13 +1,10 @@
-import proyekData from "../assets/Data/proyek.json";
+import { getProjects } from '../services/projectService.js';
 
 /**
  * useProjects
- * - Mengembalikan array projects (urut tetap seperti di JSON).
- * - Bisa ditambah filtering / sorting di sini.
+ * - Mengembalikan array projects.
+ * - Data diambil melalui service layer, bukan langsung dari JSON.
  */
 export default function useProjects() {
-  // jika ingin sort, lakukan di sini, contoh: terbaru dulu jika ada key date
-  // const sorted = proyekData.projects.slice().sort(...)
-
-  return proyekData.projects || [];
+  return getProjects();
 }
